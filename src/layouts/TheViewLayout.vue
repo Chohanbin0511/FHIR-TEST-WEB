@@ -1,5 +1,6 @@
 <template>
-	<v-layout v-resize="onResize">
+	<!-- <v-card v-resize="onResize" :style="`height:${innerHeight}px;`"> -->
+	<v-layout v-resize="onResize" :style="`min-height:${innerHeight}px;`">
 		<v-app-bar color="primary" density="compact">
 			<template v-slot:prepend>
 				<v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
