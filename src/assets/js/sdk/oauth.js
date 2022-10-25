@@ -52,8 +52,6 @@ export function clientCredentials(config) {
     };
 
     var queryStringData = queryString(clientCredentialsData);
-    console.log("config",config)
-    console.log("queryStringData",queryStringData)
     return authXMLHttpRequest(config, queryStringData);
 };
 
@@ -99,7 +97,6 @@ return queryStringData;
 // 인증 토큰 요청
 function authXMLHttpRequest(config, queryStringData) {
     return new Promise(function(resolve, reject) {
-        console.log("dddd",btoa(config.client_id + ":" + config.client_secret))
         var xhr = new XMLHttpRequest();
         xhr.open("POST", config.token, true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -107,11 +104,9 @@ function authXMLHttpRequest(config, queryStringData) {
         xhr.send(queryStringData);
 
         xhr.onreadystatechange = function() {
-            console.log("xhr",xhr)
             if(xhr.readyState == xhr.DONE) {
                 if(xhr.status >= 200 && xhr.status < 300) {
                     var data = JSON.parse(xhr.responseText);
-                    console.log("data",data)
                     resolve(data);
                 } else {
                     reject(xhr);

@@ -53,14 +53,46 @@
 				<h3>Token Result</h3>
 			</v-container>
 			<v-container>
+				<div
+					v-if="
+						oauthType === getTokenBtnList[0].title ||
+						oauthType === getTokenBtnList[3].title
+					"
+					class="d-flex justify-center mb-6"
+				>
+					<v-card-subtitle class="d-flex align-center"
+						>토큰 재발급
+						<v-tooltip activator="parent" location="bottom"
+							>Authorization Code인증, Password Credentails 인증 방식에만
+							Refresh Token 발급됨</v-tooltip
+						></v-card-subtitle
+					>
+					<v-btn
+						class="d-flex align-center"
+						style="width: 250px"
+						@click="fetchRefreshToken()"
+					>
+						{{ refreshTokenBtn.title }}
+					</v-btn>
+				</div>
+
 				<v-card>
-					<!-- <v-card-item>
-						<v-card-title>{{ clickedMethods }}</v-card-title>
+					<v-card-item>
+						<v-card-subtitle>인증타입 : {{ oauthType }}</v-card-subtitle>
+					</v-card-item>
 
-						<v-card-subtitle>This is a subtitle</v-card-subtitle>
-					</v-card-item> -->
-
-					<v-card-text> This is content </v-card-text>
+					<v-card-text :style="`min-height:200px;`">
+						<v-progress-circular
+							v-if="isOauthResult"
+							indeterminate
+							color="red"
+							style="margin-left: 50%; margin-top: 50px"
+						></v-progress-circular>
+						<!-- class="justify-center" -->
+						<template v-else>
+							{{ oauthResult }}
+						</template>
+					</v-card-text>
 				</v-card>
 			</v-container>
 			<!-- <textarea id="token_display" cols="100" rows="20"></textarea> -->
@@ -70,9 +102,11 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
 import {
 	getTokenAuthCode,
+	getTokenAuthCodeResult,
 	getTokenImplicit,
 	getTokenClient,
 	getTokenPassword,
@@ -98,13 +132,29 @@ const getTokenBtnList = ref([
 		title: '4.Password Credentials 인증',
 		methods: 'FetchTokenPassword',
 	},
-	{
-		title: 'Refresh Token',
-		methods: 'FetchTokenAuthCode',
-	},
+	// {
+	// 	title: 'Refresh Token',
+	// 	methods: 'FetchTokenAuthCode',
+	// },
 ]);
+const refreshTokenBtn = ref({
+	title: 'Refresh Token',
+	methods: 'FetchTokenAuthCode',
+});
+const oauthResult = ref(null);
+const isOauthResult = ref(false);
+const oauthType = ref(null);
+const refreshToken = ref(null);
 const clickedMethods = ref(null);
+const router = useRouter();
+const route = useRoute();
 const fetchMethods = methodsName => {
+	router.push({ path: '/sdkSample/oauth', replace: true });
+	oauthResult.value = null;
+	oauthType.value = null;
+	if (methodsName !== getTokenBtnList.value[3].methods) {
+		isOauthResult.value = true;
+	}
 	clickedMethods.value = methodsName;
 	switch (methodsName) {
 		case getTokenBtnList.value[0].methods:
@@ -136,8 +186,7 @@ const fetchMethods = methodsName => {
  */
 const FetchTokenAuthCode = async () => {
 	try {
-		const response = await getTokenAuthCode();
-		console.log('response', response);
+		await getTokenAuthCode();
 	} catch (error) {
 		console.error(error);
 	}
@@ -148,8 +197,7 @@ const FetchTokenAuthCode = async () => {
  */
 const FetchTokenImplicit = async () => {
 	try {
-		const response = await getTokenImplicit();
-		console.log('response', response);
+		await getTokenImplicit();
 	} catch (error) {
 		console.error(error);
 	}
@@ -161,9 +209,12 @@ const FetchTokenImplicit = async () => {
 const FetchTokenClient = async () => {
 	try {
 		const response = await getTokenClient();
-		console.log('response', response);
+		oauthResult.value = response;
+		oauthType.value = getTokenBtnList.value[2].title;
 	} catch (error) {
 		console.error(error);
+	} finally {
+		isOauthResult.value = false;
 	}
 };
 
@@ -173,6 +224,8 @@ const FetchTokenClient = async () => {
 const userId = ref(null);
 const userPw = ref(null);
 const FetchTokenPassword = async () => {
+	oauthResult.value = null;
+	isOauthResult.value = true;
 	if (!userId.value || !userPw.value) {
 		alert('정보를 입력하세요');
 		return false;
@@ -184,24 +237,49 @@ const FetchTokenPassword = async () => {
 	};
 	try {
 		const response = await getTokenPassword(userInfo);
-		console.log('response', response);
+		oauthResult.value = response;
+		oauthType.value = getTokenBtnList.value[3].title;
+		refreshToken.value = response.refresh_token;
 	} catch (error) {
 		console.error(error);
+	} finally {
+		isOauthResult.value = false;
+	}
+};
+
+/**
+ * refreshToken 발급
+ */
+const fetchRefreshToken = async () => {
+	const response = await getTokenRefresh(refreshToken.value);
+	console.log('response', response);
+	oauthResult.value = response;
+	refreshToken.value = null;
+};
+
+let lhash = ref(location.hash);
+let lsearch = ref(location.search);
+const isCode = ref(route.query.code);
+const tokenResultSet = async () => {
+	if (lhash.value != undefined && lhash.value != '') {
+		let accToken = lhash.value.split('&')[0].split('=')[1];
+		oauthType.value = getTokenBtnList.value[1].title;
+		oauthResult.value = accToken;
+	} else if (lsearch.value != undefined && isCode.value) {
+		let lsearchSplit = lsearch.value.split('&');
+		let code = lsearchSplit[0].split('=')[1];
+		const response = await getTokenAuthCodeResult(code);
+		oauthResult.value = response;
+		oauthType.value = getTokenBtnList.value[0].title;
+		refreshToken.value = response.refresh_token;
+	} else {
+		return;
 	}
 };
 
 onMounted(() => {
-	// FetchTokenAuthCode();
+	tokenResultSet();
 });
-// 토큰 결과
-// const setTokenValue = () => {
-// 	let accToken = localStorage.getItem('accToken');
-// 	console.log('access_token: ', accToken);
-
-// 	if (accToken != undefined) {
-// 		document.getElementById('token_display').value = accToken;
-// 	}
-// };
 </script>
 
 <style lang="scss" scoped></style>

@@ -1,6 +1,4 @@
-// import OAuth from '@/assets/js/sdk/oauth';
-import * as OAuth from './../assets/js/sdk/oauth';
-// const OAuth = require('./../assets/js/sdk/oauth');
+import * as OAuth from '@/assets/js/sdk/oauth';
 import { OAUTH_CONFIG } from './common/config';
 
 /**
@@ -9,6 +7,13 @@ import { OAUTH_CONFIG } from './common/config';
  */
 export function getTokenAuthCode() {
 	return OAuth.authorizationCode(OAUTH_CONFIG);
+}
+
+/**
+ * code로 token 값 얻기
+ */
+export function getTokenAuthCodeResult(code) {
+	return OAuth.getToken(OAUTH_CONFIG, code);
 }
 
 /**
