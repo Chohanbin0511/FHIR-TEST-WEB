@@ -118,7 +118,10 @@ const userLoginCheck = () => {
 };
 // 로그아웃 url 이동
 const logout = () => {
-	router.push('/sdkSample/oauth');
+	if (router.currentRoute.value.path === '/sdkSample/oauth') {
+		router.replace('/sdkSample/oauth');
+		router.go();
+	}
 };
 
 const items = ref([

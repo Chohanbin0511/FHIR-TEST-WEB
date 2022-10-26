@@ -101,7 +101,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, watch, onUpdated } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
 import {
@@ -214,7 +214,7 @@ const FetchTokenClient = async () => {
 		SET_OAUTH(response);
 		oauthResult.value = response;
 		oauthType.value = getTokenBtnList.value[2].title;
-		btnFetchUserInfo();
+		// btnFetchUserInfo();
 	} catch (error) {
 		console.error(error);
 	} finally {
@@ -245,7 +245,7 @@ const FetchTokenPassword = async () => {
 		SET_OAUTH(response);
 		oauthType.value = getTokenBtnList.value[3].title;
 		refreshToken.value = response.refresh_token;
-		btnFetchUserInfo();
+		// btnFetchUserInfo();
 	} catch (error) {
 		console.error(error);
 	} finally {
@@ -262,7 +262,7 @@ const fetchRefreshToken = async () => {
 	SET_OAUTH(response);
 	oauthResult.value = response;
 	refreshToken.value = null;
-	btnFetchUserInfo();
+	// btnFetchUserInfo();
 };
 
 let lhash = ref(location.hash);
@@ -281,7 +281,7 @@ const tokenResultSet = async () => {
 		SET_OAUTH(response);
 		oauthType.value = getTokenBtnList.value[0].title;
 		refreshToken.value = response.refresh_token;
-		btnFetchUserInfo();
+		// btnFetchUserInfo();
 	} else {
 		return;
 	}
@@ -307,6 +307,21 @@ const btnFetchUserInfo = async () => {
 
 onMounted(() => {
 	tokenResultSet();
+});
+
+watch(
+	() => oauthResult.value,
+	() => {
+		console.log('oauthResult', oauthResult.value);
+		if (oauthResult.value) {
+			btnFetchUserInfo();
+		}
+	},
+	{ deep: true },
+);
+
+onUpdated(() => {
+	console.log('oauth', oauth);
 });
 </script>
 
