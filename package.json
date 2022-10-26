@@ -14,13 +14,13 @@
     "fhir.js": "^0.0.22",
     "pinia": "^2.0.23",
     "pinia-plugin-persist": "^1.0.0",
+    "querystring": "^0.2.1",
     "roboto-fontface": "*",
+    "sha256": "^0.2.0",
     "vue": "^3.2.38",
     "vue-router": "^4.1.5",
     "vuetify": "npm:@vuetify/nightly@next",
-    "webfontloader": "^1.0.0",
-    "sha256": "^0.2.0",
-    "querystring": "^0.2.1"
+    "webfontloader": "^1.0.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",

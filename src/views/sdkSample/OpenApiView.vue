@@ -7,7 +7,7 @@
 			<!----------------------   회원가입 API   ---------------------------->
 			<v-container>
 				<v-card class="ma-2 pa-4">
-					<h2 class="mb-2">회원가입 API</h2>
+					<h2 class="mb-2" style="width: 250px">회원가입 API</h2>
 					<v-dialog transition="dialog-bottom-transition">
 						<template v-slot:activator="{ props }">
 							<v-btn
@@ -40,11 +40,11 @@
 			<!----------------------   회원정보관리 API   ---------------------------->
 			<v-container>
 				<v-card class="ma-2 pa-4">
-					<h2 class="mb-2">
-						회원정보관리 API
+					<h2 class="mb-2" style="width: 250px">
 						<v-tooltip activator="parent" location="bottom"
 							>AccessToken 발급 후 코드 저장하여 사용 가능함</v-tooltip
 						>
+						회원정보관리 API
 					</h2>
 					<v-dialog transition="dialog-bottom-transition">
 						<template v-slot:activator="{ props }">
@@ -77,7 +77,7 @@
 			<!----------------------   건강 예측 API   ---------------------------->
 			<v-container>
 				<v-card class="ma-2 pa-4">
-					<h2 class="mb-2">
+					<h2 class="mb-2" style="width: 250px">
 						건강 예측 API
 						<v-tooltip activator="parent" location="bottom"
 							>AccessToken 발급 후 코드 저장하여 사용 가능함</v-tooltip
@@ -114,7 +114,7 @@
 			<!----------------------  Blockchain API   ---------------------------->
 			<v-container>
 				<v-card class="ma-2 pa-4">
-					<h2 class="mb-2">
+					<h2 class="mb-2" style="width: 250px">
 						Blockchain API
 						<v-tooltip activator="parent" location="bottom"
 							>AccessToken 발급 후, token과 PatientId를 저장하여 사용
@@ -152,7 +152,7 @@
 			<!----------------------  기타 API   ---------------------------->
 			<v-container>
 				<v-card class="ma-2 pa-4">
-					<h2 class="mb-2">기타 API</h2>
+					<h2 class="mb-2" style="width: 250px">기타 API</h2>
 					<v-dialog transition="dialog-bottom-transition">
 						<template v-slot:activator="{ props }">
 							<v-btn
@@ -221,6 +221,7 @@ const btnCheckExistUserId = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -239,6 +240,7 @@ const btnIdentifyMobilePhone = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -253,6 +255,7 @@ const btnFetchStplat = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -304,6 +307,7 @@ const btnRegister = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -323,6 +327,7 @@ const btnRegisterService = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -343,6 +348,7 @@ const btnSearchUserId = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -364,6 +370,7 @@ const btnSearchUserIdByQuestion = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -384,6 +391,7 @@ const btnSearchPassword = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -403,6 +411,7 @@ const btnCheckAuthCode = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -424,6 +433,7 @@ const btnUpdatePassword = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -477,7 +487,7 @@ const userPartOpenApiList = ref([
 const configToken = {
 	baseUrl: 'https://api.redwoodhealth.kr',
 	accessToken:
-		'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJjaG9oYmluVGVzdCIsInN1YiI6ImNob2hiaW4xIiwidXNlcl9uYW1lIjoiY2hvaGJpbjEiLCJzY29wZSI6WyJwaHIucmVhZCIsInBoci53cml0ZSJdLCJpc3MiOiJSZWR3b29kUGxhdGZvcm0iLCJuYW1lIjoidGVzdCIsImV4cCI6MTY2NjcxNzkwNCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImp0aSI6ImNiZmM2YTBlLTFmODctNDI1NS04NGZhLTU5MmY3YzNhNWM4NSIsImNsaWVudF9pZCI6ImNob2hiaW5UZXN0In0.Kb7NLFw8Tb9cVBDJoTxabuaRxDwt3ERNzFstluNFkr58UEiCclOTya2Xzms_kzTDXfrogkTqmTrmn3o4I4VdH8YL5AtQC-PwjlbglL7ZgDTWpZbBsIIXgIXdFL_OMGYBjCWGx1dw9p0-94Nc1L-0KPMlUx5wFJpPuoshEI7FXjS9880qGxKhCHiKi1Egg79EZGjnYWPjS3GeIzs0iVB8Tl9Epi5_ZXua0aNEgiadUM-rRpsJhGiTJSVTacV_G2HM595D5pppD57CwgZ01sAMmzhdmFFjDoIJB6-MgYU9smBLaeixUJ2Cbu2x49RLMDepQfHKp1l8zPivJduHU09T8g',
+		'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJjaG9oYmluVGVzdCIsInN1YiI6ImNob2hiaW4xIiwidXNlcl9uYW1lIjoiY2hvaGJpbjEiLCJzY29wZSI6WyJwaHIud3JpdGUiLCJwaHIucmVhZCJdLCJpc3MiOiJSZWR3b29kUGxhdGZvcm0iLCJuYW1lIjoidGVzdCIsImV4cCI6MTY2Njc4MDcxMCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImp0aSI6IjhlNTBiY2ZiLWM3MjAtNGIwYy1iN2FlLTE1NGU1MjYxY2FjMyIsImNsaWVudF9pZCI6ImNob2hiaW5UZXN0In0.RuYnidx3FWeUg3yD_x9-il4w1xltEd3i4E5FUc8hbrNoOH2CFTfVsiMDxuPUs1QBLGGa49oVlYtpZ5TKxflyxz1LnXCTd35ge2BVIhrNIT_DJRrPq5y3rT42TtA0PbKDIsELTl9aBs_IyDHugz9pDAuJ_s2OPXLwU2yEC61H_RaE-ZYzBZPXgpqta41GMXYlKD2vth9VWh3TQ8hxReWhDNxOvmiMSpd1BtO15Q2gwpID0_lTCt-8-6jjFFVzQFtxlSaa264Iumj9Dd4ZU3o82IDOx5tefXBDwkIXNblsuXnSo_aLfSKwK4-byqyo2BfDKQajJJ5wkRfXAzpW4gntrA',
 };
 
 // 회원 정보 조회
@@ -490,6 +500,7 @@ const btnFetchUserInfo = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -509,6 +520,7 @@ const btnCheckPassword = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -542,6 +554,7 @@ const btnModifyUserInfo = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -561,6 +574,7 @@ const btnUnregister = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -579,6 +593,7 @@ const btnAddPHRSharedUser = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -593,6 +608,7 @@ const btnFetchPHRSharedUserList = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -611,6 +627,7 @@ const btnRemovePHRSharedUser = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -629,6 +646,7 @@ const btnModifyPHRSharedUsers = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -684,6 +702,7 @@ const btnCoronaryArtery = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -705,6 +724,7 @@ const btnDiabetes = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -726,6 +746,7 @@ const btnStroke = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -744,6 +765,7 @@ const btnBodyAge = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -762,6 +784,7 @@ const btnASCVD = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -795,6 +818,7 @@ const btnDiabetesIn10Years = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -833,6 +857,7 @@ const btnHeartAttackIn10Years = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -879,6 +904,7 @@ const btnCancersIn10Years = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -913,6 +939,7 @@ const btnDvtIn5Years = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -945,6 +972,7 @@ const btnCkdIn5Years = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -977,6 +1005,7 @@ const btnEsrdIn5Years = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -1020,6 +1049,7 @@ const btnOsteoporoticFractureIn10Years = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -1062,6 +1092,7 @@ const btnHipFractureIn10Years = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -1081,6 +1112,7 @@ const btnFetchLatestPredict = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -1160,6 +1192,7 @@ const btnCreateBlockchain = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -1180,6 +1213,7 @@ const btnAddResource = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -1198,6 +1232,7 @@ const btnUpdateBlockchain = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -1212,6 +1247,7 @@ const btnFetchBlockchain = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -1227,6 +1263,7 @@ const btnDeleteBlockchain = title => {
 			document.getElementById('openAPI_display').value = answer;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -1270,6 +1307,7 @@ const btnPHRApp = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -1291,6 +1329,7 @@ const btnSendSMSMsg = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };
@@ -1310,6 +1349,7 @@ const btnSendUserSMSMsg = title => {
 			apiResult.value = response;
 		})
 		.catch(error => {
+			apiResult.value = 'error';
 			console.log('error', error);
 		});
 };

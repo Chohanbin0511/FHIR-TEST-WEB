@@ -7,9 +7,9 @@
 			</template>
 			<v-app-bar-title>RedWood Platform Test</v-app-bar-title>
 
-			<!-- <v-btn rounded="lg" color="white" size="large" @click="userLoginCheck">
+			<v-btn rounded="lg" color="white" size="large" @click="userLoginCheck">
 				{{ userInfo.isLogined ? '로그아웃 ' : '로그인' }}
-			</v-btn> -->
+			</v-btn>
 		</v-app-bar>
 
 		<v-navigation-drawer v-model="drawer" bottom temporary>
@@ -19,7 +19,7 @@
 
 					<template v-slot:subtitle>
 						<v-icon> mdi-account-outline </v-icon>
-						<!-- {{ userInfo.userId }} -->
+						{{ userInfo.userId ? 'userInfo.userId' : '비회원' }}
 					</template>
 
 					<!-- <template v-slot:text> {{ userInfo.nickname }} </template> -->
@@ -50,17 +50,17 @@
 import {
 	ref,
 	onMounted,
-	//  getCurrentInstance,
+	// getCurrentInstance,
 	watch,
 } from 'vue';
 import { useRouter } from 'vue-router';
-// import { useAuthStore } from '@/stores/auth';
+import { useAuthStore } from '@/stores/auth';
 
 const router = useRouter();
 /**
  * 유저 정보
  */
-// const userInfo = useAuthStore().userInfo;
+const userInfo = useAuthStore().userInfo;
 // const { proxy } = getCurrentInstance();
 // screen height
 const innerHeight = ref(0);
@@ -90,20 +90,20 @@ watch(
 
 // 로그인 여부에 따라 로그인, 로그아웃 처리
 
-// const store = useAuthStore();
-// const { CLEAR_SESSION } = store;
-// const userLoginCheck = () => {
-// 	if (userInfo.isLogined) {
-// 		CLEAR_SESSION();
-// 		logout();
-// 	} else {
-// 		router.push('/login');
-// 	}
-// };
+const store = useAuthStore();
+const { CLEAR_SESSION } = store;
+const userLoginCheck = () => {
+	if (userInfo.isLogined) {
+		CLEAR_SESSION();
+		logout();
+	} else {
+		router.push('/login');
+	}
+};
 // 로그아웃 url 이동
-// const logout = () => {
-// 	location.href = `https://kauth.kakao.com/oauth/logout?client_id=${proxy.restApiKey}&logout_redirect_uri=${proxy.redirectUri}`;
-// };
+const logout = () => {
+	// location.href = `https://kauth.kakao.com/oauth/logout?client_id=${proxy.restApiKey}&logout_redirect_uri=${proxy.redirectUri}`;
+};
 
 const items = ref([
 	{

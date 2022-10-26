@@ -23,6 +23,12 @@ const router = createRouter({
 			name: 'openApi',
 			component: () => import('@/views/sdkSample/OpenApiView.vue'),
 		},
+		{
+			path: '/login',
+			name: 'Login',
+			// meta: { anonymous: true },
+			component: () => import('@/views/user/LoginView.vue'),
+		},
 	],
 });
 
