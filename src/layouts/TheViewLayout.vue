@@ -113,12 +113,12 @@ const userLoginCheck = () => {
 		CLEAR_SESSION();
 		logout();
 	} else {
-		router.push('/login');
+		router.push('/sdkSample/oauth');
 	}
 };
 // 로그아웃 url 이동
 const logout = () => {
-	// location.href = `https://kauth.kakao.com/oauth/logout?client_id=${proxy.restApiKey}&logout_redirect_uri=${proxy.redirectUri}`;
+	router.push('/sdkSample/oauth');
 };
 
 const items = ref([
@@ -140,12 +140,12 @@ const items = ref([
 	// 	value: 'notice',
 	// 	url: '/updateNote',
 	// },
-	{
-		icon: 'mdi-update',
-		title: 'UpdateInfo',
-		value: 'updateInfo',
-		url: '/updateNote',
-	},
+	// {
+	// 	icon: 'mdi-update',
+	// 	title: 'UpdateInfo',
+	// 	value: 'updateInfo',
+	// 	url: '/updateNote',
+	// },
 ]);
 </script>
 

@@ -5,7 +5,7 @@
 				<h1>Oauth Sample</h1>
 			</v-container>
 			<v-container>
-				<h3>Redwood OAuth Library</h3>
+				<h3>Redwood OAuth Library (4가지 로그인)</h3>
 			</v-container>
 
 			<v-container>
