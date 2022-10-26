@@ -189,7 +189,10 @@
 import { ref } from 'vue';
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
 import * as OpenAPI from '@/assets/js/sdk/openApi';
-// import { OAUTH_CONFIG } from '@/api/common/config';
+import { useAuthStore } from '@/stores/auth';
+
+const oauth = useAuthStore().oauth;
+const userInfo = useAuthStore().userInfo;
 
 // 회원가입 API, 모바일 앱 버전 API에 필요한 인증정보
 const config = {
@@ -212,7 +215,7 @@ const btnCheckExistUserId = title => {
 	resetDialogContent();
 	apiName.value = title;
 	const data = {
-		userId: 'chohbin1',
+		userId: userInfo.userId,
 	};
 
 	OpenAPI.checkExistUserId(config, data)
@@ -231,7 +234,7 @@ const btnIdentifyMobilePhone = title => {
 	resetDialogContent();
 	apiName.value = title;
 	const data = {
-		mobilePhone: '01000000000',
+		mobilePhone: userInfo.mobilePhone,
 	};
 
 	OpenAPI.identifyMobilePhone(config, data)
@@ -337,9 +340,9 @@ const btnSearchUserId = title => {
 	resetDialogContent();
 	apiName.value = title;
 	const data = {
-		userName: '테스트사용자',
+		userName: userInfo.userName,
 		type: 'email',
-		email: 'test@test.com',
+		email: userInfo.email,
 	};
 
 	OpenAPI.searchUserId(config, data)
@@ -380,9 +383,9 @@ const btnSearchPassword = title => {
 	resetDialogContent();
 	apiName.value = title;
 	const data = {
-		userId: 'chohbin1',
+		userId: userInfo.userId,
 		type: 'mobile',
-		mobilePhone: '01000000000',
+		mobilePhone: userInfo.mobilePhone,
 	};
 
 	OpenAPI.searchPassword(config, data)
@@ -486,8 +489,7 @@ const userPartOpenApiList = ref([
 // 회원정보관리 API, 건강 예측 API, Blockchain API에 필요한 인증정보
 const configToken = {
 	baseUrl: 'https://api.redwoodhealth.kr',
-	accessToken:
-		'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJjaG9oYmluVGVzdCIsInN1YiI6ImNob2hiaW4xIiwidXNlcl9uYW1lIjoiY2hvaGJpbjEiLCJzY29wZSI6WyJwaHIud3JpdGUiLCJwaHIucmVhZCJdLCJpc3MiOiJSZWR3b29kUGxhdGZvcm0iLCJuYW1lIjoidGVzdCIsImV4cCI6MTY2Njc4MDcxMCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImp0aSI6IjhlNTBiY2ZiLWM3MjAtNGIwYy1iN2FlLTE1NGU1MjYxY2FjMyIsImNsaWVudF9pZCI6ImNob2hiaW5UZXN0In0.RuYnidx3FWeUg3yD_x9-il4w1xltEd3i4E5FUc8hbrNoOH2CFTfVsiMDxuPUs1QBLGGa49oVlYtpZ5TKxflyxz1LnXCTd35ge2BVIhrNIT_DJRrPq5y3rT42TtA0PbKDIsELTl9aBs_IyDHugz9pDAuJ_s2OPXLwU2yEC61H_RaE-ZYzBZPXgpqta41GMXYlKD2vth9VWh3TQ8hxReWhDNxOvmiMSpd1BtO15Q2gwpID0_lTCt-8-6jjFFVzQFtxlSaa264Iumj9Dd4ZU3o82IDOx5tefXBDwkIXNblsuXnSo_aLfSKwK4-byqyo2BfDKQajJJ5wkRfXAzpW4gntrA',
+	accessToken: oauth.accessToken,
 };
 
 // 회원 정보 조회
@@ -531,7 +533,7 @@ const btnModifyUserInfo = title => {
 	apiName.value = title;
 	const data = {
 		serviceId: `${import.meta.env.VITE_APP_OAUTH_CLIENT_ID}`,
-		userId: 'test',
+		userId: userInfo.userId,
 		userName: '테스트사용자수정',
 		password:
 			'2fa1ecf9826474fe8e18a96441c94a500cd968454eeb05ed056d0918e19cd118',
@@ -539,7 +541,7 @@ const btnModifyUserInfo = title => {
 		weddingAnniversary: '2020-06-09',
 		gender: 'M',
 		email: 'test@test.com',
-		mobilePhone: '01000000000',
+		mobilePhone: userInfo.mobilePhone,
 		cablePhone: '020000000',
 		zip: '07327',
 		address: '서울 영등포구 여의나루로 71 동화빌딩',
@@ -564,7 +566,7 @@ const btnUnregister = title => {
 	resetDialogContent();
 	apiName.value = title;
 	const data = {
-		serviceId: 'openAPIJavaScriptLibrary',
+		serviceId: `${import.meta.env.VITE_APP_OAUTH_CLIENT_ID}`,
 		reason: '테스트로 인한 회원탈퇴',
 	};
 
@@ -1319,7 +1321,7 @@ const btnSendSMSMsg = title => {
 	resetDialogContent();
 	apiName.value = title;
 	const data = {
-		mobilePhone: '01000000000',
+		mobilePhone: userInfo.mobilePhone,
 		message: '안녕하세요.\n테스트 메시지입니다.',
 	};
 
@@ -1339,7 +1341,7 @@ const btnSendUserSMSMsg = title => {
 	resetDialogContent();
 	apiName.value = title;
 	const data = {
-		mobilePhone: '01000000000',
+		mobilePhone: userInfo.mobilePhone,
 		message: '안녕하세요.\n테스트 메시지입니다.',
 	};
 

@@ -17,12 +17,28 @@
 				<v-card width="400" class="mt-4 mb-4">
 					<template v-slot:title> Profile </template>
 
-					<template v-slot:subtitle>
-						<v-icon> mdi-account-outline </v-icon>
-						{{ userInfo.userId ? 'userInfo.userId' : '비회원' }}
-					</template>
+					<v-card-text class="pt-1 pb-1">
+						<!-- <v-icon> mdi-account-outline </v-icon> -->
+						아이디 :
+						{{ userInfo.userId ? userInfo.userId : '비회원' }}
+					</v-card-text>
 
-					<!-- <template v-slot:text> {{ userInfo.nickname }} </template> -->
+					<!-- <v-card-text class="pt-0 pb-0"> -->
+					<v-card-text class="pt-1 pb-1">
+						<!-- <v-icon> mdi-account-outline </v-icon> -->
+						성별 :
+						{{ userInfo.gender }}
+					</v-card-text>
+					<v-card-text class="pt-1 pb-1">
+						<!-- <v-icon> mdi-account-outline </v-icon> -->
+						번호 :
+						{{ userInfo.mobilePhone }}
+					</v-card-text>
+					<v-card-text class="pt-1 pb-1 mb-2">
+						<!-- <v-icon> mdi-account-outline </v-icon> -->
+						이름 :
+						{{ userInfo.userName }}
+					</v-card-text>
 				</v-card>
 				<v-list-item
 					v-for="(item, i) in items"

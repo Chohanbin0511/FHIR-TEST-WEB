@@ -52,7 +52,6 @@ onMounted(async () => {
 		await import(/* @vite-ignore */ '@/assets/images/redwoodHealth_logo_1.png')
 	).default;
 });
-// https://oauth.redwoodhealth.kr/login
 
 /**
  * Authorization Code 인증
@@ -66,33 +65,8 @@ const FetchTokenAuthCode = async () => {
 };
 
 const redwoodHealthLogin = () => {
-	// location.href = 'https://oauth.redwoodhealth.kr/login';
 	FetchTokenAuthCode();
 };
-
-// let lhash = ref(location.hash);
-// let lsearch = ref(location.search);
-// const route = useRoute();
-// const isCode = ref(route.query.code);
-// const oauthResult = ref(null);
-// const tokenResultSet = async () => {
-// 	if (lhash.value != undefined && lhash.value != '') {
-// 		let accToken = lhash.value.split('&')[0].split('=')[1];
-// 		oauthResult.value = accToken;
-// 	} else if (lsearch.value != undefined && isCode.value) {
-// 		let lsearchSplit = lsearch.value.split('&');
-// 		let code = lsearchSplit[0].split('=')[1];
-// 		const response = await getTokenAuthCodeResult(code);
-// 		oauthResult.value = response;
-// 		// refreshToken.value = response.refresh_token;
-// 	} else {
-// 		return;
-// 	}
-// };
-
-onMounted(() => {
-	// tokenResultSet();
-});
 </script>
 
 <style lang="scss" scoped></style>

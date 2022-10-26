@@ -112,7 +112,13 @@ import {
 	getTokenPassword,
 	getTokenRefresh,
 } from '@/api/oauthApi';
+import { useAuthStore } from '@/stores/auth';
+import * as OpenAPI from '@/assets/js/sdk/openApi';
+
 import sha256 from 'sha256';
+
+const store = useAuthStore();
+const { SET_LOGIN, SET_OAUTH } = store;
 
 const isInputBoxShow = ref(false);
 const getTokenBtnList = ref([
@@ -132,10 +138,6 @@ const getTokenBtnList = ref([
 		title: '4.Password Credentials 인증',
 		methods: 'FetchTokenPassword',
 	},
-	// {
-	// 	title: 'Refresh Token',
-	// 	methods: 'FetchTokenAuthCode',
-	// },
 ]);
 const refreshTokenBtn = ref({
 	title: 'Refresh Token',
@@ -209,8 +211,10 @@ const FetchTokenImplicit = async () => {
 const FetchTokenClient = async () => {
 	try {
 		const response = await getTokenClient();
+		SET_OAUTH(response);
 		oauthResult.value = response;
 		oauthType.value = getTokenBtnList.value[2].title;
+		btnFetchUserInfo();
 	} catch (error) {
 		console.error(error);
 	} finally {
@@ -238,8 +242,10 @@ const FetchTokenPassword = async () => {
 	try {
 		const response = await getTokenPassword(userInfo);
 		oauthResult.value = response;
+		SET_OAUTH(response);
 		oauthType.value = getTokenBtnList.value[3].title;
 		refreshToken.value = response.refresh_token;
+		btnFetchUserInfo();
 	} catch (error) {
 		console.error(error);
 	} finally {
@@ -253,8 +259,10 @@ const FetchTokenPassword = async () => {
 const fetchRefreshToken = async () => {
 	const response = await getTokenRefresh(refreshToken.value);
 	console.log('response', response);
+	SET_OAUTH(response);
 	oauthResult.value = response;
 	refreshToken.value = null;
+	btnFetchUserInfo();
 };
 
 let lhash = ref(location.hash);
@@ -270,11 +278,31 @@ const tokenResultSet = async () => {
 		let code = lsearchSplit[0].split('=')[1];
 		const response = await getTokenAuthCodeResult(code);
 		oauthResult.value = response;
+		SET_OAUTH(response);
 		oauthType.value = getTokenBtnList.value[0].title;
 		refreshToken.value = response.refresh_token;
+		btnFetchUserInfo();
 	} else {
 		return;
 	}
+};
+const oauth = useAuthStore().oauth;
+
+const configToken = {
+	baseUrl: 'https://api.redwoodhealth.kr',
+	accessToken: oauth.accessToken,
+};
+
+// 회원 정보 조회
+const btnFetchUserInfo = async () => {
+	await OpenAPI.fetchUserInfo(configToken)
+		.then(response => {
+			console.log('response', response);
+			SET_LOGIN(response);
+		})
+		.catch(error => {
+			console.log('error', error);
+		});
 };
 
 onMounted(() => {

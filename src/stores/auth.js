@@ -15,8 +15,8 @@ export const useAuthStore = defineStore('auth', {
 		oauth: {
 			accessToken: null,
 			refreshToken: null,
+			tokenType: null,
 			expiresIn: null,
-			authExpiry: null,
 		},
 	}),
 	actions: {
@@ -30,25 +30,30 @@ export const useAuthStore = defineStore('auth', {
 			this.userInfo.mobilePhone = loginData.mobilePhone;
 			this.userInfo.fhirResource = loginData.fhirResource;
 		},
+		SET_OAUTH(oauthData) {
+			this.oauth.accessToken = oauthData.access_token;
+			this.oauth.refreshToken = oauthData.refresh_token;
+			this.oauth.tokenType = oauthData.token_type;
+			this.oauth.expiresIn = oauthData.expires_in;
+		},
 		CLEAR_SESSION() {
 			this.userInfo.isLogined = false;
 			this.userInfo.userId = null;
-			this.userInfo.userSn = null;
-			this.userInfo.userGroupCode = null;
-			this.userInfo.token = null;
-			this.menuList = [];
+			this.userInfo.userName = null;
+			this.userInfo.birthday = null;
+			this.userInfo.gender = null;
+			this.userInfo.email = null;
+			this.userInfo.mobilePhone = null;
+			this.userInfo.fhirResource = null;
+		},
+		CLEAR_OAUTH() {
+			this.oauth.accessToken = null;
+			this.oauth.refreshToken = null;
+			this.oauth.tokenType = null;
+			this.oauth.expiresIn = null;
 		},
 	},
 	persist: {
 		enabled: true,
 	},
 });
-
-// // 만료일
-// function getExpiryDate(expiresIn) {
-// 	const today = new Date();
-// 	const expiryDate = new Date(today.getTime() + expiresIn * 1000);
-// 	const expiryDateString = CommonMixins.methods.toISOString(expiryDate);
-
-// 	return expiryDateString;
-// }
