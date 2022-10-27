@@ -286,15 +286,14 @@ const tokenResultSet = async () => {
 		return;
 	}
 };
-const oauth = useAuthStore().oauth;
-
-const configToken = {
-	baseUrl: 'https://api.redwoodhealth.kr',
-	accessToken: oauth.accessToken,
-};
+// const oauth = useAuthStore().oauth;
 
 // 회원 정보 조회
-const btnFetchUserInfo = async () => {
+const btnFetchUserInfo = async token => {
+	const configToken = {
+		baseUrl: 'https://api.redwoodhealth.kr',
+		accessToken: token,
+	};
 	await OpenAPI.fetchUserInfo(configToken)
 		.then(response => {
 			console.log('response', response);
@@ -314,14 +313,14 @@ watch(
 	() => {
 		console.log('oauthResult', oauthResult.value);
 		if (oauthResult.value) {
-			btnFetchUserInfo();
+			btnFetchUserInfo(oauthResult.value.access_token);
 		}
 	},
 	{ deep: true },
 );
 
 onUpdated(() => {
-	console.log('oauth', oauth);
+	// console.log('oauth', oauth);
 });
 </script>
 
