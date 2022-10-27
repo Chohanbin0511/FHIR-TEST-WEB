@@ -126,7 +126,7 @@ const logout = () => {
 
 const items = ref([
 	{
-		icon: 'mdi-walk',
+		icon: 'mdi-account-details',
 		title: 'Main',
 		value: 'Main',
 		url: '/',
