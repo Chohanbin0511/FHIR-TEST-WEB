@@ -64,11 +64,11 @@ import { ref } from 'vue';
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
 import { getPatient, createPatient, updatePatient } from '@/api/fhirApi.js';
 // import fhir from 'fhir.js';
-import * as fhir from 'fhir.js';
+// import * as fhir from 'fhir.js';
 // import * as fhir from 'virtual:fhir-module';
 import { useAuthStore } from '@/stores/auth';
 // fetchFhirMethods
-const oauth = useAuthStore().oauth;
+// const oauth = useAuthStore().oauth;
 const userInfo = useAuthStore().userInfo;
 
 // // 인증 정보
