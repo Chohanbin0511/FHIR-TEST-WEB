@@ -1,6 +1,6 @@
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
-import Inspect from 'vite-plugin-inspect';
+// import Inspect from 'vite-plugin-inspect';
 // import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
 // import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfill';
 // import rollupNodePolyFill from 'rollup-plugin-node-polyfills';
@@ -24,7 +24,7 @@ export default defineConfig({
 	},
 	plugins: [
 		// fhir(),
-		Inspect({ build: true, outputDir: '.vite-inspect' }),
+		// Inspect({ build: true, outputDir: '.vite-inspect' }),
 		vue(),
 		vuetify({ autoImport: true }),
 		// createFhir(),
