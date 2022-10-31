@@ -1,0 +1,1 @@
+{"resolvedId":"C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VCard/VCardText.mjs","transforms":[{"name":"vite:load-fallback","result":"import { createSimpleFunctional } from \"../../util/index.mjs\";\nexport const VCardText = createSimpleFunctional('v-card-text');\n//# sourceMappingURL=VCardText.mjs.map","start":1667202703297,"end":1667202703512}]}

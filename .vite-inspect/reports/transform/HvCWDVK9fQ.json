@@ -1,0 +1,1 @@
+{"resolvedId":"C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/defaults/transitional.js","transforms":[{"name":"vite:load-fallback","result":"'use strict';\n\nexport default {\n  silentJSONParsing: true,\n  forcedJSONParsing: true,\n  clarifyTimeoutError: false\n};\n","start":1667202705683,"end":1667202706229}]}

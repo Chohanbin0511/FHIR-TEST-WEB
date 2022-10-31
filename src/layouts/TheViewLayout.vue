@@ -107,10 +107,11 @@ watch(
 // 로그인 여부에 따라 로그인, 로그아웃 처리
 
 const store = useAuthStore();
-const { CLEAR_SESSION } = store;
+const { CLEAR_SESSION, CLEAR_OAUTH } = store;
 const userLoginCheck = () => {
 	if (userInfo.isLogined) {
 		CLEAR_SESSION();
+		CLEAR_OAUTH();
 		logout();
 	} else {
 		router.push('/sdkSample/oauth');

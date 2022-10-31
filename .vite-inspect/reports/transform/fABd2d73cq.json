@@ -1,0 +1,1 @@
+{"resolvedId":"C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VGrid/VSpacer.mjs","transforms":[{"name":"vite:load-fallback","result":"import { createSimpleFunctional } from \"../../util/index.mjs\";\nexport const VSpacer = createSimpleFunctional('flex-grow-1', 'div', 'VSpacer');\n//# sourceMappingURL=VSpacer.mjs.map","start":1667202703258,"end":1667202703415}]}

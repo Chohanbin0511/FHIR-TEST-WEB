@@ -1,0 +1,4846 @@
+{
+  "root": "C:/chohbin/Fhir-Test-Web",
+  "modules": [
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/index.html",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:build-html"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/@mdi/font/css/materialdesignicons.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/devtools-api/lib/esm/api/api.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/devtools-api/lib/esm/api/app.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/devtools-api/lib/esm/api/component.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/devtools-api/lib/esm/api/context.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/devtools-api/lib/esm/api/hooks.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/devtools-api/lib/esm/api/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/devtools-api/lib/esm/api/util.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/devtools-api/lib/esm/const.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/devtools-api/lib/esm/env.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/devtools-api/lib/esm/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/devtools-api/lib/esm/plugin.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/devtools-api/lib/esm/proxy.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/devtools-api/lib/esm/time.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:define"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:define",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:define"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/shared/dist/shared.esm-bundler.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:define",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/Base64/base64.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/ajv.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/cache.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/compile/async.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/compile/error_classes.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/compile/formats.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/compile/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/compile/resolve.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/compile/rules.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/compile/schema_obj.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/compile/ucs2length.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/compile/util.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/data.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/definition_schema.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/_limit.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/_limitItems.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/_limitLength.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/_limitProperties.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/allOf.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/anyOf.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/comment.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/const.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/contains.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/custom.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/dependencies.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/enum.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/format.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/if.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/items.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/multipleOf.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/not.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/oneOf.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/pattern.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/properties.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/propertyNames.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/ref.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/required.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/uniqueItems.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/dotjs/validate.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/keyword.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/refs/data.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/refs/json-schema-draft-06.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ajv/lib/refs/json-schema-draft-07.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/asn1/lib/ber/errors.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/asn1/lib/ber/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/asn1/lib/ber/reader.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/asn1/lib/ber/types.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/asn1/lib/ber/writer.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/asn1/lib/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/assert-plus/assert.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:define",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/available-typed-arrays/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/aws-sign2/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/aws4/aws4.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:define",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/aws4/lru.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/adapters/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/adapters/xhr.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/axios.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/cancel/CancelToken.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/cancel/CanceledError.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/cancel/isCancel.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/core/Axios.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/core/AxiosError.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/core/AxiosHeaders.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/core/InterceptorManager.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/core/buildFullPath.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/core/dispatchRequest.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/core/mergeConfig.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/core/settle.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/core/transformData.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/defaults/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/defaults/transitional.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/env/classes/FormData.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/env/data.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/helpers/AxiosURLSearchParams.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/helpers/bind.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/helpers/buildURL.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/helpers/combineURLs.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/helpers/cookies.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/helpers/formDataToJSON.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/helpers/isAbsoluteURL.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/helpers/isAxiosError.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/helpers/isURLSameOrigin.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/helpers/parseHeaders.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/helpers/parseProtocol.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/helpers/speedometer.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/helpers/spread.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/helpers/toFormData.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/helpers/toURLEncodedForm.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/helpers/validator.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/platform/browser/classes/FormData.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/platform/browser/classes/URLSearchParams.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/platform/browser/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/platform/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/utils.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/node_modules/form-data/lib/browser.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/bcrypt-pbkdf/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/call-bind/callBound.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/call-bind/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/caseless/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/combined-stream/lib/combined_stream.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/convert-hex/convert-hex.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/convert-string/convert-string.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/core-util-is/lib/util.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/delayed-stream/lib/delayed_stream.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ecc-jsbn/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ecc-jsbn/lib/ec.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ecc-jsbn/lib/sec.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/es-abstract/helpers/getOwnPropertyDescriptor.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/events/events.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/extend/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/extsprintf/lib/extsprintf.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/fast-deep-equal/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/fast-json-stable-stringify/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/fhir.js/src/adapters/node.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/fhir.js/src/decorate.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/fhir.js/src/fhir.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/fhir.js/src/middlewares/auth.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/fhir.js/src/middlewares/bundle.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/fhir.js/src/middlewares/config.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/fhir.js/src/middlewares/core.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/fhir.js/src/middlewares/errors.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/fhir.js/src/middlewares/http.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/fhir.js/src/middlewares/patient.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/fhir.js/src/middlewares/references.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/fhir.js/src/middlewares/search.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/fhir.js/src/middlewares/url.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/fhir.js/src/utils.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/for-each/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/forever-agent/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/form-data/lib/browser.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/function-bind/implementation.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/function-bind/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/get-intrinsic/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/afterRequest.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/beforeRequest.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/browser.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/cache.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/content.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/cookie.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/creator.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/entry.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/har.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/header.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/log.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/page.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/pageTimings.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/postData.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/query.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/request.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/response.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-schema/lib/timings.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-validator/lib/error.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/har-validator/lib/promise.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/has-symbols/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/has-symbols/shams.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/has-tostringtag/shams.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/has/src/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/http-signature/lib/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/http-signature/lib/parser.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/http-signature/lib/signer.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/http-signature/lib/utils.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/http-signature/lib/verify.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/inherits/inherits_browser.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/is-arguments/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/is-callable/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/is-generator-function/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/is-typed-array/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/is-typedarray/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/isstream/isstream.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/jsbn/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/json-schema-traverse/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/json-schema/lib/validate.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/json-stringify-safe/stringify.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/jsprim/lib/jsprim.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/merge/merge.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/mime-db/db.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/mime-db/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/mime-types/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/oauth-sign/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/performance-now/lib/performance-now.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/pinia-plugin-persist/dist/pinia-persist.es.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/pinia/dist/pinia.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:define"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/pinia/node_modules/vue-demi/lib/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/psl/data/rules.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/psl/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/punycode/punycode.es6.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/q/q.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:define",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/qs/lib/formats.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/qs/lib/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/qs/lib/parse.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/qs/lib/stringify.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/qs/lib/utils.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/querystring/decode.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/querystring/encode.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/querystring/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/lib/auth.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/lib/cookies.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/lib/getProxyFromURI.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:define",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/lib/har.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/lib/hawk.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/lib/helpers.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/lib/multipart.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/lib/oauth.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/lib/querystring.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/lib/redirect.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/lib/tunnel.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/node_modules/tough-cookie/lib/cookie.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/node_modules/tough-cookie/lib/memstore.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/node_modules/tough-cookie/lib/pathMatch.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/node_modules/tough-cookie/lib/permuteDomain.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/node_modules/tough-cookie/lib/pubsuffix-psl.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/node_modules/tough-cookie/lib/store.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/node_modules/tough-cookie/lib/version.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/request/request.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:define",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/rollup-plugin-node-polyfills/polyfills/buffer-es6.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/rollup-plugin-node-polyfills/polyfills/global.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/rollup-plugin-node-polyfills/polyfills/readable-stream/buffer-list.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/rollup-plugin-node-polyfills/polyfills/readable-stream/duplex.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/rollup-plugin-node-polyfills/polyfills/readable-stream/passthrough.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/rollup-plugin-node-polyfills/polyfills/readable-stream/readable.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/rollup-plugin-node-polyfills/polyfills/readable-stream/transform.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/rollup-plugin-node-polyfills/polyfills/readable-stream/writable.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/rollup-plugin-node-polyfills/polyfills/stream.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/safe-buffer/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/safer-buffer/safer.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sha256/lib/sha256.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/algs.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/certificate.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/dhe.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/ed-compat.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/errors.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/fingerprint.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/formats/auto.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/formats/dnssec.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/formats/openssh-cert.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/formats/pem.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/formats/pkcs1.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/formats/pkcs8.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/formats/putty.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/formats/rfc4253.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/formats/ssh-private.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/formats/ssh.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/formats/x509-pem.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/formats/x509.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/identity.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/key.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/private-key.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/signature.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/ssh-buffer.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/sshpk/lib/utils.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/tunnel-agent/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:define",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/tweetnacl/nacl-fast.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/uri-js/dist/es5/uri.all.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/util/support/isBufferBrowser.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/util/support/types.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/util/util.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:define",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/uuid/lib/bytesToUuid.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/uuid/lib/rng-browser.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/uuid/v4.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/verror/lib/verror.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vue-router/dist/vue-router.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:define"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:define"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VApp/VApp.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VApp/VApp.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VApp/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VAppBar/VAppBar.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VAppBar/VAppBar.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VAppBar/VAppBarNavIcon.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VAppBar/VAppBarTitle.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VAppBar/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VAvatar/VAvatar.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VAvatar/VAvatar.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VAvatar/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VBtn/VBtn.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VBtn/VBtn.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VBtn/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VBtnGroup/VBtnGroup.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VBtnGroup/VBtnGroup.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VBtnGroup/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VBtnToggle/VBtnToggle.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VBtnToggle/VBtnToggle.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VCard/VCard.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VCard/VCard.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VCard/VCardActions.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VCard/VCardItem.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VCard/VCardSubtitle.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VCard/VCardText.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VCard/VCardTitle.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VCard/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VCounter/VCounter.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VCounter/VCounter.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VCounter/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VDefaultsProvider/VDefaultsProvider.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VDefaultsProvider/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VDialog/VDialog.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VDialog/VDialog.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VDialog/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VDivider/VDivider.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VDivider/VDivider.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VDivider/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VField/VField.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VField/VField.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VField/VFieldLabel.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VForm/VForm.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VForm/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VGrid/VCol.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VGrid/VContainer.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VGrid/VGrid.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VGrid/VRow.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VGrid/VSpacer.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VGrid/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VIcon/VIcon.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VIcon/VIcon.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VIcon/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VImg/VImg.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VImg/VImg.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VImg/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VInput/InputIcon.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VInput/VInput.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VInput/VInput.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VLabel/VLabel.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VLabel/VLabel.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VLabel/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VLayout/VLayout.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VLayout/VLayout.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VLayout/VLayoutItem.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VLayout/VLayoutItem.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VLayout/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VList/VList.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VList/VList.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VList/VListChildren.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VList/VListGroup.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VList/VListImg.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VList/VListItem.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VList/VListItem.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VList/VListItemAction.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VList/VListItemMedia.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VList/VListItemSubtitle.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VList/VListItemTitle.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VList/VListSubheader.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VList/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VList/list.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VMain/VMain.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VMain/VMain.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VMain/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VMenu/shared.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VMessages/VMessages.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VMessages/VMessages.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VMessages/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VNavigationDrawer/VNavigationDrawer.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VNavigationDrawer/VNavigationDrawer.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VNavigationDrawer/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VNavigationDrawer/sticky.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VNavigationDrawer/touch.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VOverlay/VOverlay.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VOverlay/VOverlay.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VOverlay/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VOverlay/locationStrategies.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VOverlay/requestNewFrame.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VOverlay/scrollStrategies.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VOverlay/useActivator.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VOverlay/util/point.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VProgressCircular/VProgressCircular.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VProgressCircular/VProgressCircular.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VProgressCircular/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VProgressLinear/VProgressLinear.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VProgressLinear/VProgressLinear.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VProgressLinear/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VResponsive/VResponsive.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VResponsive/VResponsive.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VResponsive/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VTextField/VTextField.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VTextField/VTextField.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VTextField/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VToolbar/VToolbar.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VToolbar/VToolbar.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VToolbar/VToolbarItems.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VToolbar/VToolbarTitle.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VToolbar/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VTooltip/VTooltip.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VTooltip/VTooltip.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/VTooltip/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/transitions/createTransition.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/transitions/dialog-transition.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/transitions/expand-transition.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/components/transitions/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/border.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/color.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/defaults.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/delay.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/density.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/dimensions.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/display.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/elevation.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/focus.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/form.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/forwardRefs.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/group.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/icons.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/intersectionObserver.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/items.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/layout.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/lazy.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/loader.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/locale.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/location.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/nested/nested.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/nested/openStrategies.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/nested/selectStrategies.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/position.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/proxiedModel.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/resizeObserver.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/rounded.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/router.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/scopeId.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/selectLink.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/size.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/ssrBoot.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/stack.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/tag.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/teleport.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/theme.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/toggleScope.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/touch.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/transition.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/validation.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/composables/variant.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/directives/click-outside/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/directives/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/directives/intersect/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/directives/mutate/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/directives/resize/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/directives/ripple/VRipple.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/directives/ripple/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/directives/scroll/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/directives/touch/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/framework.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/iconsets/mdi.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/adapters/vuetify.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/af.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/ar.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/az.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/bg.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/ca.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/ckb.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/cs.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/da.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/de.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/el.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/en.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/es.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/et.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/fa.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/fi.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/fr.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/he.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/hr.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/hu.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/id.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/it.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/ja.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/ko.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/lt.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/lv.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/nl.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/no.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/pl.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/pt.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/ro.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/ru.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/sk.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/sl.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/sr-Cyrl.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/sr-Latn.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/sv.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/th.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/tr.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/uk.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/vi.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/zh-Hans.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/locale/zh-Hant.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/styles/main.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/anchor.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/animation.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/box.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/color/APCA.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/color/transformCIELAB.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/color/transformSRGB.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/colorUtils.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/console.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/createSimpleFunctional.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/defineComponent.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/dom.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/easing.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/getCurrentInstance.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/getScrollParent.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/globals.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/helpers.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/index.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/injectSelf.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/isFixedPosition.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/propsFactory.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/vuetify/lib/util/useRender.mjs",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/webfontloader/webfontloader.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/which-typed-array/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs",
+        "node-polyfills"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/App.vue",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:vue",
+        "vuetify:import",
+        "vite:import-glob"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/api/common/common.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/api/common/config.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:define"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/api/common/interceptors.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/api/fhirApi.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/api/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:define"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/api/oauthApi.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/assets/images/redwoodHealth_logo_1.png",
+      "deps": [],
+      "plugins": [
+        "vite:asset"
+      ],
+      "virtual": true
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/assets/js/sdk/oauth.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/assets/js/sdk/openApi.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/layouts/TheView.vue",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:vue",
+        "vuetify:import"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/layouts/TheViewLayout.vue",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:vue",
+        "vuetify:import"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/main.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:define"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/plugins/vuetify.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/plugins/webfontloader.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:build-import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/router/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:define",
+        "vite:build-import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/stores/auth.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/views/MainView.vue",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:vue",
+        "vuetify:import"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/views/sdkSample/FhirView.vue",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:vue",
+        "vuetify:import"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/views/sdkSample/OauthView.vue",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:vue",
+        "vuetify:import"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/views/sdkSample/OpenApiView.vue",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:vue",
+        "vuetify:import",
+        "vite:define"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/src/views/user/LoginView.vue",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:vue",
+        "vuetify:import",
+        "vite:build-import-analysis"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "__vite-browser-external",
+      "deps": [],
+      "plugins": [
+        "vite:resolve"
+      ],
+      "virtual": true
+    },
+    {
+      "id": "vite/modulepreload-polyfill",
+      "deps": [],
+      "plugins": [
+        "vite:modulepreload-polyfill"
+      ],
+      "virtual": true
+    }
+  ],
+  "ssrModules": []
+}

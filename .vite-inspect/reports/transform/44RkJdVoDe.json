@@ -1,0 +1,1 @@
+{"resolvedId":"C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/env/classes/FormData.js","transforms":[{"name":"vite:load-fallback","result":"import FormData from 'form-data';\nexport default FormData;\n","start":1667202705779,"end":1667202706245}]}
