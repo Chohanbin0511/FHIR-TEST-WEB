@@ -88,8 +88,7 @@
       "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/devtools-api/lib/esm/env.js",
       "deps": [],
       "plugins": [
-        "vite:load-fallback",
-        "node-polyfills"
+        "vite:load-fallback"
       ],
       "virtual": false
     },
@@ -121,8 +120,7 @@
       "id": "C:/chohbin/Fhir-Test-Web/node_modules/@vue/devtools-api/lib/esm/time.js",
       "deps": [],
       "plugins": [
-        "vite:load-fallback",
-        "node-polyfills"
+        "vite:load-fallback"
       ],
       "virtual": false
     },
@@ -140,8 +138,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "vite:define",
-        "node-polyfills"
+        "vite:define"
       ],
       "virtual": false
     },
@@ -159,8 +156,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "vite:define",
-        "node-polyfills"
+        "vite:define"
       ],
       "virtual": false
     },
@@ -196,8 +192,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -224,8 +219,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -522,8 +516,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -586,8 +579,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -605,8 +597,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -624,9 +615,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "vite:define",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -635,8 +624,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -654,9 +642,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "vite:define",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -801,8 +787,7 @@
       "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/defaults/index.js",
       "deps": [],
       "plugins": [
-        "vite:load-fallback",
-        "node-polyfills"
+        "vite:load-fallback"
       ],
       "virtual": false
     },
@@ -938,8 +923,7 @@
       "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/helpers/toFormData.js",
       "deps": [],
       "plugins": [
-        "vite:load-fallback",
-        "node-polyfills"
+        "vite:load-fallback"
       ],
       "virtual": false
     },
@@ -947,8 +931,7 @@
       "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/helpers/toURLEncodedForm.js",
       "deps": [],
       "plugins": [
-        "vite:load-fallback",
-        "node-polyfills"
+        "vite:load-fallback"
       ],
       "virtual": false
     },
@@ -980,8 +963,7 @@
       "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/platform/browser/index.js",
       "deps": [],
       "plugins": [
-        "vite:load-fallback",
-        "node-polyfills"
+        "vite:load-fallback"
       ],
       "virtual": false
     },
@@ -997,8 +979,7 @@
       "id": "C:/chohbin/Fhir-Test-Web/node_modules/axios/lib/utils.js",
       "deps": [],
       "plugins": [
-        "vite:load-fallback",
-        "node-polyfills"
+        "vite:load-fallback"
       ],
       "virtual": false
     },
@@ -1012,7 +993,25 @@
       "virtual": false
     },
     {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/base64-js/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
       "id": "C:/chohbin/Fhir-Test-Web/node_modules/bcrypt-pbkdf/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/buffer/index.js",
       "deps": [],
       "plugins": [
         "vite:load-fallback",
@@ -1052,8 +1051,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1062,8 +1060,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1072,8 +1069,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1082,8 +1078,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1101,8 +1096,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1156,8 +1150,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1193,8 +1186,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1356,8 +1348,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1609,8 +1600,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1628,8 +1618,16 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
+      ],
+      "virtual": false
+    },
+    {
+      "id": "C:/chohbin/Fhir-Test-Web/node_modules/ieee754/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1656,8 +1654,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1675,8 +1672,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1721,8 +1717,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1740,8 +1735,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1795,8 +1789,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1847,8 +1840,7 @@
       "id": "C:/chohbin/Fhir-Test-Web/node_modules/punycode/punycode.es6.js",
       "deps": [],
       "plugins": [
-        "vite:load-fallback",
-        "node-polyfills"
+        "vite:load-fallback"
       ],
       "virtual": false
     },
@@ -1857,9 +1849,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "vite:define",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1895,8 +1885,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1905,8 +1894,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1969,7 +1957,6 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "vite:define",
         "commonjs"
       ],
       "virtual": false
@@ -1979,8 +1966,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -1998,8 +1984,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2008,8 +1993,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2018,8 +2002,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2118,88 +2101,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "vite:define",
-        "commonjs",
-        "node-polyfills"
-      ],
-      "virtual": false
-    },
-    {
-      "id": "C:/chohbin/Fhir-Test-Web/node_modules/rollup-plugin-node-polyfills/polyfills/buffer-es6.js",
-      "deps": [],
-      "plugins": [
-        "vite:load-fallback",
-        "node-polyfills"
-      ],
-      "virtual": false
-    },
-    {
-      "id": "C:/chohbin/Fhir-Test-Web/node_modules/rollup-plugin-node-polyfills/polyfills/global.js",
-      "deps": [],
-      "plugins": [
-        "vite:load-fallback",
-        "node-polyfills"
-      ],
-      "virtual": false
-    },
-    {
-      "id": "C:/chohbin/Fhir-Test-Web/node_modules/rollup-plugin-node-polyfills/polyfills/readable-stream/buffer-list.js",
-      "deps": [],
-      "plugins": [
-        "vite:load-fallback",
-        "node-polyfills"
-      ],
-      "virtual": false
-    },
-    {
-      "id": "C:/chohbin/Fhir-Test-Web/node_modules/rollup-plugin-node-polyfills/polyfills/readable-stream/duplex.js",
-      "deps": [],
-      "plugins": [
-        "vite:load-fallback",
-        "node-polyfills"
-      ],
-      "virtual": false
-    },
-    {
-      "id": "C:/chohbin/Fhir-Test-Web/node_modules/rollup-plugin-node-polyfills/polyfills/readable-stream/passthrough.js",
-      "deps": [],
-      "plugins": [
-        "vite:load-fallback"
-      ],
-      "virtual": false
-    },
-    {
-      "id": "C:/chohbin/Fhir-Test-Web/node_modules/rollup-plugin-node-polyfills/polyfills/readable-stream/readable.js",
-      "deps": [],
-      "plugins": [
-        "vite:load-fallback",
-        "node-polyfills"
-      ],
-      "virtual": false
-    },
-    {
-      "id": "C:/chohbin/Fhir-Test-Web/node_modules/rollup-plugin-node-polyfills/polyfills/readable-stream/transform.js",
-      "deps": [],
-      "plugins": [
-        "vite:load-fallback",
-        "node-polyfills"
-      ],
-      "virtual": false
-    },
-    {
-      "id": "C:/chohbin/Fhir-Test-Web/node_modules/rollup-plugin-node-polyfills/polyfills/readable-stream/writable.js",
-      "deps": [],
-      "plugins": [
-        "vite:load-fallback",
-        "node-polyfills"
-      ],
-      "virtual": false
-    },
-    {
-      "id": "C:/chohbin/Fhir-Test-Web/node_modules/rollup-plugin-node-polyfills/polyfills/stream.js",
-      "deps": [],
-      "plugins": [
-        "vite:load-fallback"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2208,8 +2110,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2218,8 +2119,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2228,8 +2128,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2238,8 +2137,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2248,8 +2146,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2258,8 +2155,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2268,8 +2164,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2287,8 +2182,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2297,8 +2191,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2307,8 +2200,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2317,8 +2209,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2327,8 +2218,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2337,8 +2227,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2347,8 +2236,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2357,8 +2245,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2367,8 +2254,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2377,8 +2263,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2387,8 +2272,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2397,8 +2281,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2407,8 +2290,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2417,8 +2299,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2436,8 +2317,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2446,8 +2326,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2456,8 +2335,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2466,8 +2344,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2476,8 +2353,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2486,9 +2362,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "vite:define",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2506,8 +2380,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2516,8 +2389,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2526,8 +2398,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2536,9 +2407,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "vite:define",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -2574,8 +2443,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -4619,8 +4487,7 @@
       "deps": [],
       "plugins": [
         "vite:load-fallback",
-        "commonjs",
-        "node-polyfills"
+        "commonjs"
       ],
       "virtual": false
     },
@@ -4630,8 +4497,7 @@
       "plugins": [
         "vite:load-fallback",
         "vite:vue",
-        "vuetify:import",
-        "vite:import-glob"
+        "vuetify:import"
       ],
       "virtual": false
     },

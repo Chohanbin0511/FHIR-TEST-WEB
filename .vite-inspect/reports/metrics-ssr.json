@@ -10,16 +10,6 @@
     "totalTime": 0
   },
   {
-    "name": "create-fhir",
-    "invokeCount": 0,
-    "totalTime": 0
-  },
-  {
-    "name": "node-polyfills",
-    "invokeCount": 0,
-    "totalTime": 0
-  },
-  {
     "name": "vite-plugin-inspect",
     "enforce": "pre",
     "invokeCount": 0,

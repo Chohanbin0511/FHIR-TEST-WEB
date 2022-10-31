@@ -1,67 +1,57 @@
 [
   {
-    "name": "commonjs",
-    "invokeCount": 190,
-    "totalTime": 128710
+    "name": "vite:load-fallback",
+    "invokeCount": 546,
+    "totalTime": 142701
   },
   {
-    "name": "vite:load-fallback",
-    "invokeCount": 552,
-    "totalTime": 117489
+    "name": "commonjs",
+    "invokeCount": 193,
+    "totalTime": 141938
   },
   {
     "name": "vite:css",
     "invokeCount": 33,
-    "totalTime": 31872
-  },
-  {
-    "name": "node-polyfills",
-    "invokeCount": 81,
-    "totalTime": 948
+    "totalTime": 23649
   },
   {
     "name": "vite:asset",
     "invokeCount": 1,
-    "totalTime": 711
+    "totalTime": 381
   },
   {
     "name": "vite:vue",
     "invokeCount": 8,
-    "totalTime": 170
-  },
-  {
-    "name": "vite:import-glob",
-    "invokeCount": 1,
-    "totalTime": 156
+    "totalTime": 211
   },
   {
     "name": "vite:json",
     "invokeCount": 23,
-    "totalTime": 57
+    "totalTime": 58
   },
   {
     "name": "vite:build-html",
     "invokeCount": 1,
-    "totalTime": 20
+    "totalTime": 28
   },
   {
     "name": "vite:define",
-    "invokeCount": 19,
-    "totalTime": 6
+    "invokeCount": 12,
+    "totalTime": 11
   },
   {
     "name": "vuetify:import",
     "invokeCount": 8,
-    "totalTime": 2
-  },
-  {
-    "name": "vite:build-import-analysis",
-    "invokeCount": 3,
-    "totalTime": 1
+    "totalTime": 4
   },
   {
     "name": "vite:css-post",
     "invokeCount": 33,
+    "totalTime": 1
+  },
+  {
+    "name": "vite:build-import-analysis",
+    "invokeCount": 3,
     "totalTime": 0
   },
   {
@@ -76,11 +66,6 @@
   },
   {
     "name": "alias",
-    "invokeCount": 0,
-    "totalTime": 0
-  },
-  {
-    "name": "create-fhir",
     "invokeCount": 0,
     "totalTime": 0
   },
@@ -127,6 +112,11 @@
   },
   {
     "name": "vite:html-inline-proxy",
+    "invokeCount": 0,
+    "totalTime": 0
+  },
+  {
+    "name": "vite:import-glob",
     "invokeCount": 0,
     "totalTime": 0
   },
