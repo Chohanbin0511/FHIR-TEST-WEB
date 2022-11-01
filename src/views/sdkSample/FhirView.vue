@@ -8,20 +8,19 @@
 			<v-container>
 				<v-card class="ma-2 pa-4">
 					<h2 class="mb-2" style="width: 250px">Patient</h2>
-					<!-- <v-dialog transition="dialog-bottom-transition"> -->
-					<!-- <template v-slot:activator="{ props }"> -->
-					<!-- <v-btn
-						v-bind="props" -->
-					<v-btn
-						class="mb-2 mr-4"
-						v-for="item in patientFhirApiList"
-						:key="item"
-						@click="item.methodsNm(item.title)"
-					>
-						{{ item.title }}
-					</v-btn>
-					<!-- </template> -->
-					<!-- <template v-slot:default="{ isActive }">
+					<v-dialog transition="dialog-bottom-transition">
+						<template v-slot:activator="{ props }">
+							<v-btn
+								v-bind="props"
+								class="mb-2 mr-4"
+								v-for="item in patientFhirApiList"
+								:key="item"
+								@click="item.methodsNm(item.title)"
+							>
+								{{ item.title }}
+							</v-btn>
+						</template>
+						<template v-slot:default="{ isActive }">
 							<v-card>
 								<v-toolbar color="primary" class="pl-3">{{
 									apiName
@@ -34,14 +33,12 @@
 								</v-card-actions>
 							</v-card>
 						</template>
-					</v-dialog> -->
+					</v-dialog>
 				</v-card>
 			</v-container>
 			<!-- <h1>Redwood FHIR Library</h1>
 			<h2>Patient</h2> -->
-			<h3>Patient Result</h3>
-			<textarea id="patient_display" cols="100" rows="15"></textarea>
-			<h2>Observation</h2>
+			<!-- <h2>Observation</h2>
 			<v-btn @click="btnObservationCreate()">Resource 생성</v-btn>
 			<v-btn @click="btnObservationUpdate()">Resource 수정</v-btn>
 			<v-btn @click="btnObservationDelete()">Resource 삭제</v-btn>
@@ -54,7 +51,7 @@
 			<v-btn @click="btnConformance()">Conformance</v-btn>
 			<v-btn @click="btnResourceBundle()">Resource 일괄 처리</v-btn>
 			<h3>Common Result</h3>
-			<textarea id="common_display" cols="100" rows="15"></textarea>
+			<textarea id="common_display" cols="100" rows="15"></textarea> -->
 		</template>
 	</TheViewLayout>
 </template>
@@ -62,7 +59,13 @@
 <script setup>
 import { ref } from 'vue';
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
-import { getPatient, createPatient, updatePatient } from '@/api/fhirApi.js';
+import {
+	getPatient,
+	createPatient,
+	updatePatient,
+	deletePatient,
+	getPatientVersion,
+} from '@/api/fhirApi.js';
 // import fhir from 'fhir.js';
 // import * as fhir from 'fhir.js';
 // import * as fhir from 'virtual:fhir-module';
@@ -81,9 +84,19 @@ const userInfo = useAuthStore().userInfo;
 
 // const myClient = fhir(fhirConfig.value);
 
+const apiName = ref(null);
+const apiResult = ref(null);
+
+const resetDialogContent = () => {
+	apiName.value = null;
+	apiResult.value = null;
+};
+
 // Patient 생성
-const btnPatientCreate = async () => {
-	let resource = {
+const btnPatientCreate = async title => {
+	resetDialogContent();
+	apiName.value = title;
+	const resource = {
 		resourceType: 'Patient',
 		name: [
 			{
@@ -108,6 +121,7 @@ const btnPatientCreate = async () => {
 	try {
 		const response = await createPatient(resource);
 		console.log('response', response);
+		apiResult.value = response;
 	} catch (error) {
 		console.error(error);
 	}
@@ -124,8 +138,10 @@ const btnPatientCreate = async () => {
 };
 
 // Patient 수정
-const btnPatientUpdate = async () => {
-	var resource = {
+const btnPatientUpdate = async title => {
+	resetDialogContent();
+	apiName.value = title;
+	const resource = {
 		resourceType: 'Patient',
 		id: '766371',
 		name: [
@@ -148,8 +164,9 @@ const btnPatientUpdate = async () => {
 		birthDate: userInfo.birthday,
 	};
 	try {
-		const response = await updatePatient(resource, '766371');
+		const response = await updatePatient(resource, '770573');
 		console.log('response', response);
+		apiResult.value = response;
 	} catch (error) {
 		console.error(error);
 	}
@@ -166,13 +183,21 @@ const btnPatientUpdate = async () => {
 };
 
 // Patient 삭제
-const btnPatientDelete = () => {
+const btnPatientDelete = async title => {
+	resetDialogContent();
+	apiName.value = title;
+	try {
+		const response = await deletePatient('766371');
+		console.log('response', response);
+		apiResult.value = response;
+	} catch (error) {
+		console.error(error);
+	}
 	// myClient
 	// 	.delete({ type: 'Patient', id: '89937' })
 	// 	.then(response => {
 	// 		console.log('response', response);
-	// 		var resultData = response.data.issue[0].diagnostics;
-	// 		document.getElementById('patient_display').value = resultData;
+	// apiResult.value = response;
 	// 	})
 	// 	.catch(error => {
 	// 		console.log('error', error);
@@ -180,14 +205,17 @@ const btnPatientDelete = () => {
 };
 
 // Patient 조회
-const btnPatientRead = async () => {
+const btnPatientRead = async title => {
+	resetDialogContent();
+	apiName.value = title;
 	try {
-		const response = await getPatient('766371');
+		const response = await getPatient('770573');
 		console.log('response', response);
+		apiResult.value = response;
 	} catch (error) {
 		console.error(error);
 	}
-	// 인증 정보
+	// // 인증 정보
 	// const fhirConfig = {
 	// 	baseUrl: 'http://fhir.redwoodhealth.kr/fhir',
 	// 	auth: {
@@ -218,7 +246,16 @@ const btnPatientRead = async () => {
 // });
 
 // Patient 버전 조회
-const btnPatientReadVersion = () => {
+const btnPatientReadVersion = async title => {
+	resetDialogContent();
+	apiName.value = title;
+	try {
+		const response = await getPatientVersion('770573', '1');
+		console.log('response', response);
+		apiResult.value = response;
+	} catch (error) {
+		console.error(error);
+	}
 	// myClient
 	// 	.vread({ type: 'Patient', id: '89937', versionId: '2' })
 	// 	.then(response => {

@@ -7,9 +7,10 @@ import { fhirAuth } from './index';
  * @returns
  */
 export function getPatient(patientId) {
+	// console.log('fhir', fhir);
 	// const oauth = useAuthStore().oauth;
 	// const fhirConfig = {
-	// 	baseUrl: 'https://fhir.redwoodhealth.kr/fhir',
+	// 	baseUrl: 'http://fhir.redwoodhealth.kr/fhir',
 	// 	auth: {
 	// 		bearer: oauth.accessToken,
 	// 	},
@@ -40,4 +41,18 @@ export function createPatient(resource) {
  */
 export function updatePatient(resource, patientId) {
 	return fhirAuth.put(`/Patient/${patientId}`, resource);
+}
+
+/**
+ * 환자 삭제
+ */
+export function deletePatient(patientId) {
+	return fhirAuth.delete(`/Patient/${patientId}`);
+}
+
+/**
+ * 환자 버전 조회
+ */
+export function getPatientVersion(patientId, versionId) {
+	return fhirAuth.get(`/Patient/${patientId}/_history/${versionId}`);
 }
