@@ -40,20 +40,20 @@ export default defineConfig({
 			// buffer: 'rollup-plugin-node-polyfills/polyfills/buffer-es6',
 		},
 	},
-	optimizeDeps: {
-		// esbuildOptions: {
-		// 	define: {
-		// 		global: 'globalThis',
-		// 	},
-		// 	plugins: [
-		// 		NodeGlobalsPolyfillPlugin({
-		// 			process: true,
-		// 			buffer: true,
-		// 		}),
-		// 		NodeModulesPolyfillPlugin(),
-		// 	],
-		// },
-	},
+	// optimizeDeps: {
+	// esbuildOptions: {
+	// 	define: {
+	// 		global: 'globalThis',
+	// 	},
+	// 	plugins: [
+	// 		NodeGlobalsPolyfillPlugin({
+	// 			process: true,
+	// 			buffer: true,
+	// 		}),
+	// 		NodeModulesPolyfillPlugin(),
+	// 	],
+	// },
+	// },
 	// devServer: {
 	// 	proxy: {
 	// 		'/api': {
@@ -63,7 +63,7 @@ export default defineConfig({
 	// 		},
 	// 	},
 	// },
-	define: {
-		'process.env': {},
-	},
+	// define: {
+	// 	'process.env': {},
+	// },
 });
