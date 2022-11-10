@@ -11,6 +11,7 @@ export const useAuthStore = defineStore('auth', {
 			email: null,
 			mobilePhone: null,
 			fhirResource: null,
+			patientId: null,
 		},
 		oauth: {
 			accessToken: null,
@@ -29,6 +30,7 @@ export const useAuthStore = defineStore('auth', {
 			this.userInfo.email = loginData.email;
 			this.userInfo.mobilePhone = loginData.mobilePhone;
 			this.userInfo.fhirResource = loginData.fhirResource;
+			this.userInfo.patientId = loginData.fhirResource.split('/')[1];
 		},
 		SET_OAUTH(oauthData) {
 			this.oauth.accessToken = oauthData.access_token;
@@ -45,6 +47,7 @@ export const useAuthStore = defineStore('auth', {
 			this.userInfo.email = null;
 			this.userInfo.mobilePhone = null;
 			this.userInfo.fhirResource = null;
+			this.userInfo.patientId = null;
 		},
 		CLEAR_OAUTH() {
 			this.oauth.accessToken = null;

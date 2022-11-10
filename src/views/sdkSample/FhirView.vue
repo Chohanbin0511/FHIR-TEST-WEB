@@ -143,7 +143,7 @@ const btnPatientUpdate = async title => {
 	apiName.value = title;
 	const resource = {
 		resourceType: 'Patient',
-		id: '766371',
+		id: userInfo.patientId,
 		name: [
 			{
 				text: userInfo.userName + '수정',
@@ -163,8 +163,11 @@ const btnPatientUpdate = async title => {
 		gender: 'male',
 		birthDate: userInfo.birthday,
 	};
+
+	const patientId = userInfo.patientId;
+
 	try {
-		const response = await updatePatient(resource, '770573');
+		const response = await updatePatient(resource, patientId);
 		console.log('response', response);
 		apiResult.value = response;
 	} catch (error) {
@@ -186,8 +189,10 @@ const btnPatientUpdate = async title => {
 const btnPatientDelete = async title => {
 	resetDialogContent();
 	apiName.value = title;
+	const patientId = userInfo.patientId;
+
 	try {
-		const response = await deletePatient('766371');
+		const response = await deletePatient(patientId);
 		console.log('response', response);
 		apiResult.value = response;
 	} catch (error) {
@@ -208,8 +213,9 @@ const btnPatientDelete = async title => {
 const btnPatientRead = async title => {
 	resetDialogContent();
 	apiName.value = title;
+	const patientId = userInfo.patientId;
 	try {
-		const response = await getPatient('770573');
+		const response = await getPatient(patientId);
 		console.log('response', response);
 		apiResult.value = response;
 	} catch (error) {
@@ -249,8 +255,9 @@ const btnPatientRead = async title => {
 const btnPatientReadVersion = async title => {
 	resetDialogContent();
 	apiName.value = title;
+	const patientId = userInfo.patientId;
 	try {
-		const response = await getPatientVersion('770573', '1');
+		const response = await getPatientVersion(patientId, '1');
 		console.log('response', response);
 		apiResult.value = response;
 	} catch (error) {

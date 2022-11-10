@@ -114,23 +114,25 @@ const userLoginCheck = () => {
 		CLEAR_OAUTH();
 		logout();
 	} else {
-		router.push('/sdkSample/oauth');
+		router.push('/login');
 	}
 };
 // 로그아웃 url 이동
 const logout = () => {
-	if (router.currentRoute.value.path === '/sdkSample/oauth') {
-		router.replace('/sdkSample/oauth');
+	if (router.currentRoute.value.path === '/login') {
+		router.replace('/login');
 		router.go();
+	} else {
+		router.push('/login');
 	}
 };
 
 const items = ref([
 	{
 		icon: 'mdi-account-details',
-		title: 'Main',
-		value: 'Main',
-		url: '/',
+		title: 'Sample',
+		value: 'Sample',
+		url: '/sdkSample/main',
 	},
 	// {
 	// 	icon: 'mdi-alarm',
@@ -138,12 +140,12 @@ const items = ref([
 	// 	value: 'qna',
 	// 	url: '/updateNote',
 	// },
-	// {
-	// 	icon: 'mdi-bulletin-board',
-	// 	title: 'Notice',
-	// 	value: 'notice',
-	// 	url: '/updateNote',
-	// },
+	{
+		icon: 'mdi-bulletin-board',
+		title: 'Main',
+		value: 'main',
+		url: '/',
+	},
 	// {
 	// 	icon: 'mdi-update',
 	// 	title: 'UpdateInfo',

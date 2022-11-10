@@ -64,7 +64,8 @@
 						>토큰 재발급
 						<v-tooltip activator="parent" location="bottom"
 							>Authorization Code인증, Password Credentails 인증 방식에만
-							Refresh Token 발급됨</v-tooltip
+							Refresh Token 발급됨[관리자 페이지 가서 redirect uri 수정해야
+							가능]</v-tooltip
 						></v-card-subtitle
 					>
 					<v-btn
