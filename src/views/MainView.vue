@@ -6,30 +6,8 @@
 			</v-container>
 
 			<v-container>
-				<v-dialog transition="dialog-bottom-transition">
-					<template v-slot:activator="{ props }">
-						<v-btn
-							v-bind="props"
-							class="mb-2 mr-4"
-							v-for="item in blockchainOpenApiList"
-							:key="item"
-							@click="item.methodsNm(item.title)"
-						>
-							{{ item.title }}
-						</v-btn>
-					</template>
-					<template v-slot:default="{ isActive }">
-						<v-card>
-							<v-toolbar color="primary" class="pl-3">{{ apiName }}</v-toolbar>
-							<v-card-text>
-								<div class="pa-2">{{ apiResult }}</div>
-							</v-card-text>
-							<v-card-actions class="justify-end">
-								<v-btn text @click="isActive.value = false">닫기</v-btn>
-							</v-card-actions>
-						</v-card>
-					</template>
-				</v-dialog>
+				<PetInsert></PetInsert>
+				<!-- <v-btn @click="createFamily()"> 가족 생성</v-btn> -->
 				<!-- <v-row>
 					<v-col
 						v-for="item in samplePageList"
@@ -56,6 +34,7 @@ import { getTokenAuthCodeResult } from '@/api/oauthApi';
 import { useAuthStore } from '@/stores/auth';
 import * as OpenAPI from '@/assets/js/sdk/openApi';
 
+import PetInsert from '@/components/pet/PetInsert.vue';
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
 
 // const samplePageList = ref([
@@ -69,6 +48,9 @@ import TheViewLayout from '@/layouts/TheViewLayout.vue';
 // 	router.push(`/sdkSample/${type}`);
 // };
 
+/**
+ * 로그인 후  회원 정보 store에 담기
+ */
 const store = useAuthStore();
 const { SET_LOGIN, SET_OAUTH } = store;
 
@@ -88,8 +70,10 @@ const btnFetchUserInfo = async token => {
 		});
 };
 
+/**
+ * url에 token 있는지 체크
+ */
 const route = useRoute();
-
 let lsearch = ref(location.search);
 const isCode = ref(route.query.code);
 const tokenResultSet = async () => {
@@ -107,6 +91,14 @@ const tokenResultSet = async () => {
 onMounted(() => {
 	tokenResultSet();
 });
+
+// // 가족 생성
+// const createFamily = () => {
+// 	console.log('가족생성 버튼 클릭');
+// 	// todo patient
+// 	// 1.생성 입력 폼 만든후 제출 => patient 정상 생성되면
+// 	// 2. phr 공유자에 추가
+// };
 </script>
 
 <style lang="scss" scoped></style>
