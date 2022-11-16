@@ -257,6 +257,7 @@ const addGroupPet = async (active, id, birthDate) => {
 			alert('팻 추가 성공');
 			emit('update:groupList');
 			dialog.value = false;
+			clearInputText();
 		} else {
 			alert(status);
 		}
@@ -266,6 +267,10 @@ const addGroupPet = async (active, id, birthDate) => {
 };
 const closeInsertForm = () => {
 	dialog.value = false;
+	clearInputText();
+};
+
+const clearInputText = () => {
 	inputData.value.name = null;
 	inputData.value.birth = null;
 	inputData.value.species = null;
@@ -273,7 +278,6 @@ const closeInsertForm = () => {
 	inputData.value.gender = null;
 	inputData.value.officialAnimalNum = null;
 };
-
 const createFamily = () => {
 	createFhirPatient();
 };
