@@ -14,7 +14,7 @@
 					그룹 정보 템플릿
 					<div>그룹 명: {{ groupList.name }}</div>
 					<div>멤버 수 : {{ groupList.memberTotal }}</div>
-					<div>멤머 리스트 :{{ groupList.memberList }}</div>
+					<div>멤버 리스트 :{{ groupList.memberList }}</div>
 					<PetInsert
 						:group-info="groupInfo"
 						@update:groupList="fetchGroupList"
