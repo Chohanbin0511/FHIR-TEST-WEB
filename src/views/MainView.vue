@@ -119,7 +119,7 @@ const tokenResultSet = async () => {
 
 onMounted(() => {
 	tokenResultSet();
-	btnFetchUserInfo(oauth.accessToken);
+	if (oauth.accessToken) btnFetchUserInfo(oauth.accessToken);
 });
 
 // // 가족 생성
