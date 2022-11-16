@@ -226,8 +226,7 @@ const addGroupPet = async (active, id, birthDate) => {
 		name: groupList.name,
 		quantity: groupList.memberTotal + 1,
 		member:
-			//  [
-			groupList.memberList === null
+			groupList.memberList === undefined
 				? [
 						{
 							entity: {
@@ -251,17 +250,6 @@ const addGroupPet = async (active, id, birthDate) => {
 							inactive: active,
 						},
 				  ],
-		// 	...groupList.memberList,
-		// 	{
-		// 		entity: {
-		// 			reference: `Patient/${id}`,
-		// 		},
-		// 		period: {
-		// 			start: birthDate,
-		// 		},
-		// 		inactive: active,
-		// 	},
-		// ],
 	};
 	try {
 		const { status } = await updateGroup(userInfo.patientId, resource);
