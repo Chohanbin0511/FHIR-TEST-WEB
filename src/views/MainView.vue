@@ -6,7 +6,20 @@
 			</v-container>
 
 			<v-container>
-				<PetInsert></PetInsert>
+				<template v-if="groupList.total === 0">
+					<groupInsert @update:groupList="fetchGroupList"> </groupInsert
+				></template>
+
+				<template v-if="groupList.total > 0">
+					그룹 정보 템플릿
+					<div>그룹 명: {{ groupList.name }}</div>
+					<div>멤버 수 : {{ groupList.memberTotal }}</div>
+					<div>멤머 리스트 :{{ groupList.memberList }}</div>
+					<PetInsert
+						:group-info="groupInfo"
+						@update:groupList="fetchGroupList"
+					></PetInsert>
+				</template>
 				<!-- <v-btn @click="createFamily()"> 가족 생성</v-btn> -->
 				<!-- <v-row>
 					<v-col
@@ -29,31 +42,25 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { getTokenAuthCodeResult } from '@/api/oauthApi';
+import { getGroupList } from '@/api/fhirApi';
 import { useAuthStore } from '@/stores/auth';
 import * as OpenAPI from '@/assets/js/sdk/openApi';
 
 import PetInsert from '@/components/pet/PetInsert.vue';
+import groupInsert from '@/components/group/GroupInsert.vue';
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
-
-// const samplePageList = ref([
-// 	{ title: 'Fhir Sample', type: 'fhir' },
-// 	{ title: 'OAuth Sample', type: 'oauth' },
-// 	{ title: 'OpenApi Sample', type: 'openApi' },
-// ]);
-
-// const router = useRouter();
-// const goPage = type => {
-// 	router.push(`/sdkSample/${type}`);
-// };
 
 /**
  * 로그인 후  회원 정보 store에 담기
  */
 const store = useAuthStore();
-const { SET_LOGIN, SET_OAUTH } = store;
+const userInfo = useAuthStore().userInfo;
+const oauth = useAuthStore().oauth;
+const { SET_LOGIN, SET_OAUTH, SET_GROUPLIST, CLEAR_GROUPLIST } = store;
 
+const router = useRouter();
 // 회원 정보 조회
 const btnFetchUserInfo = async token => {
 	const configToken = {
@@ -64,10 +71,32 @@ const btnFetchUserInfo = async token => {
 		.then(response => {
 			console.log('response', response);
 			SET_LOGIN(response);
+			router.replace('/');
+			fetchGroupList();
 		})
 		.catch(error => {
-			console.log('error', error);
+			console.error(error);
 		});
+};
+const groupList = ref(useAuthStore().groupList);
+const groupInfo = ref(null);
+const fetchGroupList = async () => {
+	const {
+		data: { total },
+		data: { entry },
+	} = await getGroupList(userInfo.patientId);
+	if (total > 0) {
+		groupInfo.value = entry[0];
+		const {
+			resource: { quantity },
+			resource: { name },
+			resource: { member },
+		} = entry[0];
+		SET_GROUPLIST(total, name, quantity, member);
+	}
+	if (total === 0) {
+		CLEAR_GROUPLIST();
+	}
 };
 
 /**
@@ -90,6 +119,7 @@ const tokenResultSet = async () => {
 
 onMounted(() => {
 	tokenResultSet();
+	btnFetchUserInfo(oauth.accessToken);
 });
 
 // // 가족 생성

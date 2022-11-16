@@ -4,11 +4,11 @@
 		<v-row>
 			<v-dialog v-model="dialog">
 				<template v-slot:activator="{ props }">
-					<v-btn color="primary" v-bind="props">가족 생성</v-btn>
+					<v-btn color="primary" v-bind="props">팻 생성</v-btn>
 				</template>
 				<v-card>
 					<v-card-title class="mt-5">
-						<span class="text-h6">가족 등록 정보</span>
+						<span class="text-h6">팻 등록 정보</span>
 					</v-card-title>
 					<v-card-text>
 						<v-container>
@@ -69,10 +69,15 @@
 					</v-card-text>
 					<v-card-actions>
 						<v-spacer></v-spacer>
-						<v-btn color="blue-darken-1" variant="text" @click="dialog = false">
+						<v-btn
+							color="blue-darken-1"
+							variant="text"
+							@click="closeInsertForm"
+						>
 							Close
 						</v-btn>
 						<v-btn color="blue-darken-1" variant="text" @click="createFamily">
+							<!-- <v-btn color="blue-darken-1" variant="text" @click="test"> -->
 							Save
 						</v-btn>
 					</v-card-actions>
@@ -82,12 +87,14 @@
 	</v-container>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue';
-import { useAuthStore } from '@/stores/auth.js';
-import { createPatient } from '@/api/fhirApi.js';
+import { useAuthStore } from '@/stores/auth';
+import { createPatient, updateGroup } from '@/api/fhirApi';
 
 const dialog = ref(false);
+
+const emit = defineEmits(['update:groupList']);
 
 /**
  * 유저 정보
@@ -117,12 +124,10 @@ const createFhirPatientValidCheck = () => {
 
 const createFhirPatient = async () => {
 	const result = createFhirPatientValidCheck();
-	console.log('result', result);
 	if (!result) {
 		alert('빈칸체크!');
 		return false;
 	}
-	// console.log('Patient 생성 버튼 클릭', inputData.value);
 	const resource = {
 		resourceType: 'Patient',
 		language: 'ko',
@@ -194,20 +199,70 @@ const createFhirPatient = async () => {
 			display: 'chohbin PET 서비스',
 		},
 	};
-	console.log('resource', resource);
 	try {
-		const response = await createPatient(resource);
-		console.log('response', response);
+		const { data } = await createPatient(resource);
+		const { active, id, birthDate } = data;
+		addGroupPet(active, id, birthDate);
 	} catch (error) {
 		console.error(error);
 	}
 };
+
+const groupList = useAuthStore().groupList;
+
+// 그룹에 생성한 펫 추가
+const addGroupPet = async (active, id, birthDate) => {
+	const resource = {
+		resourceType: 'Group',
+		identifier: [
+			{
+				system: 'https://redwoodplatformtest-chohbin.netlify.app',
+				value: userInfo.patientId,
+			},
+		],
+		active: true,
+		type: 'animal',
+		actual: true,
+		name: groupList.name,
+		quantity: groupList.memberTotal + 1,
+		member: [
+			...groupList.memberList,
+			{
+				entity: {
+					reference: `Patient/${id}`,
+				},
+				period: {
+					start: birthDate,
+				},
+				inactive: active,
+			},
+		],
+	};
+	try {
+		const { status } = await updateGroup(userInfo.patientId, resource);
+		if (status >= 200) {
+			alert('팻 추가 성공');
+			emit('update:groupList');
+			dialog.value = false;
+		} else {
+			alert(status);
+		}
+	} catch (error) {
+		console.error(error);
+	}
+};
+const closeInsertForm = () => {
+	dialog.value = false;
+	inputData.value.name = null;
+	inputData.value.birth = null;
+	inputData.value.species = null;
+	inputData.value.breed = null;
+	inputData.value.gender = null;
+	inputData.value.officialAnimalNum = null;
+};
+
 const createFamily = () => {
 	createFhirPatient();
-
-	// todo patient
-	// 1.생성 입력 폼 만든후 제출 => patient 정상 생성되면
-	// 2. phr 공유자에 추가
 };
 </script>
 

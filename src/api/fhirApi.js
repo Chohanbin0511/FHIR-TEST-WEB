@@ -1,5 +1,5 @@
 // import * as fhir from 'fhir.js';
-import { fhirAuth } from './index';
+import { fhirAuth, fhirCredentialsAuth } from './index';
 // import { useAuthStore } from '@/stores/auth';
 
 /**
@@ -7,25 +7,6 @@ import { fhirAuth } from './index';
  * @returns
  */
 export function getPatient(patientId) {
-	// console.log('fhir', fhir);
-	// const oauth = useAuthStore().oauth;
-	// const fhirConfig = {
-	// 	baseUrl: 'http://fhir.redwoodhealth.kr/fhir',
-	// 	auth: {
-	// 		bearer: oauth.accessToken,
-	// 	},
-	// };
-	// return (
-	// 	fhir(fhirConfig)
-	// 		.read({ type: 'Patient', id: '766371' })
-	// 		// .conformance({})
-	// 		.then(response => {
-	// 			console.log('response', response);
-	// 		})
-	// 		.catch(error => {
-	// 			console.log('error', error);
-	// 		})
-	// );
 	return fhirAuth.get(`/Patient/${patientId}`);
 }
 
@@ -55,4 +36,25 @@ export function deletePatient(patientId) {
  */
 export function getPatientVersion(patientId, versionId) {
 	return fhirAuth.get(`/Patient/${patientId}/_history/${versionId}`);
+}
+
+/**
+ * 그룹 조회
+ */
+export function getGroupList(patientId) {
+	return fhirCredentialsAuth.get(`/Group?identifier=${patientId}`);
+}
+
+/**
+ * 그룹 생성
+ */
+export function createGroup(resource) {
+	return fhirCredentialsAuth.post(`/Group`, resource);
+}
+
+/**
+ * 그룹 수정
+ */
+export function updateGroup(patientId, resource) {
+	return fhirCredentialsAuth.put(`/Group?identifier=${patientId}`, resource);
 }

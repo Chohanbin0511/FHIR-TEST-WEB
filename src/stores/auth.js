@@ -19,6 +19,12 @@ export const useAuthStore = defineStore('auth', {
 			tokenType: null,
 			expiresIn: null,
 		},
+		groupList: {
+			total: 0,
+			name: null,
+			memberTotal: 0,
+			memberList: [],
+		},
 	}),
 	actions: {
 		SET_LOGIN(loginData) {
@@ -38,6 +44,12 @@ export const useAuthStore = defineStore('auth', {
 			this.oauth.tokenType = oauthData.token_type;
 			this.oauth.expiresIn = oauthData.expires_in;
 		},
+		SET_GROUPLIST(total, name, quantity, list) {
+			this.groupList.total = total;
+			this.groupList.name = name;
+			this.groupList.memberTotal = quantity;
+			this.groupList.memberList = list;
+		},
 		CLEAR_SESSION() {
 			this.userInfo.isLogined = false;
 			this.userInfo.userId = null;
@@ -54,6 +66,12 @@ export const useAuthStore = defineStore('auth', {
 			this.oauth.refreshToken = null;
 			this.oauth.tokenType = null;
 			this.oauth.expiresIn = null;
+		},
+		CLEAR_GROUPLIST() {
+			this.groupList.total = 0;
+			this.groupList.name = null;
+			this.groupList.memberTotal = 0;
+			this.groupList.memberList = [];
 		},
 	},
 	persist: {

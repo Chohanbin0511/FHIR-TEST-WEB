@@ -1,5 +1,9 @@
 import axios from 'axios';
-import { setAuthInterceptors, setInterceptors } from './common/interceptors';
+import {
+	setAuthInterceptors,
+	setInterceptors,
+	setAuthInterceptors_client,
+} from './common/interceptors';
 
 export const paramsSerializer = function (paramObj) {
 	const params = new URLSearchParams();
@@ -36,7 +40,16 @@ function createdFhirInstance(url) {
 	return setAuthInterceptors(instance);
 }
 
+//* ==== fhir: clientCredentials interceptor === *//
+function createFhirInstance_client(url) {
+	const instance = axios.create({
+		baseURL: `${import.meta.env.VITE_APP_URL_FHIR}${url}`,
+	});
+	return setAuthInterceptors_client(instance);
+}
+
 export const notice = createInstance('/api/notice');
 export const noticeAuth = createAuthInstance('/api/notice');
 
 export const fhirAuth = createdFhirInstance('');
+export const fhirCredentialsAuth = createFhirInstance_client('');

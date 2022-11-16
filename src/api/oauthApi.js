@@ -1,6 +1,4 @@
 import * as OAuth from '@/assets/js/sdk/oauth';
-// import OAuth from '@/assets/js/sdk/oauth';
-// const OAuth = require('../assets/js/sdk/oauth');
 import { OAUTH_CONFIG } from './common/config';
 
 /**
