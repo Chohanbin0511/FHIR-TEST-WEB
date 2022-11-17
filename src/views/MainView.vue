@@ -167,6 +167,9 @@ const fetchGroupList = async () => {
 		SET_GROUPLIST(total, name, quantity, member);
 		if (quantity > 0) {
 			fetchBundlePetList(member);
+		} else {
+			myPetList.value = [];
+			model.value = null;
 		}
 	}
 	if (total === 0) {
