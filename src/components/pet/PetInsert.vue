@@ -1,7 +1,14 @@
 <template>
 	<v-dialog v-model="dialog">
 		<template v-slot:activator="{ props }">
-			<v-btn v-bind="props">팻 생성</v-btn>
+			<v-card
+				color="grey-lighten-5"
+				class="ma-2"
+				v-bind="props"
+				height="80"
+				width="80"
+				><v-icon icon="mdi-plus" class="ma-6" size="x-large"></v-icon
+			></v-card>
 		</template>
 		<v-card>
 			<v-card-title class="mt-5">

@@ -1,10 +1,10 @@
 <template>
-	<v-container>
+	<v-btn>
 		<!-- <v-btn @click="createFamily()"> 가족 생성</v-btn> -->
 		<v-row>
 			<v-dialog v-model="dialog">
 				<template v-slot:activator="{ props }">
-					<v-btn color="primary" v-bind="props">가족 그룹 생성</v-btn>
+					<v-btn color="" v-bind="props">가족 그룹 생성</v-btn>
 				</template>
 				<v-card>
 					<v-card-title class="mt-5">
@@ -44,7 +44,7 @@
 				</v-card>
 			</v-dialog>
 		</v-row>
-	</v-container>
+	</v-btn>
 </template>
 
 <script setup>
