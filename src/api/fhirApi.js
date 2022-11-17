@@ -58,3 +58,10 @@ export function createGroup(resource) {
 export function updateGroup(patientId, resource) {
 	return fhirCredentialsAuth.put(`/Group?identifier=${patientId}`, resource);
 }
+
+/**
+ * Bundle 조회
+ */
+export function getBundle(resource) {
+	return fhirAuth.post('', resource);
+}

@@ -1,90 +1,80 @@
 <template>
-	<v-container>
-		<!-- <v-btn @click="createFamily()"> 가족 생성</v-btn> -->
-		<v-row>
-			<v-dialog v-model="dialog">
-				<template v-slot:activator="{ props }">
-					<v-btn color="primary" v-bind="props">팻 생성</v-btn>
-				</template>
-				<v-card>
-					<v-card-title class="mt-5">
-						<span class="text-h6">팻 등록 정보</span>
-					</v-card-title>
-					<v-card-text>
-						<v-container>
-							<v-row>
-								<v-col cols="12">
-									<v-text-field
-										v-model="inputData.name"
-										label="*이름"
-										required
-									></v-text-field>
-								</v-col>
-								<v-col cols="12">
-									<v-text-field
-										v-model="inputData.birth"
-										label="*생년월일 ex.2018-04-01"
-										required
-									></v-text-field>
-								</v-col>
-								<!-- <v-col cols="12" sm="6">
+	<v-dialog v-model="dialog">
+		<template v-slot:activator="{ props }">
+			<v-btn v-bind="props">팻 생성</v-btn>
+		</template>
+		<v-card>
+			<v-card-title class="mt-5">
+				<span class="text-h6">팻 등록 정보</span>
+			</v-card-title>
+			<v-card-text>
+				<v-container>
+					<v-row>
+						<v-col cols="12">
+							<v-text-field
+								v-model="inputData.name"
+								label="*이름"
+								required
+							></v-text-field>
+						</v-col>
+						<v-col cols="12">
+							<v-text-field
+								v-model="inputData.birth"
+								label="*생년월일 ex.2018-04-01"
+								required
+							></v-text-field>
+						</v-col>
+						<!-- <v-col cols="12" sm="6">
 									<v-select
 										:items="['0-17', '18-29', '30-54', '54+']"
 										label="Age*"
 										required
 										></v-select>
 									</v-col> -->
-								<v-col cols="12" sm="6">
-									<v-autocomplete
-										v-model="inputData.species"
-										:items="['Dog', 'Cat']"
-										label="카테고리"
-									></v-autocomplete>
-								</v-col>
-								<v-col cols="12" sm="6">
-									<v-text-field
-										v-model="inputData.breed"
-										label="*품종 ex.말티즈"
-										required
-									></v-text-field>
-								</v-col>
-								<v-col cols="12" sm="6">
-									<v-autocomplete
-										v-model="inputData.gender"
-										:items="['수컷', '암컷', '중성화']"
-										label="*성별"
-									></v-autocomplete>
-									<!-- multiple -->
-								</v-col>
-								<v-col cols="12" sm="6">
-									<v-text-field
-										v-model="inputData.officialAnimalNum"
-										label="동물 등록 번호"
-									></v-text-field>
-									<!-- multiple -->
-								</v-col>
-							</v-row>
-						</v-container>
-						<small>*필수 입력 사항</small>
-					</v-card-text>
-					<v-card-actions>
-						<v-spacer></v-spacer>
-						<v-btn
-							color="blue-darken-1"
-							variant="text"
-							@click="closeInsertForm"
-						>
-							Close
-						</v-btn>
-						<v-btn color="blue-darken-1" variant="text" @click="createFamily">
-							<!-- <v-btn color="blue-darken-1" variant="text" @click="test"> -->
-							Save
-						</v-btn>
-					</v-card-actions>
-				</v-card>
-			</v-dialog>
-		</v-row>
-	</v-container>
+						<v-col cols="12" sm="6">
+							<v-autocomplete
+								v-model="inputData.species"
+								:items="['Dog', 'Cat']"
+								label="카테고리"
+							></v-autocomplete>
+						</v-col>
+						<v-col cols="12" sm="6">
+							<v-text-field
+								v-model="inputData.breed"
+								label="*품종 ex.말티즈"
+								required
+							></v-text-field>
+						</v-col>
+						<v-col cols="12" sm="6">
+							<v-autocomplete
+								v-model="inputData.gender"
+								:items="['수컷', '암컷', '중성화']"
+								label="*성별"
+							></v-autocomplete>
+							<!-- multiple -->
+						</v-col>
+						<v-col cols="12" sm="6">
+							<v-text-field
+								v-model="inputData.officialAnimalNum"
+								label="동물 등록 번호"
+							></v-text-field>
+							<!-- multiple -->
+						</v-col>
+					</v-row>
+				</v-container>
+				<small>*필수 입력 사항</small>
+			</v-card-text>
+			<v-card-actions>
+				<v-spacer></v-spacer>
+				<v-btn color="blue-darken-1" variant="text" @click="closeInsertForm">
+					Close
+				</v-btn>
+				<v-btn color="blue-darken-1" variant="text" @click="createFamily">
+					Save
+				</v-btn>
+			</v-card-actions>
+		</v-card>
+	</v-dialog>
 </template>
 
 <script setup>
@@ -175,26 +165,72 @@ const createFhirPatient = async () => {
 				],
 			},
 		],
-		animal: {
-			species: {
-				coding: [
+		extension: [
+			{
+				url: 'http://hl7.org/fhir/StructureDefinition/patient-animal',
+				extension: [
 					{
-						system: 'http://hl7.org/fhir/animal-species',
-						code: 'canislf',
-						display: inputData.value.species,
+						url: 'species',
+						valueCodeableConcept: {
+							coding: [
+								{
+									system: 'http://hl7.org/fhir/animal-species',
+									code: 'canislf',
+									display: inputData.value.species,
+								},
+							],
+						},
+					},
+					{
+						url: 'breed',
+						valueCodeableConcept: {
+							coding: [
+								{
+									// system: 'http://snomed.info/sct',
+									system: 'https://www.animal.go.kr',
+									code: inputData.value.breed,
+									display: inputData.value.breed,
+								},
+							],
+						},
+					},
+					{
+						url: 'genderStatus',
+						valueCodeableConcept: {
+							coding: [
+								{
+									// system: 'http://hl7.org/fhir/animal-genderstatus',
+									// code: 'neutered',
+									system: 'https://www.animal.go.kr',
+									code: inputData.value.gender,
+									display: inputData.value.gender,
+								},
+							],
+						},
 					},
 				],
 			},
-			breed: inputData.value.breed,
-			genderStatus: {
-				coding: [
-					{
-						system: 'https://www.animal.go.kr',
-						code: inputData.value.gender,
-					},
-				],
-			},
-		},
+		],
+		// animal: {
+		// 	species: {
+		// 		coding: [
+		// 			{
+		// 				system: 'http://hl7.org/fhir/animal-species',
+		// 				code: 'canislf',
+		// 				display: inputData.value.species,
+		// 			},
+		// 		],
+		// 	},
+		// 	breed: inputData.value.breed,
+		// 	genderStatus: {
+		// 		coding: [
+		// 			{
+		// 				system: 'https://www.animal.go.kr',
+		// 				code: inputData.value.gender,
+		// 			},
+		// 		],
+		// 	},
+		// },
 		managingOrganization: {
 			display: 'chohbin PET 서비스',
 		},

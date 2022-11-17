@@ -2,39 +2,88 @@
 	<TheViewLayout>
 		<template #mainPanel>
 			<v-container>
-				<h1>Main Page</h1>
-			</v-container>
-
-			<v-container>
 				<template v-if="groupList.total === 0">
 					<groupInsert @update:groupList="fetchGroupList"> </groupInsert
 				></template>
 
 				<template v-if="groupList.total > 0">
-					그룹 정보 템플릿
-					<div>그룹 명: {{ groupList.name }}</div>
-					<div>멤버 수 : {{ groupList.memberTotal }}</div>
-					<div>멤버 리스트 :{{ groupList.memberList }}</div>
-					<PetInsert
-						:group-info="groupInfo"
-						@update:groupList="fetchGroupList"
-					></PetInsert>
-				</template>
-				<!-- <v-btn @click="createFamily()"> 가족 생성</v-btn> -->
-				<!-- <v-row>
-					<v-col
-						v-for="item in samplePageList"
-						:key="item"
-						class="mx-auto my-2"
-						max-width="200"
-						cols="12"
-						md="4"
+					<v-card-title class="mt-2"> PET LIST </v-card-title>
+					<v-banner color="pink-darken-1" icon="mdi-account-box" lines="two">
+						<template v-slot:prepend>
+							<v-avatar></v-avatar>
+						</template>
+
+						<v-banner-text>
+							Pet 추가가 가능하고 상세정보를 확인할 수 있다.
+						</v-banner-text>
+
+						<v-banner-actions class="mt-1">
+							<PetInsert
+								:group-info="groupInfo"
+								@update:groupList="fetchGroupList"
+							></PetInsert>
+						</v-banner-actions>
+					</v-banner>
+					<v-slide-group
+						v-model="model"
+						class="pa-2"
+						selected-class="bg-primary"
+						show-arrows
 					>
-						<v-btn width="100%" @click="goPage(item.type)">
-							{{ item.title }}
-						</v-btn>
-					</v-col>
-				</v-row> -->
+						<v-slide-group-item
+							v-for="item in myPetList"
+							:key="item"
+							v-slot="{ isSelected, toggle, selectedClass }"
+						>
+							<v-card
+								color="grey-lighten-5"
+								:class="['ma-2', selectedClass]"
+								height="80"
+								width="80"
+								@click="toggle"
+							>
+								<div class="d-flex fill-height align-center justify-center">
+									<v-scale-transition>
+										<v-icon
+											v-if="isSelected"
+											color="white"
+											size="48"
+											icon="mdi-close-circle-outline"
+										></v-icon>
+										{{ item.name }}
+									</v-scale-transition>
+								</div>
+							</v-card>
+						</v-slide-group-item>
+					</v-slide-group>
+				</template>
+				<v-expand-transition>
+					<v-sheet v-if="model != null" height="200">
+						<div class="d-flex justify-center">
+							<v-card
+								min-width="300"
+								:title="`Name : ${myPetList[model].name}`"
+								:subtitle="`BirthDay :
+							${myPetList[model].birthDate}`"
+							>
+								<v-card-text>
+									<div class="mt-1 my-4 text-subtitle-1">
+										• 품종 : {{ myPetList[model].speices }}
+									</div>
+									<div class="my-4 text-subtitle-1">
+										• 성별 : {{ myPetList[model].genderStatus }}
+									</div>
+									<div class="my-4 text-subtitle-1">
+										• 종류 : {{ myPetList[model].speices }}
+									</div>
+									<div class="my-4 text-subtitle-1">
+										• 품종 : {{ myPetList[model].breed }}
+									</div>
+								</v-card-text>
+							</v-card>
+						</div>
+					</v-sheet>
+				</v-expand-transition>
 			</v-container>
 		</template>
 	</TheViewLayout>
@@ -44,13 +93,15 @@
 import { ref, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { getTokenAuthCodeResult } from '@/api/oauthApi';
-import { getGroupList } from '@/api/fhirApi';
+import { getGroupList, getBundle } from '@/api/fhirApi';
 import { useAuthStore } from '@/stores/auth';
 import * as OpenAPI from '@/assets/js/sdk/openApi';
 
 import PetInsert from '@/components/pet/PetInsert.vue';
 import groupInsert from '@/components/group/GroupInsert.vue';
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
+
+const model = ref(null);
 
 /**
  * 로그인 후  회원 정보 store에 담기
@@ -93,12 +144,66 @@ const fetchGroupList = async () => {
 			resource: { member },
 		} = entry[0];
 		SET_GROUPLIST(total, name, quantity, member);
+		fetchBundlePetList(member);
 	}
 	if (total === 0) {
 		CLEAR_GROUPLIST();
 	}
 };
 
+/**
+ * 팻 bundle 조회 요청
+ */
+const myPetList = ref([]);
+const fetchBundlePetList = async member => {
+	let requestList = [];
+	member.forEach((el, idx) => {
+		requestList[idx] = {
+			request: {
+				method: 'GET',
+				url: el.entity.reference,
+			},
+		};
+	});
+	const resource = {
+		resourceType: 'Bundle',
+		type: 'batch',
+		entry: requestList,
+	};
+	const {
+		data: { entry },
+	} = await getBundle(resource);
+	console.log('entry', entry);
+	entry.forEach((el, idx) => {
+		let extensionArr = el.resource.extension;
+		let extension;
+		if (extensionArr) {
+			extension = extensionArr[0].extension;
+		}
+		myPetList.value[idx] = {
+			active: el.resource.active,
+			birthDate: el.resource.birthDate,
+			id: el.resource.id,
+			animalNum: el.resource.identifier[0].value
+				? el.resource.identifier[0].value
+				: null,
+			name: el.resource.name[0].text,
+			speices: extension
+				? extension[extension.findIndex(i => i.url === 'species')]
+						.valueCodeableConcept.coding[0].display
+				: null,
+			breed: extension
+				? extension[extension.findIndex(i => i.url === 'breed')]
+						.valueCodeableConcept.coding[0].display
+				: null,
+			genderStatus: extension
+				? extension[extension.findIndex(i => i.url === 'genderStatus')]
+						.valueCodeableConcept.coding[0].display
+				: null,
+		};
+	});
+	console.log('tq', myPetList.value);
+};
 /**
  * url에 token 있는지 체크
  */
