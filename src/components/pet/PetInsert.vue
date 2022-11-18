@@ -12,7 +12,7 @@
 		</template>
 		<v-card>
 			<v-card-title class="mt-5">
-				<span class="text-h6">팻 등록 정보</span>
+				<span class="text-h6">펫 등록 정보</span>
 			</v-card-title>
 			<v-card-text>
 				<v-container>
@@ -297,7 +297,7 @@ const addGroupPet = async (active, id, birthDate) => {
 	try {
 		const { status } = await updateGroup(userInfo.patientId, resource);
 		if (status >= 200) {
-			alert('팻 추가 성공');
+			alert('펫 추가 성공');
 			emit('update:groupList');
 			dialog.value = false;
 			clearInputText();

@@ -178,7 +178,7 @@ const fetchGroupList = async () => {
 };
 
 /**
- * 팻 bundle 조회 요청
+ * 펫 bundle 조회 요청
  */
 const myPetList = ref([]);
 const fetchBundlePetList = async member => {
@@ -300,7 +300,7 @@ const expectedMyGroupSelectedPet = async petInfo => {
 // 	try {
 // 		const response = await deletePatient(petInfo.id);
 // 		console.log('response', response);
-// 		alert('팻 삭제 성공');
+// 		alert('펫 삭제 성공');
 // 	} catch (error) {
 // 		console.error(error);
 // 	}
