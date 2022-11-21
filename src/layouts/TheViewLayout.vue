@@ -34,10 +34,20 @@
 						번호 :
 						{{ userInfo.mobilePhone }}
 					</v-card-text>
-					<v-card-text class="pt-1 pb-1 mb-2">
+					<v-card-text class="pt-1 pb-1">
 						<!-- <v-icon> mdi-account-outline </v-icon> -->
 						이름 :
 						{{ userInfo.userName }}
+					</v-card-text>
+					<v-card-text class="pt-1 pb-1">
+						<!-- <v-icon> mdi-account-outline </v-icon> -->
+						생년월일 :
+						{{ userInfo.birthday }}
+					</v-card-text>
+					<v-card-text class="pt-1 pb-1 mb-2">
+						<!-- <v-icon> mdi-account-outline </v-icon> -->
+						이메일 :
+						{{ userInfo.email }}
 					</v-card-text>
 				</v-card>
 				<v-list-item
