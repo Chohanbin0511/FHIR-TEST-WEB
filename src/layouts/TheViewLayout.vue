@@ -151,11 +151,41 @@ const items = ref([
 	// 	value: 'qna',
 	// 	url: '/updateNote',
 	// },
+	/**
+	 * TODO: Main 기획 정해지면 현재 Main은 MyGroupInfo로 변경
+	 */
 	{
 		icon: 'mdi-bulletin-board',
 		title: 'Main',
 		value: 'main',
 		url: '/',
+	},
+	/**
+	 * TODO: 진료기록 Part Main =>
+	 */
+	{
+		icon: 'mdi-clipboard-text-outline',
+		title: 'Encounter',
+		value: 'encounter',
+		url: '/encounter/encounterMain',
+	},
+	/**
+	 * TODO: 알레르기 Part Main => 모든 Patient 알레르기 => 품종 별 통계를 내서 보여주는 식(사용자가 작성한 알레르기 바탕)
+	 */
+	{
+		icon: 'mdi-block-helper',
+		title: 'Allergy',
+		value: 'allergy',
+		url: '/allergy/allergyMain',
+	},
+	/**
+	 * TODO: 예방접종 Part Main => 모든 Patient 예방접종 => 품종 별 통계를 내서 보여주는 식(사용자가 작성한 예방접종 바탕) , 예방접종에 대한 정보 제공
+	 */
+	{
+		icon: 'mdi-pill',
+		title: 'Immunization',
+		value: 'immunization',
+		url: '/immunization/ImmunizationMain',
 	},
 	// {
 	// 	icon: 'mdi-update',

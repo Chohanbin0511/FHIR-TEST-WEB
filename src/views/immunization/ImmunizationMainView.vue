@@ -1,0 +1,15 @@
+<template>
+	<TheViewLayout>
+		<template #mainPanel>
+			<v-container>
+				<div>예방접종 메인</div>
+			</v-container>
+		</template>
+	</TheViewLayout>
+</template>
+
+<script setup>
+import TheViewLayout from '@/layouts/TheViewLayout.vue';
+</script>
+
+<style lang="scss" scoped></style>

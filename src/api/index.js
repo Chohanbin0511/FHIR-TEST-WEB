@@ -48,8 +48,10 @@ function createFhirInstance_client(url) {
 	return setAuthInterceptors_client(instance);
 }
 
-export const notice = createInstance('/api/notice');
-export const noticeAuth = createAuthInstance('/api/notice');
+export const animalHospital = createInstance('/fhirTestWeb_animalHospital');
+export const animalHospitalAuth = createAuthInstance(
+	'/fhirTestWeb_animalHospital',
+);
 
 export const fhirAuth = createdFhirInstance('');
 export const fhirCredentialsAuth = createFhirInstance_client('');

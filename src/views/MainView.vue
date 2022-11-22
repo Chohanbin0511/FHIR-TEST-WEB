@@ -2,7 +2,23 @@
 	<TheViewLayout>
 		<template #mainPanel>
 			<v-container>
-				<v-card-title class="mt-2"> PET LIST </v-card-title>
+				<template v-if="groupList.total > 0 && userInfo.isLogined">
+					<v-card-title class="mt-2"> Group Info</v-card-title>
+					<v-banner
+						color="orange-darken-1"
+						icon="mdi-account-multiple"
+						lines="two"
+					>
+						<template v-slot:prepend>
+							<v-avatar> </v-avatar>
+							<!-- <v-icon icon="mdi-home"></v-icon> -->
+						</template>
+						<v-banner-text class="d-flex fill-height align-center">
+							그룹명 : {{ groupList.name }}
+						</v-banner-text>
+					</v-banner>
+				</template>
+				<v-card-title class="mt-2"> Pet List </v-card-title>
 				<v-banner color="pink-darken-1" icon="mdi-account-box" lines="two">
 					<template v-slot:prepend>
 						<v-avatar></v-avatar>
@@ -11,7 +27,7 @@
 					<v-banner-text v-if="!userInfo.isLogined">
 						로그인 후 자신의 그룹을 생성해 Pet의 정보를 관리해보세요!
 					</v-banner-text>
-					<v-banner-text v-else>
+					<v-banner-text v-else class="d-flex fill-height align-center">
 						Pet 추가가 가능하고 상세정보를 확인할 수 있어요.
 					</v-banner-text>
 					<v-banner-actions v-if="!userInfo.isLogined" class="mt-1">
@@ -26,6 +42,20 @@
 					</v-banner-actions>
 				</v-banner>
 				<template v-if="groupList.total > 0 && userInfo.isLogined">
+					<!-- <v-card-title class="mt-2"> Group Info</v-card-title>
+					<v-banner
+						color="orange-darken-1"
+						icon="mdi-account-multiple"
+						lines="two"
+					>
+						<template v-slot:prepend>
+							<v-avatar> </v-avatar>
+							<v-icon icon="mdi-home"></v-icon>
+						</template>
+						<v-banner-text>
+							로그인 후 자신의 그룹을 생성해 Pet의 정보를 관리해보세요!
+						</v-banner-text>
+					</v-banner> -->
 					<v-slide-group
 						v-model="model"
 						class="pa-2"
@@ -89,10 +119,13 @@
 							</v-col>
 						</div>
 						<div style="display: flex; justify-content: center">
-							<v-btn class="ma-3"> 상세보기 </v-btn>
-							<v-btn class="ma-3"> 정보수정 </v-btn>
+							<v-btn class="ma-3" color="primary" @click="snackbar = true">
+								상세보기
+							</v-btn>
+							<v-btn class="ma-3" color="grey"> 정보수정 </v-btn>
 							<v-btn
 								class="ma-3"
+								color="grey"
 								@click="fetchDeletePetByMyGroup(myPetList[model])"
 							>
 								펫 삭제
@@ -100,6 +133,35 @@
 						</div>
 					</v-sheet>
 				</v-expand-transition>
+			</v-container>
+			<v-container>
+				<v-overlay v-model="snackbar">
+					<v-snackbar v-model="snackbar" vertical :timeout="1000000">
+						<v-card-title class="text-subtitle-1 pb-2" color="indigo">
+							This is a Pet Detail List
+						</v-card-title>
+
+						<v-list-item
+							v-for="(item, i) in detailPetInfoList"
+							:key="i"
+							:value="item"
+							active-color="primary"
+						>
+							<template v-slot:prepend>
+								<v-icon :icon="item.icon" style="margin-left: 50px"></v-icon>
+							</template>
+
+							<v-list-item-title @click="clickTest" style="cursor: pointer">
+								{{ item.text }}</v-list-item-title
+							>
+						</v-list-item>
+						<template v-slot:actions>
+							<v-btn color="indigo" variant="text" @click="snackbar = false">
+								Close
+							</v-btn>
+						</template>
+					</v-snackbar>
+				</v-overlay>
 			</v-container>
 		</template>
 	</TheViewLayout>
@@ -123,6 +185,17 @@ import groupInsert from '@/components/group/GroupInsert.vue';
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
 
 const model = ref(null);
+const snackbar = ref(false);
+
+const clickTest = () => {
+	console.log('click');
+};
+
+const detailPetInfoList = ref([
+	{ text: '진료기록', icon: 'mdi-clipboard-text-outline' },
+	{ text: '알레르기', icon: 'mdi-block-helper' },
+	{ text: '예방접종', icon: 'mdi-pill' },
+]);
 
 /**
  * 로그인 후  회원 정보 store에 담기
