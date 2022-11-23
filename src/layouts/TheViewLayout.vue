@@ -185,7 +185,13 @@ const items = ref([
 		icon: 'mdi-pill',
 		title: 'Immunization',
 		value: 'immunization',
-		url: '/immunization/ImmunizationMain',
+		url: '/immunization/immunizationMain',
+	},
+	{
+		icon: 'mdi-hospital-building',
+		title: 'AnimalHospital',
+		value: 'animalHospital',
+		url: '/animalHospital/animalHospitalMain',
 	},
 	// {
 	// 	icon: 'mdi-update',

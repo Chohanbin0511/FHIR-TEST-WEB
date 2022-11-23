@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import allergyRouter from '@/router/allergyRouter.js';
 import encounterRouter from '@/router/encounterRouter.js';
 import immunizationRouter from '@/router/immunizationRouter.js';
+import animalHospitalRouter from '@/router/animalHospitalRouter.js';
 
 const otherRoutes = [
 	{
@@ -43,6 +44,7 @@ allRoutes = allRoutes.concat(
 	allergyRouter,
 	encounterRouter,
 	immunizationRouter,
+	animalHospitalRouter,
 	// loginRouter,
 	// serviceManageRouter,
 	// dataManageRouter,

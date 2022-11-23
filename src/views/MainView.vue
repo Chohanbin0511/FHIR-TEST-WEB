@@ -2,23 +2,7 @@
 	<TheViewLayout>
 		<template #mainPanel>
 			<v-container>
-				<template v-if="groupList.total > 0 && userInfo.isLogined">
-					<v-card-title class="mt-2"> Group Info</v-card-title>
-					<v-banner
-						color="orange-darken-1"
-						icon="mdi-account-multiple"
-						lines="two"
-					>
-						<template v-slot:prepend>
-							<v-avatar> </v-avatar>
-							<!-- <v-icon icon="mdi-home"></v-icon> -->
-						</template>
-						<v-banner-text class="d-flex fill-height align-center">
-							그룹명 : {{ groupList.name }}
-						</v-banner-text>
-					</v-banner>
-				</template>
-				<v-card-title class="mt-2"> Pet List </v-card-title>
+				<v-card-title class="mt-2"> Main </v-card-title>
 				<v-banner color="pink-darken-1" icon="mdi-account-box" lines="two">
 					<template v-slot:prepend>
 						<v-avatar></v-avatar>
@@ -42,20 +26,21 @@
 					</v-banner-actions>
 				</v-banner>
 				<template v-if="groupList.total > 0 && userInfo.isLogined">
-					<!-- <v-card-title class="mt-2"> Group Info</v-card-title>
+					<v-card-title class="mt-2"> Group Info</v-card-title>
 					<v-banner
 						color="orange-darken-1"
 						icon="mdi-account-multiple"
-						lines="two"
+						lines="one"
 					>
 						<template v-slot:prepend>
 							<v-avatar> </v-avatar>
-							<v-icon icon="mdi-home"></v-icon>
 						</template>
-						<v-banner-text>
-							로그인 후 자신의 그룹을 생성해 Pet의 정보를 관리해보세요!
+						<v-banner-text class="d-flex fill-height align-center">
+							그룹명 : {{ groupList.name }}
 						</v-banner-text>
-					</v-banner> -->
+					</v-banner>
+				</template>
+				<template v-if="groupList.total > 0 && userInfo.isLogined">
 					<v-slide-group
 						v-model="model"
 						class="pa-2"
@@ -65,29 +50,28 @@
 						<v-slide-group-item
 							v-for="item in myPetList"
 							:key="item"
-							v-slot="{
-								//  isSelected,
-								toggle,
-								selectedClass,
-							}"
+							v-slot="{ toggle, selectedClass }"
 						>
-							<v-card
-								color="grey-lighten-5"
-								:class="['ma-2', selectedClass]"
-								height="80"
-								width="80"
+							<v-chip
+								class="ma-2"
+								:class="selectedClass"
+								color="green"
+								variant="outlined"
 								@click="toggle"
 							>
+								<!-- {{ toggle }} -->
+								<v-icon icon="mdi-dog-side"></v-icon>
 								<div class="d-flex fill-height align-center justify-center">
 									<v-scale-transition>
 										{{ item.name }}
 									</v-scale-transition>
 								</div>
-							</v-card>
+							</v-chip>
+							<!-- </v-card> -->
 						</v-slide-group-item>
 						<v-slide-group-item>
+							<!-- color="grey-lighten-5" -->
 							<PetInsert
-								color="grey-lighten-5"
 								:group-info="groupInfo"
 								@update:groupList="fetchGroupList"
 							></PetInsert>
@@ -99,26 +83,59 @@
 						<div class="d-flex justify-center">
 							<v-col>
 								<v-card
+									class="rounded-xl"
 									min-width="330"
-									:title="`이름 : ${myPetList[model].name}`"
+									:title="`${myPetList[model].name}`"
 									:subtitle="`생일 :
 							${myPetList[model].birthDate}`"
 								>
+									<template v-slot:append>
+										<v-btn
+											icon="mdi-pencil"
+											size="x-small"
+											color="green"
+											@click="clickTest"
+										></v-btn>
+										<v-btn
+											class="ml-1"
+											icon="mdi-lock-open-variant-outline"
+											size="x-small"
+											color="red"
+											@click="fetchDeletePetByMyGroup(myPetList[model])"
+										></v-btn>
+										<!-- @click="" -->
+										<!-- <div>•••</div> -->
+									</template>
 									<v-card-text>
-										<div class="mt-1 my-4 text-subtitle-1">
-											• 종류 : {{ myPetList[model].speices }}
+										<div>
+											<v-chip class="ma-2" color="primary" variant="outlined">
+												• 종 류
+											</v-chip>
+											<span class="text-subtitle-1" style="border-radius: 1px">
+												{{ myPetList[model].speices }}
+											</span>
 										</div>
-										<div class="my-4 text-subtitle-1">
-											• 성별 : {{ myPetList[model].genderStatus }}
+										<div>
+											<v-chip class="ma-2" color="primary" variant="outlined">
+												• 성 별
+											</v-chip>
+											<span class="text-subtitle-1">
+												{{ myPetList[model].genderStatus }}
+											</span>
 										</div>
-										<div class="my-4 text-subtitle-1">
-											• 품종 : {{ myPetList[model].breed }}
+										<div>
+											<v-chip class="ma-2" color="primary" variant="outlined">
+												• 품 종
+											</v-chip>
+											<span class="text-subtitle-1">
+												{{ myPetList[model].breed }}
+											</span>
 										</div>
 									</v-card-text>
 								</v-card>
 							</v-col>
 						</div>
-						<div style="display: flex; justify-content: center">
+						<!-- <div style="display: flex; justify-content: center">
 							<v-btn class="ma-3" color="primary" @click="snackbar = true">
 								상세보기
 							</v-btn>
@@ -130,11 +147,12 @@
 							>
 								펫 삭제
 							</v-btn>
-						</div>
+						</div> -->
 					</v-sheet>
 				</v-expand-transition>
 			</v-container>
-			<v-container>
+
+			<!-- <v-container>
 				<v-overlay v-model="snackbar">
 					<v-snackbar v-model="snackbar" vertical :timeout="1000000">
 						<v-card-title class="text-subtitle-1 pb-2" color="indigo">
@@ -162,7 +180,7 @@
 						</template>
 					</v-snackbar>
 				</v-overlay>
-			</v-container>
+			</v-container> -->
 		</template>
 	</TheViewLayout>
 </template>
@@ -185,17 +203,17 @@ import groupInsert from '@/components/group/GroupInsert.vue';
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
 
 const model = ref(null);
-const snackbar = ref(false);
+// const snackbar = ref(false);
 
 const clickTest = () => {
 	console.log('click');
 };
 
-const detailPetInfoList = ref([
-	{ text: '진료기록', icon: 'mdi-clipboard-text-outline' },
-	{ text: '알레르기', icon: 'mdi-block-helper' },
-	{ text: '예방접종', icon: 'mdi-pill' },
-]);
+// const detailPetInfoList = ref([
+// 	{ text: '진료기록', icon: 'mdi-clipboard-text-outline' },
+// 	{ text: '알레르기', icon: 'mdi-block-helper' },
+// 	{ text: '예방접종', icon: 'mdi-pill' },
+// ]);
 
 /**
  * 로그인 후  회원 정보 store에 담기

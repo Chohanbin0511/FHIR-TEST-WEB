@@ -2,17 +2,14 @@
 	<TheViewLayout>
 		<template #mainPanel>
 			<v-container>
-				<v-card-title class="mt-2">Encounter Main</v-card-title>
-				<v-banner color="pink-darken-1" icon="mdi-account-box" lines="two">
+				<v-card-title class="mt-2">Hospital Map</v-card-title>
+				<v-banner color="pink-darken-1" icon="mdi-account-box" lines="one">
 					<template v-slot:prepend>
 						<v-avatar></v-avatar>
 					</template>
-
-					<v-banner-text> Pet의 진료기록을 기록/관리 가능합니다 </v-banner-text>
-					<v-banner-actions class="mt-1">
-						<v-btn>로그인 하기</v-btn>
-					</v-banner-actions>
+					<v-banner-text> 동물병원 Map (부천시) </v-banner-text>
 				</v-banner>
+				<AnimalHospitalList> </AnimalHospitalList>
 			</v-container>
 		</template>
 	</TheViewLayout>
@@ -20,6 +17,7 @@
 
 <script setup>
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
+import AnimalHospitalList from '@/components/animalHospital/AnimalHospitalList.vue';
 </script>
 
 <style lang="scss" scoped></style>

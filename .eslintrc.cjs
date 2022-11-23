@@ -32,4 +32,8 @@ module.exports = {
 			},
 		],
 	},
+	globals: {
+		// kakao: false,
+		naver: false,
+	},
 };
