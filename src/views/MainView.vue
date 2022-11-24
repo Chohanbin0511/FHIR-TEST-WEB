@@ -49,7 +49,6 @@
 					</v-banner>
 				</template>
 				<template v-if="groupList.total > 0 && userInfo.isLogined">
-					<!-- class="pa-2" -->
 					<v-slide-group
 						v-model="model"
 						selected-class="bg-indigo-lighten-5"
@@ -68,7 +67,6 @@
 								variant="outlined"
 								@click="toggle"
 							>
-								<!-- {{ toggle }} -->
 								<v-icon icon="mdi-dog-side"></v-icon>
 								<div class="d-flex fill-height align-center justify-center">
 									<v-scale-transition>
@@ -76,10 +74,8 @@
 									</v-scale-transition>
 								</div>
 							</v-chip>
-							<!-- </v-card> -->
 						</v-slide-group-item>
 						<v-slide-group-item>
-							<!-- color="grey-lighten-5" -->
 							<PetInsert
 								:group-info="groupInfo"
 								@update:groupList="fetchGroupList"
@@ -87,13 +83,8 @@
 						</v-slide-group-item>
 					</v-slide-group>
 				</template>
-				<!-- <v-expand-transition class="rounded-lg">
-					<v-sheet v-if="model != null"> -->
 			</v-container>
 			<v-container v-if="model != null" class="pt-0 pb-0">
-				<!-- <v-card> -->
-				<!-- <div class="d-flex justify-center"> -->
-				<!-- <v-col> -->
 				<v-card
 					class="pa-2 mb-2 rounded-xl"
 					min-width="330"
@@ -115,8 +106,6 @@
 							color="red"
 							@click="fetchDeletePetByMyGroup(myPetList[model])"
 						></v-btn>
-						<!-- @click="" -->
-						<!-- <div>•••</div> -->
 					</template>
 					<v-card-text class="pb-1">
 						<div>
@@ -140,10 +129,6 @@
 							</v-chip>
 						</div>
 					</v-card-text>
-					<!-- </v-card> -->
-					<!-- <v-card-text> ※ PET의 정보를 나타냅니다.</v-card-text> -->
-					<!-- </v-col> -->
-					<!-- </div> -->
 				</v-card>
 				<div style="display: flex; justify-content: center">
 					<v-btn
@@ -163,10 +148,6 @@
 						{{ detail.text }}</v-btn
 					>
 				</div>
-				<!-- </v-col> -->
-				<!-- </div> -->
-				<!-- </v-sheet>
-				</v-expand-transition> -->
 			</v-container>
 			<v-container>
 				<v-card-title>
@@ -183,35 +164,6 @@
 					>
 				</v-list-item>
 			</v-container>
-			<!-- <v-container>
-				<v-overlay v-model="snackbar">
-					<v-snackbar v-model="snackbar" vertical :timeout="1000000">
-						<v-card-title class="text-subtitle-1 pb-2" color="indigo">
-							This is a Pet Detail List
-						</v-card-title>
-
-						<v-list-item
-							v-for="(item, i) in detailPetInfoList"
-							:key="i"
-							:value="item"
-							active-color="primary"
-						>
-							<template v-slot:prepend>
-								<v-icon :icon="item.icon" style="margin-left: 50px"></v-icon>
-							</template>
-
-							<v-list-item-title @click="clickTest" style="cursor: pointer">
-								{{ item.text }}</v-list-item-title
-							>
-						</v-list-item>
-						<template v-slot:actions>
-							<v-btn color="indigo" variant="text" @click="snackbar = false">
-								Close
-							</v-btn>
-						</template>
-					</v-snackbar>
-				</v-overlay>
-			</v-container> -->
 		</template>
 	</TheViewLayout>
 </template>
@@ -234,7 +186,6 @@ import groupInsert from '@/components/group/GroupInsert.vue';
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
 
 const model = ref(null);
-// const snackbar = ref(false);
 
 const clickTest = () => {
 	console.log('click');
