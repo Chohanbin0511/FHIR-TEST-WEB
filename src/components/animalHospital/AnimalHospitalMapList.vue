@@ -13,7 +13,6 @@ const fetchAnimalHospitalList = async () => {
 	try {
 		const { data } = await getAnimalHospitalList();
 		itemList.value = data;
-		console.log('data', data);
 		initMap();
 	} catch (error) {
 		console.error(error);
@@ -50,7 +49,6 @@ const path1 = () => {
 			itemList.value[key]['latitude'],
 			itemList.value[key]['longitude'],
 		);
-		console.log('position', position);
 		let marker = new naver.maps.Marker({
 			map: map,
 			position: position,
@@ -71,22 +69,26 @@ const path1 = () => {
 		// 37.48345439	126.8103845
 
 		var contentString = [
+			'<div style="padding: 8px;">',
 			'<v-container>',
-			'			<v-card-item >',
+			'				<v-card class="rounded-xl">',
 			'					<div>',
 			'	          <v-card-title> ' +
 				itemList.value[key]['businessNm'] +
-				'						</v-card-title>',
-			'						<div class="text-overline mb-1">' +
+				'						</v-card-title> <br />',
+			'						<v-card-text>' +
 				itemList.value[key]['roadNameFullAddress'] +
-				'					</div>',
-			'						<div class="text-h6 mb-1">' + itemList.value[key]['tel'] + '</div>',
-			'						<div class="text-caption">',
-			' 							Greyhound divisely hello coldly fonwderfully',
-			'						</div>',
+				'					</v-card-text> <br />',
+			'						<div class="text-h6 mb-1">' + itemList.value[key]['tel']
+				? itemList.value[key]['tel']
+				: '-' + '</div>',
+			// '						<div class="text-caption">',
+			// ' 							Greyhound divisely hello coldly fonwderfully',
+			// '						</div>',
 			'					</div>',
-			'				</v-card-item>',
+			'				</v-card>',
 			'</v-container>',
+			'</div>',
 			// '<div class="iw_inner ">',
 			// '   <h3>서울특별시청</h3>',
 			// '   <p>서울특별시 중구 태평로1가 31 | 서울특별시 중구 세종대로 110 서울특별시청<br />',
@@ -100,13 +102,15 @@ const path1 = () => {
 		].join('');
 		let infoWindow = new naver.maps.InfoWindow({
 			content: contentString,
-			maxWidth: 140,
-			backgroundColor: '#eee',
-			borderColor: '#2db400',
-			borderWidth: 5,
-			anchorSize: new naver.maps.Size(30, 30),
+			maxWidth: 250,
+			backgroundColor: '#FFFFFF',
+			// backgroundColor: 'transparent',
+			borderColor: '#000000',
+			borderWidth: 1,
+			anchorSize: new naver.maps.Size(20, -10),
+			// anchorSkew: false,
 			anchorSkew: true,
-			anchorColor: '#eee',
+			anchorColor: '#FFFFFF',
 			pixelOffset: new naver.maps.Point(20, -20),
 		});
 
@@ -158,7 +162,6 @@ const getClickHandler = (seq, item) => {
 	return function () {
 		let marker = markers[seq],
 			infoWindow = infoWindows[seq];
-		console.log('seq', seq);
 		console.log('item', item);
 		if (infoWindow.getMap()) {
 			infoWindow.close();
@@ -167,9 +170,21 @@ const getClickHandler = (seq, item) => {
 		}
 	};
 };
-
+const doSomething = (latitude, longitude) => {
+	console.log('현재 좌표', '(' + latitude + ',' + longitude + ')');
+};
 onMounted(() => {
 	fetchAnimalHospitalList();
+	if ('geolocation' in navigator) {
+		/* 위치정보 사용 가능 */
+		console.log('navigator 가능', navigator);
+		navigator.geolocation.getCurrentPosition(position => {
+			doSomething(position.coords.latitude, position.coords.longitude);
+		});
+	} else {
+		/* 위치정보 사용 불가능 */
+		console.log('navigator 불가능', navigator);
+	}
 });
 </script>
 

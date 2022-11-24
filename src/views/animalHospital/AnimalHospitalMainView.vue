@@ -7,9 +7,11 @@
 					<template v-slot:prepend>
 						<v-avatar></v-avatar>
 					</template>
-					<v-banner-text> 동물병원 Map (부천시) </v-banner-text>
+					<v-banner-text class="d-flex fill-height align-center">
+						동물병원(부천시)의 위치정보를 조회할 수 있다.
+					</v-banner-text>
 				</v-banner>
-				<AnimalHospitalList> </AnimalHospitalList>
+				<AnimalHospitalMapList> </AnimalHospitalMapList>
 			</v-container>
 		</template>
 	</TheViewLayout>
@@ -17,7 +19,7 @@
 
 <script setup>
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
-import AnimalHospitalList from '@/components/animalHospital/AnimalHospitalList.vue';
+import AnimalHospitalMapList from '@/components/animalHospital/AnimalHospitalMapList.vue';
 </script>
 
 <style lang="scss" scoped></style>

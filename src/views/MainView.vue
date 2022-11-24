@@ -108,28 +108,24 @@
 									</template>
 									<v-card-text>
 										<div>
-											<v-chip class="ma-2" color="primary" variant="outlined">
-												• 종 류
-											</v-chip>
 											<span class="text-subtitle-1" style="border-radius: 1px">
+												• 종 류 :
+											</span>
+											<v-chip class="ma-2" color="primary" variant="outlined">
 												{{ myPetList[model].speices }}
-											</span>
+											</v-chip>
 										</div>
 										<div>
+											<span class="text-subtitle-1"> • 성 별 : </span>
 											<v-chip class="ma-2" color="primary" variant="outlined">
-												• 성 별
-											</v-chip>
-											<span class="text-subtitle-1">
 												{{ myPetList[model].genderStatus }}
-											</span>
+											</v-chip>
 										</div>
 										<div>
+											<span class="text-subtitle-1"> • 품 종 : </span>
 											<v-chip class="ma-2" color="primary" variant="outlined">
-												• 품 종
-											</v-chip>
-											<span class="text-subtitle-1">
 												{{ myPetList[model].breed }}
-											</span>
+											</v-chip>
 										</div>
 									</v-card-text>
 								</v-card>
