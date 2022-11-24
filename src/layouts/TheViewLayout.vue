@@ -1,7 +1,19 @@
 <template>
-	<!-- <v-card v-resize="onResize" :style="`height:${innerHeight}px;`"> -->
-	<v-layout v-resize="onResize" :style="`min-height:${innerHeight}px;`">
-		<v-app-bar color="primary" density="compact">
+	<v-layout
+		id="main-layout"
+		v-resize="onResize"
+		:style="
+			layoutHeight < windowHeight
+				? 'height:' + innerHeight + 'px;'
+				: 'height: 100%;'
+		"
+	>
+		<v-app-bar
+			color="indigo-lighten-2"
+			density="compact"
+			style="position: fixed; top: 0; width: 100%"
+			class="bg-indigo-lighten-1"
+		>
 			<template v-slot:prepend>
 				<v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 			</template>
@@ -65,7 +77,7 @@
 			</v-list>
 		</v-navigation-drawer>
 
-		<v-main>
+		<v-main style="background-color: whitesmoke">
 			<slot name="mainPanel" />
 		</v-main>
 	</v-layout>
@@ -89,8 +101,12 @@ const router = useRouter();
 const userInfo = useAuthStore().userInfo;
 // const { proxy } = getCurrentInstance();
 // screen height
+const layoutHeight = ref(0);
 const innerHeight = ref(0);
+const windowHeight = ref(0);
 onMounted(() => {
+	layoutHeight.value = document.getElementById('main-layout').clientHeight;
+	windowHeight.value = window.innerHeight;
 	innerHeight.value = window.innerHeight;
 });
 // screen resize

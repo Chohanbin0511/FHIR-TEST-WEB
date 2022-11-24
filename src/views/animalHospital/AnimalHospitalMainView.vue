@@ -1,9 +1,14 @@
 <template>
 	<TheViewLayout>
 		<template #mainPanel>
-			<v-container>
+			<v-container class="pb-0">
 				<v-card-title class="mt-2">Hospital Map</v-card-title>
-				<v-banner color="pink-darken-1" icon="mdi-account-box" lines="one">
+				<v-banner
+					color="pink-darken-1"
+					icon="mdi-account-box"
+					lines="one"
+					class="rounded-lg"
+				>
 					<template v-slot:prepend>
 						<v-avatar></v-avatar>
 					</template>
@@ -11,6 +16,8 @@
 						동물병원(부천시)의 위치정보를 조회할 수 있다.
 					</v-banner-text>
 				</v-banner>
+			</v-container>
+			<v-container>
 				<AnimalHospitalMapList> </AnimalHospitalMapList>
 			</v-container>
 		</template>

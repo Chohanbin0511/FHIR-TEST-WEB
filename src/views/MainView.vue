@@ -1,9 +1,14 @@
 <template>
 	<TheViewLayout>
 		<template #mainPanel>
-			<v-container>
+			<v-container class="pb-0">
 				<v-card-title class="mt-2"> Main </v-card-title>
-				<v-banner color="pink-darken-1" icon="mdi-account-box" lines="two">
+				<v-banner
+					class="rounded-lg"
+					color="pink-darken-1"
+					icon="mdi-account-box"
+					lines="two"
+				>
 					<template v-slot:prepend>
 						<v-avatar></v-avatar>
 					</template>
@@ -25,12 +30,15 @@
 						</groupInsert>
 					</v-banner-actions>
 				</v-banner>
+			</v-container>
+			<v-container class="pt-0 pb-0">
 				<template v-if="groupList.total > 0 && userInfo.isLogined">
-					<v-card-title class="mt-2"> Group Info</v-card-title>
+					<v-card-title> Group Info</v-card-title>
 					<v-banner
 						color="orange-darken-1"
 						icon="mdi-account-multiple"
 						lines="one"
+						class="rounded-lg"
 					>
 						<template v-slot:prepend>
 							<v-avatar> </v-avatar>
@@ -41,9 +49,9 @@
 					</v-banner>
 				</template>
 				<template v-if="groupList.total > 0 && userInfo.isLogined">
+					<!-- class="pa-2" -->
 					<v-slide-group
 						v-model="model"
-						class="pa-2"
 						selected-class="bg-primary"
 						show-arrows
 					>
@@ -55,7 +63,8 @@
 							<v-chip
 								class="ma-2"
 								:class="selectedClass"
-								color="green"
+								color="indigo-lighten-2"
+								style="background-color: white"
 								variant="outlined"
 								@click="toggle"
 							>
@@ -78,76 +87,95 @@
 						</v-slide-group-item>
 					</v-slide-group>
 				</template>
-				<v-expand-transition>
-					<v-sheet v-if="model != null" height="200">
-						<div class="d-flex justify-center">
-							<v-col>
-								<v-card
-									class="rounded-xl"
-									min-width="330"
-									:title="`${myPetList[model].name}`"
-									:subtitle="`생일 :
-							${myPetList[model].birthDate}`"
-								>
-									<template v-slot:append>
-										<v-btn
-											icon="mdi-pencil"
-											size="x-small"
-											color="green"
-											@click="clickTest"
-										></v-btn>
-										<v-btn
-											class="ml-1"
-											icon="mdi-lock-open-variant-outline"
-											size="x-small"
-											color="red"
-											@click="fetchDeletePetByMyGroup(myPetList[model])"
-										></v-btn>
-										<!-- @click="" -->
-										<!-- <div>•••</div> -->
-									</template>
-									<v-card-text>
-										<div>
-											<span class="text-subtitle-1" style="border-radius: 1px">
-												• 종 류 :
-											</span>
-											<v-chip class="ma-2" color="primary" variant="outlined">
-												{{ myPetList[model].speices }}
-											</v-chip>
-										</div>
-										<div>
-											<span class="text-subtitle-1"> • 성 별 : </span>
-											<v-chip class="ma-2" color="primary" variant="outlined">
-												{{ myPetList[model].genderStatus }}
-											</v-chip>
-										</div>
-										<div>
-											<span class="text-subtitle-1"> • 품 종 : </span>
-											<v-chip class="ma-2" color="primary" variant="outlined">
-												{{ myPetList[model].breed }}
-											</v-chip>
-										</div>
-									</v-card-text>
-								</v-card>
-							</v-col>
-						</div>
-						<!-- <div style="display: flex; justify-content: center">
-							<v-btn class="ma-3" color="primary" @click="snackbar = true">
-								상세보기
-							</v-btn>
-							<v-btn class="ma-3" color="grey"> 정보수정 </v-btn>
-							<v-btn
-								class="ma-3"
-								color="grey"
-								@click="fetchDeletePetByMyGroup(myPetList[model])"
-							>
-								펫 삭제
-							</v-btn>
-						</div> -->
-					</v-sheet>
-				</v-expand-transition>
+				<!-- <v-expand-transition class="rounded-lg">
+					<v-sheet v-if="model != null"> -->
 			</v-container>
+			<v-container v-if="model != null" class="pt-0 pb-0">
+				<!-- <v-card> -->
+				<!-- <div class="d-flex justify-center"> -->
+				<!-- <v-col> -->
+				<v-card
+					class="pa-2 mb-2 rounded-xl"
+					min-width="330"
+					:title="`${myPetList[model].name}`"
+					:subtitle="`생일 :
+							${myPetList[model].birthDate}`"
+				>
+					<template v-slot:append>
+						<v-btn
+							icon="mdi-pencil"
+							size="x-small"
+							color="green"
+							@click="clickTest"
+						></v-btn>
+						<v-btn
+							class="ml-1"
+							icon="mdi-lock-open-variant-outline"
+							size="x-small"
+							color="red"
+							@click="fetchDeletePetByMyGroup(myPetList[model])"
+						></v-btn>
+						<!-- @click="" -->
+						<!-- <div>•••</div> -->
+					</template>
+					<v-card-text class="pb-1">
+						<div>
+							<span class="text-subtitle-1" style="border-radius: 1px">
+								• 종 류 :
+							</span>
+							<v-chip color="indigo-lighten-2" variant="outlined">
+								{{ myPetList[model].speices }}
+							</v-chip>
+						</div>
+						<div>
+							<span class="text-subtitle-1"> • 성 별 : </span>
+							<v-chip class="ma-1" color="indigo-lighten-2" variant="outlined">
+								{{ myPetList[model].genderStatus }}
+							</v-chip>
+						</div>
+						<div>
+							<span class="text-subtitle-1"> • 품 종 : </span>
+							<v-chip color="indigo-lighten-2" variant="outlined">
+								{{ myPetList[model].breed }}
+							</v-chip>
+						</div>
+					</v-card-text>
+					<!-- </v-card> -->
+					<!-- <v-card-text> ※ PET의 정보를 나타냅니다.</v-card-text> -->
+					<!-- </v-col> -->
+					<!-- </div> -->
+				</v-card>
+				<div style="display: flex; justify-content: center">
+					<v-btn
+						v-for="detail in detailPetInfoList"
+						:key="detail"
+						class="ma-1"
+						:color="nowBottomTab === detail.id ? 'primary' : 'grey'"
+						@click="nowBottomTab = detail.id"
+					>
+						<template v-slot:prepend>
+							<v-icon :icon="detail.icon" size="small"></v-icon>
+						</template>
+						{{ detail.text }}</v-btn
+					>
+				</div>
+				<!-- </v-col> -->
+				<!-- </div> -->
+				<!-- </v-sheet>
+				</v-expand-transition> -->
+			</v-container>
+			<v-container>
+				<!-- <v-card-title> test</v-card-title>
+				<v-list-item v-for="i in 12" :key="i" active-color="primary">
+					<template v-slot:prepend>
+						<v-icon :icon="'mdi-pill'" style="margin-left: 50px"></v-icon>
+					</template>
 
+					<v-list-item-title @click="clickTest" style="cursor: pointer">
+						{{ i }}sssssssssssssssssssssssss</v-list-item-title
+					>
+				</v-list-item> -->
+			</v-container>
 			<!-- <v-container>
 				<v-overlay v-model="snackbar">
 					<v-snackbar v-model="snackbar" vertical :timeout="1000000">
@@ -204,12 +232,12 @@ const model = ref(null);
 const clickTest = () => {
 	console.log('click');
 };
-
-// const detailPetInfoList = ref([
-// 	{ text: '진료기록', icon: 'mdi-clipboard-text-outline' },
-// 	{ text: '알레르기', icon: 'mdi-block-helper' },
-// 	{ text: '예방접종', icon: 'mdi-pill' },
-// ]);
+const nowBottomTab = ref(1);
+const detailPetInfoList = ref([
+	{ id: 1, text: '진료기록', icon: 'mdi-clipboard-text-outline' },
+	{ id: 2, text: '알레르기', icon: 'mdi-block-helper' },
+	{ id: 3, text: '예방접종', icon: 'mdi-pill' },
+]);
 
 /**
  * 로그인 후  회원 정보 store에 담기
@@ -287,7 +315,7 @@ const fetchBundlePetList = async member => {
 		data: { entry },
 	} = await getBundle(resource);
 	myPetList.value = [];
-	model.value = null;
+	model.value = 0;
 	entry.forEach((el, idx) => {
 		let extensionArr = el.resource.extension;
 		let extension;
@@ -380,18 +408,6 @@ const expectedMyGroupSelectedPet = async petInfo => {
 		console.error(error);
 	}
 };
-/**
- * Delete patient Id
- */
-// const delteSelctedPetPatientId = async petInfo => {
-// 	try {
-// 		const response = await deletePatient(petInfo.id);
-// 		console.log('response', response);
-// 		alert('펫 삭제 성공');
-// 	} catch (error) {
-// 		console.error(error);
-// 	}
-// };
 
 onMounted(() => {
 	tokenResultSet();
