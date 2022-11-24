@@ -172,15 +172,16 @@
 				<v-card-title>
 					{{ detailPetInfoList[nowBottomTab].text }} 리스트</v-card-title
 				>
-				<!-- <v-list-item v-for="i in 12" :key="i" active-color="primary">
+				<v-list-item v-for="i in 25" :key="i" active-color="primary">
 					<template v-slot:prepend>
-						<v-icon :icon="'mdi-pill'" style="margin-left: 50px"></v-icon>
+						<v-icon :icon="detailPetInfoList[nowBottomTab].icon"></v-icon>
 					</template>
 
 					<v-list-item-title @click="clickTest" style="cursor: pointer">
-						{{ i }}sssssssssssssssssssssssss</v-list-item-title
+						{{ i }}. {{ detailPetInfoList[nowBottomTab].text }} 기록 리스트
+						샘플</v-list-item-title
 					>
-				</v-list-item> -->
+				</v-list-item>
 			</v-container>
 			<!-- <v-container>
 				<v-overlay v-model="snackbar">
