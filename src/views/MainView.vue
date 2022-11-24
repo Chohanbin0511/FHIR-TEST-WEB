@@ -52,7 +52,7 @@
 					<!-- class="pa-2" -->
 					<v-slide-group
 						v-model="model"
-						selected-class="bg-primary"
+						selected-class="bg-indigo-lighten-5"
 						show-arrows
 					>
 						<v-slide-group-item
@@ -150,7 +150,11 @@
 						v-for="detail in detailPetInfoList"
 						:key="detail"
 						class="ma-1"
-						:color="nowBottomTab === detail.id ? 'primary' : 'grey'"
+						:color="
+							nowBottomTab === detail.id
+								? 'indigo-lighten-5'
+								: 'indigo-lighten-6'
+						"
 						@click="nowBottomTab = detail.id"
 					>
 						<template v-slot:prepend>
@@ -165,8 +169,10 @@
 				</v-expand-transition> -->
 			</v-container>
 			<v-container>
-				<!-- <v-card-title> test</v-card-title>
-				<v-list-item v-for="i in 12" :key="i" active-color="primary">
+				<v-card-title>
+					{{ detailPetInfoList[nowBottomTab].text }} 리스트</v-card-title
+				>
+				<!-- <v-list-item v-for="i in 12" :key="i" active-color="primary">
 					<template v-slot:prepend>
 						<v-icon :icon="'mdi-pill'" style="margin-left: 50px"></v-icon>
 					</template>
@@ -234,9 +240,9 @@ const clickTest = () => {
 };
 const nowBottomTab = ref(1);
 const detailPetInfoList = ref([
-	{ id: 1, text: '진료기록', icon: 'mdi-clipboard-text-outline' },
-	{ id: 2, text: '알레르기', icon: 'mdi-block-helper' },
-	{ id: 3, text: '예방접종', icon: 'mdi-pill' },
+	{ id: 0, text: '진료기록', icon: 'mdi-clipboard-text-outline' },
+	{ id: 1, text: '알레르기', icon: 'mdi-block-helper' },
+	{ id: 2, text: '예방접종', icon: 'mdi-pill' },
 ]);
 
 /**
