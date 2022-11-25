@@ -149,7 +149,8 @@
 					>
 				</div>
 			</v-container>
-			<v-container class="pt-2" v-if="model != null">
+			<v-container class="pt-2">
+				<!-- <v-container class="pt-2" v-if="model != null"> -->
 				<v-card class="pa-2 rounded-xl">
 					<v-card-title>
 						{{ detailPetInfoList[nowBottomTab].text }} 리스트</v-card-title
@@ -192,7 +193,7 @@ const model = ref(null);
 const clickTest = () => {
 	console.log('click');
 };
-const nowBottomTab = ref(1);
+const nowBottomTab = ref(0);
 const detailPetInfoList = ref([
 	{ id: 0, text: '진료기록', icon: 'mdi-clipboard-text-outline' },
 	{ id: 1, text: '알레르기', icon: 'mdi-block-helper' },

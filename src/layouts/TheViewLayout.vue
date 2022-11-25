@@ -114,6 +114,19 @@ const onResize = () => {
 	innerHeight.value = window.innerHeight;
 };
 
+watch(
+	() => layoutHeight.value,
+	() => {
+		console.log('layoutHeight', layoutHeight.value);
+		console.log(
+			'layoutHeight',
+			document.getElementById('main-layout').clientHeight,
+		);
+		// innerHeight.value = window.innerHeight;
+	},
+	{ deep: true },
+);
+
 // 메뉴클릭시 이동
 const routeUrlChange = url => {
 	console.log('url', url);
