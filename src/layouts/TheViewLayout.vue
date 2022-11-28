@@ -8,6 +8,7 @@
 				: 'height: 100%;'
 		"
 	>
+		<!-- ? 'height:' + changeLayout + 'px;' -->
 		<v-app-bar
 			color="indigo-lighten-2"
 			density="compact"
@@ -24,7 +25,7 @@
 			</v-btn>
 		</v-app-bar>
 
-		<v-navigation-drawer v-model="drawer" bottom temporary>
+		<v-navigation-drawer v-model="drawer" style="position: fixed">
 			<v-list density="compact">
 				<v-card width="400" class="mt-4 mb-4">
 					<template v-slot:title> Profile </template>
@@ -89,10 +90,20 @@ import {
 	ref,
 	onMounted,
 	// getCurrentInstance,
+	// computed,
+	onUpdated,
 	watch,
 } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
+
+// const props = defineProps({
+// 	changeHeight: { type: [Number, String], default: null },
+// });
+
+// const changeLayout = computed(() => {
+// 	return innerHeight.value + props.changeHeight;
+// });
 
 const router = useRouter();
 /**
@@ -106,8 +117,13 @@ const innerHeight = ref(0);
 const windowHeight = ref(0);
 onMounted(() => {
 	layoutHeight.value = document.getElementById('main-layout').clientHeight;
+	// console.log('sss', document.getElementById('main-layout').scrollHeight);
+	// console.log('layoutHeight', layoutHeight.value);
 	windowHeight.value = window.innerHeight;
 	innerHeight.value = window.innerHeight;
+});
+onUpdated(() => {
+	console.log('onUpdated', document.getElementById('main-layout').scrollHeight);
 });
 // screen resize
 const onResize = () => {

@@ -1,5 +1,5 @@
 <template>
-	<TheViewLayout>
+	<TheViewLayout :change-height="addHeight">
 		<template #mainPanel>
 			<v-container class="pb-0">
 				<v-card-title class="mt-2"> Main </v-card-title>
@@ -140,8 +140,9 @@
 								? 'indigo-lighten-5'
 								: 'indigo-lighten-6'
 						"
-						@click="nowBottomTab = detail.id"
+						@click="changePetActList(detail, myPetList[model])"
 					>
+						<!-- @click="nowBottomTab = detail.id" -->
 						<template v-slot:prepend>
 							<v-icon :icon="detail.icon" size="small"></v-icon>
 						</template>
@@ -149,8 +150,7 @@
 					>
 				</div>
 			</v-container>
-			<v-container class="pt-2">
-				<!-- <v-container class="pt-2" v-if="model != null"> -->
+			<!-- <v-container class="pt-2" id="pet_actlist">
 				<v-card class="pa-2 rounded-xl">
 					<v-card-title>
 						{{ detailPetInfoList[nowBottomTab].text }} 리스트</v-card-title
@@ -166,7 +166,34 @@
 						>
 					</v-list-item>
 				</v-card>
-			</v-container>
+			</v-container> -->
+			<!-- <v-container>
+				<v-overlay v-model="snackbar">
+					<v-snackbar v-model="snackbar" vertical :timeout="1000000">
+						<v-card-title class="text-subtitle-1 pb-2" color="indigo">
+							This is a Pet Detail List
+						</v-card-title>
+						<v-list-item
+							v-for="(item, i) in detailPetInfoList"
+							:key="i"
+							:value="item"
+							active-color="primary"
+						>
+							<template v-slot:prepend>
+								<v-icon :icon="item.icon" style="margin-left: 50px"></v-icon>
+							</template>
+							<v-list-item-title @click="clickTest" style="cursor: pointer">
+								{{ item.text }}</v-list-item-title
+							>
+						</v-list-item>
+						<template v-slot:actions>
+							<v-btn color="indigo" variant="text" @click="snackbar = false">
+								Close
+							</v-btn>
+						</template>
+					</v-snackbar>
+				</v-overlay>
+			</v-container> -->
 		</template>
 	</TheViewLayout>
 </template>
@@ -305,6 +332,7 @@ const fetchBundlePetList = async member => {
 				: null,
 		};
 	});
+	// changePetActList(detailPetInfoList.value[0], myPetList.value[0]);
 };
 /**
  * url에 token 있는지 체크
@@ -370,9 +398,21 @@ const expectedMyGroupSelectedPet = async petInfo => {
 	}
 };
 
+const addHeight = ref(null);
+const changePetActList = (btnDetail, selectedPet) => {
+	nowBottomTab.value = btnDetail.id;
+
+	// addHeight.value = document.getElementById('pet_actlist').clientHeight;
+
+	console.log('test', addHeight.value);
+	console.log('btnDetail', btnDetail);
+	console.log('selectedPet', selectedPet);
+};
+
 onMounted(() => {
 	tokenResultSet();
 	if (oauth.accessToken) btnFetchUserInfo(oauth.accessToken);
+	// changePetActList();
 });
 </script>
 
