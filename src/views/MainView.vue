@@ -150,12 +150,12 @@
 					>
 				</div>
 			</v-container>
-			<!-- <v-container class="pt-2" id="pet_actlist">
+			<v-container class="pt-2" id="pet_actlist">
 				<v-card class="pa-2 rounded-xl">
 					<v-card-title>
 						{{ detailPetInfoList[nowBottomTab].text }} 리스트</v-card-title
 					>
-					<v-list-item v-for="i in 25" :key="i" active-color="primary">
+					<v-list-item v-for="i in 12" :key="i" active-color="primary">
 						<template v-slot:prepend>
 							<v-icon :icon="detailPetInfoList[nowBottomTab].icon"></v-icon>
 						</template>
@@ -166,7 +166,7 @@
 						>
 					</v-list-item>
 				</v-card>
-			</v-container> -->
+			</v-container>
 			<!-- <v-container>
 				<v-overlay v-model="snackbar">
 					<v-snackbar v-model="snackbar" vertical :timeout="1000000">

@@ -208,12 +208,12 @@ const items = ref([
 	/**
 	 * TODO: 진료기록 Part Main =>
 	 */
-	// {
-	// 	icon: 'mdi-clipboard-text-outline',
-	// 	title: 'Encounter',
-	// 	value: 'encounter',
-	// 	url: '/encounter/encounterMain',
-	// },
+	{
+		icon: 'mdi-clipboard-text-outline',
+		title: 'Encounter',
+		value: 'encounter',
+		url: '/encounter/encounterMain',
+	},
 	/**
 	 * TODO: 알레르기 Part Main => 모든 Patient 알레르기 => 품종 별 통계를 내서 보여주는 식(사용자가 작성한 알레르기 바탕)
 	 */
@@ -232,12 +232,12 @@ const items = ref([
 	// 	value: 'immunization',
 	// 	url: '/immunization/immunizationMain',
 	// },
-	{
-		icon: 'mdi-hospital-building',
-		title: 'AnimalHospital',
-		value: 'animalHospital',
-		url: '/animalHospital/animalHospitalMain',
-	},
+	// {
+	// 	icon: 'mdi-hospital-building',
+	// 	title: 'AnimalHospital',
+	// 	value: 'animalHospital',
+	// 	url: '/animalHospital/animalHospitalMain',
+	// },
 	// {
 	// 	icon: 'mdi-update',
 	// 	title: 'UpdateInfo',
