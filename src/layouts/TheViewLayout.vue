@@ -190,12 +190,7 @@ const items = ref([
 		value: 'Sample',
 		url: '/sdkSample/main',
 	},
-	// {
-	// 	icon: 'mdi-alarm',
-	// 	title: 'Q&A',
-	// 	value: 'qna',
-	// 	url: '/updateNote',
-	// },
+
 	/**
 	 * TODO: Main 기획 정해지면 현재 Main은 MyGroupInfo로 변경
 	 */
