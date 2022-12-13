@@ -1,5 +1,5 @@
 <template>
-	<TheViewLayout>
+	<TheViewLayout :is-change-height="isChangeHeight">
 		<template #mainPanel>
 			<v-container>
 				<v-card-title class="mt-2">Encounter Main</v-card-title>
@@ -15,9 +15,6 @@
 					<v-banner-text class="d-flex fill-height align-center">
 						Pet의 진료기록을 기록/관리 가능합니다
 					</v-banner-text>
-					<!-- <v-banner-actions class="mt-1">
-						<v-btn>로그인 하기</v-btn>
-					</v-banner-actions> -->
 				</v-banner>
 			</v-container>
 			<v-container>
@@ -38,8 +35,36 @@
 					지도로 병원 찾기</v-btn
 				>
 			</v-container>
-			<v-container>
-				<AnimalHospitalList> </AnimalHospitalList>
+			<v-container v-if="itemList.length > 0">
+				<v-row>
+					<v-col
+						class="pb-0"
+						v-for="item in itemList"
+						:key="item"
+						cols="12"
+						sm="6"
+						md="4"
+						lg="3"
+					>
+						<v-card
+							class="mx-auto mb-1"
+							max-width="400"
+							variant="outlined"
+							rounded="xl"
+							style="background-color: ghostwhite"
+						>
+							<v-card-item>
+								<v-card-title>{{ item.businessNm }}</v-card-title>
+
+								<v-divider class="mx-4 mb-1"></v-divider>
+								<v-card-subtitle>
+									<span class="mr-1">{{ item.fullAddressOfLocation }}</span>
+								</v-card-subtitle>
+							</v-card-item>
+							<v-card-text> 전화번호 : {{ item.tel }} </v-card-text>
+						</v-card>
+					</v-col>
+				</v-row>
 			</v-container>
 		</template>
 	</TheViewLayout>
@@ -47,7 +72,82 @@
 
 <script setup>
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
-import AnimalHospitalList from '../../components/animalHospital/AnimalHospitalList.vue';
+import { ref, onMounted } from 'vue';
+import { onBeforeRouteLeave } from 'vue-router';
+import { getPageAnimalHospitalList } from '@/api/animalHospitalApi';
+import { handleScroll } from '@/composables/handleScroll';
+
+const loading = ref(true);
+const totalSearchParams = ref({
+	_sort: 'id',
+});
+const totalCount = ref(null);
+const totalPage = ref(null);
+const fetchTotalAnimalHospitalCount = async () => {
+	try {
+		const { data } = await getPageAnimalHospitalList(totalSearchParams.value);
+		totalCount.value = data.length;
+		totalPage.value = Math.ceil(data.length / searchParams.value._limit);
+	} catch (error) {
+		console.error(error);
+	}
+};
+
+const searchParams = ref({
+	_page: 1,
+	_limit: 10,
+	_sort: 'id',
+});
+const itemList = ref([]);
+const nowPage = ref(0);
+const nextPass = ref(false);
+const isChangeHeight = ref(false);
+const fetchAnimalHospitalList = async () => {
+	loading.value = true;
+	isChangeHeight.value = false;
+	try {
+		nowPage.value++;
+		searchParams.value._page = nowPage.value;
+		const { data } = await getPageAnimalHospitalList(searchParams.value);
+		nextPass.value = true;
+		itemList.value = [...itemList.value, ...data];
+		console.log('data', data);
+		isChangeHeight.value = true;
+		loading.value = false;
+	} catch (error) {
+		console.error(error);
+	}
+};
+
+/**
+ * 스크롤처리
+ */
+const handleScrollAct = () => {
+	let result = handleScroll();
+	if (
+		result &&
+		totalPage.value > nowPage.value &&
+		nextPass.value &&
+		!loading.value
+	) {
+		console.log('***************next*****************');
+		nextPass.value = false;
+		fetchAnimalHospitalList();
+	}
+};
+
+onMounted(() => {
+	fetchAnimalHospitalList();
+	fetchTotalAnimalHospitalCount();
+
+	window.addEventListener('scroll', handleScrollAct);
+});
+
+onBeforeRouteLeave(() => {
+	console.log('stop scroll');
+	// 다른 곳에서 스크롤 못하게
+	window.removeEventListener('scroll', handleScrollAct);
+});
 </script>
 
 <style lang="scss" scoped></style>

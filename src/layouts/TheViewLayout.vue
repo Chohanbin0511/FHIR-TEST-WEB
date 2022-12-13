@@ -8,7 +8,6 @@
 				: 'height: 100%;'
 		"
 	>
-		<!-- ? 'height:' + changeLayout + 'px;' -->
 		<v-app-bar
 			color="indigo-lighten-2"
 			density="compact"
@@ -86,66 +85,53 @@
 </template>
 
 <script setup>
-import {
-	ref,
-	onMounted,
-	// getCurrentInstance,
-	// computed,
-	onUpdated,
-	watch,
-} from 'vue';
+import { ref, onMounted, toRefs, onUpdated, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
 
-// const props = defineProps({
-// 	changeHeight: { type: [Number, String], default: null },
-// });
+const props = defineProps({
+	isChangeHeight: { type: Boolean, default: false },
+});
 
-// const changeLayout = computed(() => {
-// 	return innerHeight.value + props.changeHeight;
-// });
+const { isChangeHeight } = toRefs(props);
 
 const router = useRouter();
 /**
  * 유저 정보
  */
 const userInfo = useAuthStore().userInfo;
-// const { proxy } = getCurrentInstance();
-// screen height
 const layoutHeight = ref(0);
 const innerHeight = ref(0);
 const windowHeight = ref(0);
 onMounted(() => {
+	console.log('onMounted');
 	layoutHeight.value = document.getElementById('main-layout').clientHeight;
-	// console.log('sss', document.getElementById('main-layout').scrollHeight);
-	// console.log('layoutHeight', layoutHeight.value);
 	windowHeight.value = window.innerHeight;
 	innerHeight.value = window.innerHeight;
 });
 onUpdated(() => {
 	console.log('onUpdated', document.getElementById('main-layout').scrollHeight);
+	// innerHeight.value = window.innerHeight;
 });
 // screen resize
 const onResize = () => {
+	console.log('onResize');
 	innerHeight.value = window.innerHeight;
 };
 
 watch(
-	() => layoutHeight.value,
+	() => isChangeHeight.value,
 	() => {
-		console.log('layoutHeight', layoutHeight.value);
-		console.log(
-			'layoutHeight',
-			document.getElementById('main-layout').clientHeight,
-		);
-		// innerHeight.value = window.innerHeight;
+		if (isChangeHeight.value) {
+			console.log('!!');
+			layoutHeight.value = document.getElementById('main-layout').clientHeight;
+		}
 	},
 	{ deep: true },
 );
 
 // 메뉴클릭시 이동
 const routeUrlChange = url => {
-	console.log('url', url);
 	router.push(url);
 };
 

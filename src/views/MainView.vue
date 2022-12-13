@@ -1,5 +1,5 @@
 <template>
-	<TheViewLayout :change-height="addHeight">
+	<TheViewLayout :is-change-height="isChangeHeight">
 		<template #mainPanel>
 			<v-container class="pb-0">
 				<v-card-title class="mt-2"> Main </v-card-title>
@@ -142,7 +142,6 @@
 						"
 						@click="changePetActList(detail, myPetList[model])"
 					>
-						<!-- @click="nowBottomTab = detail.id" -->
 						<template v-slot:prepend>
 							<v-icon :icon="detail.icon" size="small"></v-icon>
 						</template>
@@ -150,16 +149,23 @@
 					>
 				</div>
 			</v-container>
-			<v-container class="pt-2" id="pet_actlist">
+			<v-container
+				class="pt-2"
+				id="pet_actlist"
+				v-if="userInfo.isLogined && model != null"
+			>
 				<v-card class="pa-2 rounded-xl">
 					<v-card-title>
 						{{ detailPetInfoList[nowBottomTab].text }} 리스트</v-card-title
 					>
-					<v-list-item v-for="i in 12" :key="i" active-color="primary">
+					<v-list-item
+						v-for="i in detailPetInfoList[nowBottomTab].length"
+						:key="i"
+						active-color="primary"
+					>
 						<template v-slot:prepend>
 							<v-icon :icon="detailPetInfoList[nowBottomTab].icon"></v-icon>
 						</template>
-
 						<v-list-item-title @click="clickTest" style="cursor: pointer">
 							{{ i }}. {{ detailPetInfoList[nowBottomTab].text }} 기록 리스트
 							샘플</v-list-item-title
@@ -199,7 +205,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { getTokenAuthCodeResult } from '@/api/oauthApi';
 import {
@@ -222,9 +228,9 @@ const clickTest = () => {
 };
 const nowBottomTab = ref(0);
 const detailPetInfoList = ref([
-	{ id: 0, text: '진료기록', icon: 'mdi-clipboard-text-outline' },
-	{ id: 1, text: '알레르기', icon: 'mdi-block-helper' },
-	{ id: 2, text: '예방접종', icon: 'mdi-pill' },
+	{ id: 0, text: '진료기록', icon: 'mdi-clipboard-text-outline', length: 4 },
+	{ id: 1, text: '알레르기', icon: 'mdi-block-helper', length: 10 },
+	{ id: 2, text: '예방접종', icon: 'mdi-pill', length: 20 },
 ]);
 
 /**
@@ -304,6 +310,7 @@ const fetchBundlePetList = async member => {
 	} = await getBundle(resource);
 	myPetList.value = [];
 	model.value = 0;
+
 	entry.forEach((el, idx) => {
 		let extensionArr = el.resource.extension;
 		let extension;
@@ -332,7 +339,8 @@ const fetchBundlePetList = async member => {
 				: null,
 		};
 	});
-	// changePetActList(detailPetInfoList.value[0], myPetList.value[0]);
+	// 진료기록 리스트 on
+	changePetActList(detailPetInfoList.value[0], myPetList.value[0]);
 };
 /**
  * url에 token 있는지 체크
@@ -398,22 +406,30 @@ const expectedMyGroupSelectedPet = async petInfo => {
 	}
 };
 
-const addHeight = ref(null);
+const isChangeHeight = ref(false);
 const changePetActList = (btnDetail, selectedPet) => {
+	isChangeHeight.value = false;
 	nowBottomTab.value = btnDetail.id;
-
-	// addHeight.value = document.getElementById('pet_actlist').clientHeight;
-
-	console.log('test', addHeight.value);
+	// fhir 조회예정
+	console.log('test', isChangeHeight.value);
 	console.log('btnDetail', btnDetail);
 	console.log('selectedPet', selectedPet);
+	isChangeHeight.value = true;
 };
 
 onMounted(() => {
 	tokenResultSet();
 	if (oauth.accessToken) btnFetchUserInfo(oauth.accessToken);
-	// changePetActList();
 });
+
+watch(
+	() => model.value,
+	() => {
+		console.log('model', model.value);
+		changePetActList(detailPetInfoList.value[0], myPetList.value[model.value]);
+	},
+	{ deep: true },
+);
 </script>
 
 <style lang="scss" scoped></style>

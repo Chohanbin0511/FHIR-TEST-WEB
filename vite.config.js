@@ -1,11 +1,6 @@
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
-// import Inspect from 'vite-plugin-inspect';
-// import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
-// import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfill';
-// import rollupNodePolyFill from 'rollup-plugin-node-polyfills';
-// import fhir from 'fhir.js';
-// import createFhir from './src/plugins/vite-plugin-fhir';
+
 import vue from '@vitejs/plugin-vue';
 
 // https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
@@ -15,11 +10,7 @@ import vuetify from 'vite-plugin-vuetify';
 export default defineConfig({
 	build: {
 		rollupOptions: {
-			plugins: [
-				// Enable rollup polyfills plugin
-				// used during production bundling
-				// rollupNodePolyFill(),
-			],
+			plugins: [],
 		},
 	},
 	plugins: [
