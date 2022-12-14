@@ -95,7 +95,7 @@ const fetchTotalAnimalHospitalCount = async () => {
 
 const searchParams = ref({
 	_page: 1,
-	_limit: 10,
+	_limit: 30,
 	_sort: 'id',
 });
 const itemList = ref([]);
