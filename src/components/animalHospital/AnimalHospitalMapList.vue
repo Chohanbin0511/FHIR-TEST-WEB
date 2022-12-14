@@ -1,7 +1,5 @@
 <template>
-	<!-- <v-container> -->
 	<div id="map" style="width: 100%; height: 400px"></div>
-	<!-- </v-container> -->
 </template>
 
 <script setup>
@@ -26,7 +24,6 @@ let infoWindows = [];
 
 const initMap = () => {
 	map = new naver.maps.Map('map', {
-		// Default 춘천 => 변경 가능 ex=> 내위치
 		center: new naver.maps.LatLng(37.49309157, 126.7908841),
 		zoom: 13,
 	});
@@ -34,14 +31,6 @@ const initMap = () => {
 
 	path1();
 };
-
-// const hospitalIcon = ref(null);
-
-// onMounted(async () => {
-// 	hospitalIcon.value[0] = (
-// 		await import(/* @vite-ignore */ './../src/assets/icons/test_icon.png')
-// 	).default;
-// });
 
 const path1 = () => {
 	for (let key in itemList.value) {
@@ -66,7 +55,6 @@ const path1 = () => {
 			},
 			zIndex: 100,
 		});
-		// 37.48345439	126.8103845
 
 		var contentString = [
 			'<div style="padding: 8px;">',

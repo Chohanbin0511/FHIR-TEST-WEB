@@ -236,7 +236,6 @@ const model = ref(null);
 
 const innerHeight = ref(0);
 
-// onUpdated(() => {});
 const updateInnerHeight = () => {
 	innerHeight.value = window.innerHeight;
 };
@@ -267,7 +266,6 @@ const btnFetchUserInfo = async token => {
 	};
 	await OpenAPI.fetchUserInfo(configToken)
 		.then(response => {
-			console.log('response', response);
 			SET_LOGIN(response);
 			router.replace('/');
 			fetchGroupList();
@@ -388,7 +386,6 @@ const fetchDeletePetByMyGroup = petInfo => {
  * Selected Pet expected at My Group
  */
 const expectedMyGroupSelectedPet = async petInfo => {
-	console.log('petInfo', petInfo);
 	let memberList = groupList.value.memberList;
 	let findIndex = memberList.findIndex(
 		i => i.entity.reference === `Patient/${petInfo.id}`,
@@ -398,7 +395,6 @@ const expectedMyGroupSelectedPet = async petInfo => {
 	} else {
 		delete memberList[findIndex];
 	}
-	console.log('memeberList', memberList);
 	const resource = {
 		resourceType: 'Group',
 		identifier: [
@@ -438,7 +434,6 @@ onMounted(() => {
 watch(
 	() => model.value,
 	() => {
-		console.log('model', model.value);
 		changePetActList(detailPetInfoList.value[0], myPetList.value[model.value]);
 	},
 	{ deep: true },

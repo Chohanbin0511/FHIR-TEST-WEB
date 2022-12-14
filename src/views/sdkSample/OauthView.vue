@@ -28,15 +28,12 @@
 				<h4>FetchTokenPassword 정보 입력</h4>
 				<v-card class="ma-2 pa-4">
 					<v-form class="justify-center mb-6" ref="form">
-						<!-- :style="`width:50%;`" -->
-						<!-- :rules="nameRules" -->
 						<v-text-field
 							v-model="userId"
 							:counter="10"
 							label="UserId"
 							required
 						></v-text-field>
-						<!-- :rules="emailRules" -->
 						<v-text-field
 							v-model="userPw"
 							label="Password"
@@ -48,7 +45,6 @@
 				</v-card>
 			</v-container>
 
-			<!-- <button @click="btnTokenRefresh()">Refresh Token</button> -->
 			<v-container>
 				<h3>Token Result</h3>
 			</v-container>
@@ -89,20 +85,18 @@
 							color="red"
 							style="margin-left: 50%; margin-top: 50px"
 						></v-progress-circular>
-						<!-- class="justify-center" -->
 						<template v-else>
 							{{ oauthResult }}
 						</template>
 					</v-card-text>
 				</v-card>
 			</v-container>
-			<!-- <textarea id="token_display" cols="100" rows="20"></textarea> -->
 		</template>
 	</TheViewLayout>
 </template>
 
 <script setup>
-import { onMounted, ref, watch, onUpdated } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
 import {
@@ -215,7 +209,6 @@ const FetchTokenClient = async () => {
 		SET_OAUTH(response);
 		oauthResult.value = response;
 		oauthType.value = getTokenBtnList.value[2].title;
-		// btnFetchUserInfo();
 	} catch (error) {
 		console.error(error);
 	} finally {
@@ -238,7 +231,6 @@ const FetchTokenPassword = async () => {
 	let userInfo = {
 		userId: userId.value,
 		userPw: sha256(userPw.value),
-		// userPw: '2fa1ecf9826474fe8e18a96441c94a500cd968454eeb05ed056d0918e19cd118',
 	};
 	try {
 		const response = await getTokenPassword(userInfo);
@@ -246,7 +238,6 @@ const FetchTokenPassword = async () => {
 		SET_OAUTH(response);
 		oauthType.value = getTokenBtnList.value[3].title;
 		refreshToken.value = response.refresh_token;
-		// btnFetchUserInfo();
 	} catch (error) {
 		console.error(error);
 	} finally {
@@ -259,11 +250,9 @@ const FetchTokenPassword = async () => {
  */
 const fetchRefreshToken = async () => {
 	const response = await getTokenRefresh(refreshToken.value);
-	console.log('response', response);
 	SET_OAUTH(response);
 	oauthResult.value = response;
 	refreshToken.value = null;
-	// btnFetchUserInfo();
 };
 
 let lhash = ref(location.hash);
@@ -282,12 +271,10 @@ const tokenResultSet = async () => {
 		SET_OAUTH(response);
 		oauthType.value = getTokenBtnList.value[0].title;
 		refreshToken.value = response.refresh_token;
-		// btnFetchUserInfo();
 	} else {
 		return;
 	}
 };
-// const oauth = useAuthStore().oauth;
 
 // 회원 정보 조회
 const btnFetchUserInfo = async token => {
@@ -297,7 +284,6 @@ const btnFetchUserInfo = async token => {
 	};
 	await OpenAPI.fetchUserInfo(configToken)
 		.then(response => {
-			console.log('response', response);
 			SET_LOGIN(response);
 		})
 		.catch(error => {
@@ -312,17 +298,12 @@ onMounted(() => {
 watch(
 	() => oauthResult.value,
 	() => {
-		console.log('oauthResult', oauthResult.value);
 		if (oauthResult.value) {
 			btnFetchUserInfo(oauthResult.value.access_token);
 		}
 	},
 	{ deep: true },
 );
-
-onUpdated(() => {
-	// console.log('oauth', oauth);
-});
 </script>
 
 <style lang="scss" scoped></style>

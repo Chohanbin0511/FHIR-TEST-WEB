@@ -86,7 +86,6 @@ function setAuthInterceptors_client(instance) {
 	instance.interceptors.request.use(
 		function (config) {
 			// Do something before request is sent
-			// console.log(config);
 			config.headers = {
 				'Content-Type': 'application/json;charset=utf-8',
 				Authorization: `Bearer ${token}`,

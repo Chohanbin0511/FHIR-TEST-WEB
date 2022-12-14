@@ -130,7 +130,6 @@ const btnPatientCreate = async title => {
 
 	try {
 		const response = await createPatient(resource);
-		console.log('response', response);
 		apiResult.value = response;
 	} catch (error) {
 		console.error(error);

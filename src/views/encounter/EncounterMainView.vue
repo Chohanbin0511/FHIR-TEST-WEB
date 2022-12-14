@@ -109,7 +109,6 @@ const fetchAnimalHospitalList = async () => {
 		const { data } = await getPageAnimalHospitalList(searchParams.value);
 		nextPass.value = true;
 		itemList.value = [...itemList.value, ...data];
-		console.log('data', data);
 		loading.value = false;
 	} catch (error) {
 		console.error(error);
@@ -141,7 +140,6 @@ onMounted(() => {
 });
 
 onBeforeRouteLeave(() => {
-	console.log('stop scroll');
 	// 다른 곳에서 스크롤 못하게
 	window.removeEventListener('scroll', handleScrollAct);
 });
