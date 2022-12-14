@@ -64,25 +64,14 @@
 						<v-slide-group-item
 							v-for="(item, idx) in myPetList"
 							:key="item"
-							v-slot="{ toggle, selectedClass }"
+							v-slot="{ toggle }"
 						>
-							<!-- <v-chip
-								class="ma-2"
-								:class="selectedClass"
-								color="indigo-lighten-2"
-								style="background-color: white"
-								variant="outlined"
-								@click="toggle"
-							> -->
-							<!-- :disabled="model === idx" -->
-							<!-- color="indigo-lighten-2" -->
-							<!-- :class="selectedClass" -->
 							<v-chip
 								class="ma-2"
 								:color="model === idx ? 'white' : 'indigo-lighten-2'"
 								:style="
 									model === idx
-										? 'background-color: black'
+										? 'background-color: blue'
 										: 'background-color: white'
 								"
 								variant="outlined"
