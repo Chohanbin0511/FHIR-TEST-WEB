@@ -2,7 +2,7 @@
   "fhirTestWeb_animalHospital" :   [
       {
       "id": 1,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824377",
       "city": "부천시",
       "businessNm": "가람동물병원",
       "licensedDt": 20051117,
@@ -21,7 +21,7 @@
       },
       {
       "id": 2,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824378",
       "city": "부천시",
       "businessNm": "행복한동물병원",
       "licensedDt": 20031017,
@@ -40,7 +40,7 @@
       },
       {
       "id": 3,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824381",
       "city": "부천시",
       "businessNm": "다솜동물병원",
       "licensedDt": 20051214,
@@ -59,7 +59,7 @@
       },
       {
       "id": 4,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824383",
       "city": "부천시",
       "businessNm": "로뎀종합동물병원",
       "licensedDt": 20060308,
@@ -77,7 +77,7 @@
       },
       {
       "id": 5,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824385",
       "city": "부천시",
       "businessNm": "24시해든동물메디컬센터",
       "licensedDt": 20160601,
@@ -96,7 +96,7 @@
       },
       {
       "id": 6,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824387",
       "city": "부천시",
       "businessNm": "기린동물병원",
       "licensedDt": 20130403,
@@ -115,7 +115,7 @@
       },
       {
       "id": 7,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824389",
       "city": "부천시",
       "businessNm": "부천준동물병원",
       "licensedDt": 20110803,
@@ -134,7 +134,7 @@
       },
       {
       "id": 8,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824391",
       "city": "부천시",
       "businessNm": "아이러브펫동물병원",
       "licensedDt": 20100907,
@@ -153,7 +153,7 @@
       },
       {
       "id": 9,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824393",
       "city": "부천시",
       "businessNm": "노엘동물병원",
       "licensedDt": 20140410,
@@ -172,7 +172,7 @@
       },
       {
       "id": 10,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824395",
       "city": "부천시",
       "businessNm": "부천24시SKY동물메디컬센터",
       "licensedDt": 20110406,
@@ -189,7 +189,7 @@
       },
       {
       "id": 11,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824397",
       "city": "부천시",
       "businessNm": "라임동물병원",
       "licensedDt": 20070108,
@@ -208,7 +208,7 @@
       },
       {
       "id": 12,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824399",
       "city": "부천시",
       "businessNm": "가야동물병원",
       "licensedDt": 20100205,
@@ -227,7 +227,7 @@
       },
       {
       "id": 13,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824401",
       "city": "부천시",
       "businessNm": "CJ동물병원",
       "licensedDt": 20131016,
@@ -246,7 +246,7 @@
       },
       {
       "id": 14,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824403",
       "city": "부천시",
       "businessNm": "우리앤동물병원",
       "licensedDt": 20140701,
@@ -265,7 +265,7 @@
       },
       {
       "id": 15,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824405",
       "city": "부천시",
       "businessNm": "쿨펫동물병원(이마트 중동점)",
       "licensedDt": 20161020,
@@ -284,7 +284,7 @@
       },
       {
       "id": 16,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824407",
       "city": "부천시",
       "businessNm": "늘봄 동물병원",
       "licensedDt": 20171208,
@@ -303,7 +303,7 @@
       },
       {
       "id": 17,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824409",
       "city": "부천시",
       "businessNm": "미르 동물병원",
       "licensedDt": 19990531,
@@ -322,7 +322,7 @@
       },
       {
       "id": 18,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824411",
       "city": "부천시",
       "businessNm": "엘림동물병원",
       "licensedDt": 20060417,
@@ -340,7 +340,7 @@
       },
       {
       "id": 19,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824413",
       "city": "부천시",
       "businessNm": "고강동물병원",
       "licensedDt": 19980216,
@@ -359,7 +359,7 @@
       },
       {
       "id": 20,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824415",
       "city": "부천시",
       "businessNm": "샐리동물병원",
       "licensedDt": 19960816,
@@ -378,7 +378,7 @@
       },
       {
       "id": 21,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824417",
       "city": "부천시",
       "businessNm": "소풍동물병원",
       "licensedDt": 20120502,
@@ -397,7 +397,7 @@
       },
       {
       "id": 22,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824419",
       "city": "부천시",
       "businessNm": "하노바동물병원",
       "licensedDt": 20081128,
@@ -416,7 +416,7 @@
       },
       {
       "id": 23,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824421",
       "city": "부천시",
       "businessNm": "훈 동물병원",
       "licensedDt": 20170426,
@@ -435,7 +435,7 @@
       },
       {
       "id": 24,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824423",
       "city": "부천시",
       "businessNm": "수동물병원",
       "licensedDt": 20060504,
@@ -454,7 +454,7 @@
       },
       {
       "id": 25,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824425",
       "city": "부천시",
       "businessNm": "소사프라임동물병원",
       "licensedDt": 20060814,
@@ -472,7 +472,7 @@
       },
       {
       "id": 26,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824427",
       "city": "부천시",
       "businessNm": "위더스동물병원",
       "licensedDt": 20110316,
@@ -491,7 +491,7 @@
       },
       {
       "id": 27,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824429",
       "city": "부천시",
       "businessNm": "동물사랑병원",
       "licensedDt": 20061226,
@@ -510,7 +510,7 @@
       },
       {
       "id": 28,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824431",
       "city": "부천시",
       "businessNm": "24시 이지동물의료센터",
       "licensedDt": 20110629,
@@ -529,7 +529,7 @@
       },
       {
       "id": 29,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824433",
       "city": "부천시",
       "businessNm": "바로 동물병원",
       "licensedDt": 20160525,
@@ -548,7 +548,7 @@
       },
       {
       "id": 30,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824435",
       "city": "부천시",
       "businessNm": "24시 아이동물메디컬센터",
       "licensedDt": 20000320,
@@ -567,7 +567,7 @@
       },
       {
       "id": 31,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824437",
       "city": "부천시",
       "businessNm": "맘스동물의료센터",
       "licensedDt": 20160525,
@@ -585,7 +585,7 @@
       },
       {
       "id": 32,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824439",
       "city": "부천시",
       "businessNm": "포근한동물병원",
       "licensedDt": 20080714,
@@ -603,7 +603,7 @@
       },
       {
       "id": 33,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824441",
       "city": "부천시",
       "businessNm": "서울 베스트 동물병원",
       "licensedDt": 20100910,
@@ -621,7 +621,7 @@
       },
       {
       "id": 34,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824442",
       "city": "부천시",
       "businessNm": "하모니동물병원",
       "licensedDt": 20080922,
@@ -640,7 +640,7 @@
       },
       {
       "id": 35,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824443",
       "city": "부천시",
       "businessNm": "원종동물병원",
       "licensedDt": 20150305,
@@ -658,7 +658,7 @@
       },
       {
       "id": 36,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824444",
       "city": "부천시",
       "businessNm": "신세계동물병원",
       "licensedDt": 20110525,
@@ -677,7 +677,7 @@
       },
       {
       "id": 37,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824445",
       "city": "부천시",
       "businessNm": "월드펫동물종합병원중동역점",
       "licensedDt": 20110427,
@@ -696,7 +696,7 @@
       },
       {
       "id": 38,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824446",
       "city": "부천시",
       "businessNm": "조규만외과동물병원",
       "licensedDt": 20020709,
@@ -715,7 +715,7 @@
       },
       {
       "id": 39,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824447",
       "city": "부천시",
       "businessNm": "큐피트동물병원",
       "licensedDt": 20061026,
@@ -734,7 +734,7 @@
       },
       {
       "id": 40,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824448",
       "city": "부천시",
       "businessNm": "현대동물병원",
       "licensedDt": 20070425,
@@ -753,7 +753,7 @@
       },
       {
       "id": 41,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824449",
       "city": "부천시",
       "businessNm": "햇빛 동물병원",
       "licensedDt": 20100713,
@@ -772,7 +772,7 @@
       },
       {
       "id": 42,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824450",
       "city": "부천시",
       "businessNm": "가나동물병원",
       "licensedDt": 20050608,
@@ -791,7 +791,7 @@
       },
       {
       "id": 43,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824451",
       "city": "부천시",
       "businessNm": "S동물병원",
       "licensedDt": 20130319,
@@ -810,7 +810,7 @@
       },
       {
       "id": 44,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824452",
       "city": "부천시",
       "businessNm": "더본 동물병원",
       "licensedDt": 20160511,
@@ -829,7 +829,7 @@
       },
       {
       "id": 45,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824453",
       "city": "부천시",
       "businessNm": "다나동물병원",
       "licensedDt": 20050519,
@@ -848,7 +848,7 @@
       },
       {
       "id": 46,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824454",
       "city": "부천시",
       "businessNm": "정종합동물병원",
       "licensedDt": 19971213,
@@ -867,7 +867,7 @@
       },
       {
       "id": 47,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824455",
       "city": "부천시",
       "businessNm": "상동물병원",
       "licensedDt": 20020726,
@@ -886,7 +886,7 @@
       },
       {
       "id": 48,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824456",
       "city": "부천시",
       "businessNm": "팜펫동물병원",
       "licensedDt": 20061206,
@@ -905,7 +905,7 @@
       },
       {
       "id": 49,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824457",
       "city": "부천시",
       "businessNm": "비엔동물전문의료센터",
       "licensedDt": 20180618,
@@ -924,7 +924,7 @@
       },
       {
       "id": 50,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824458",
       "city": "부천시",
       "businessNm": "온유동물병원",
       "licensedDt": 20040812,
@@ -943,7 +943,7 @@
       },
       {
       "id": 51,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824459",
       "city": "부천시",
       "businessNm": "채움동물병원",
       "licensedDt": 20200116,
@@ -962,7 +962,7 @@
       },
       {
       "id": 52,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824460",
       "city": "부천시",
       "businessNm": "TLC 동물의료센터",
       "licensedDt": 20190218,
@@ -980,7 +980,7 @@
       },
       {
       "id": 53,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824461",
       "city": "부천시",
       "businessNm": "런던동물병원",
       "licensedDt": 20170925,
@@ -999,7 +999,7 @@
       },
       {
       "id": 54,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824462",
       "city": "부천시",
       "businessNm": "보우동물병원",
       "licensedDt": 20161220,
@@ -1018,7 +1018,7 @@
       },
       {
       "id": 55,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824463",
       "city": "부천시",
       "businessNm": "정다운동물병원",
       "licensedDt": 20220922,
@@ -1036,7 +1036,7 @@
       },
       {
       "id": 56,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824464",
       "city": "부천시",
       "businessNm": "옥길아라동물의료센터",
       "licensedDt": 20210409,
@@ -1055,7 +1055,7 @@
       },
       {
       "id": 57,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824465",
       "city": "부천시",
       "businessNm": "부천종합동물병원",
       "licensedDt": 20090701,
@@ -1074,7 +1074,7 @@
       },
       {
       "id": 58,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824466",
       "city": "부천시",
       "businessNm": "리움 동물의료센터",
       "licensedDt": 20221103,
@@ -1092,7 +1092,7 @@
       },
       {
       "id": 59,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824467",
       "city": "부천시",
       "businessNm": "나음동물병원",
       "licensedDt": 20120918,
@@ -1111,7 +1111,7 @@
       },
       {
       "id": 60,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824468",
       "city": "부천시",
       "businessNm": "마리동물병원",
       "licensedDt": 20160722,
@@ -1130,7 +1130,7 @@
       },
       {
       "id": 61,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824469",
       "city": "부천시",
       "businessNm": "지중해동물병원",
       "licensedDt": 20141210,
@@ -1149,7 +1149,7 @@
       },
       {
       "id": 62,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824470",
       "city": "부천시",
       "businessNm": "Be 동물병원",
       "licensedDt": 20081010,
@@ -1168,7 +1168,7 @@
       },
       {
       "id": 63,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824471",
       "city": "부천시",
       "businessNm": "24시 웰니스 동물 의료센터",
       "licensedDt": 20190308,
@@ -1187,7 +1187,7 @@
       },
       {
       "id": 64,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824472",
       "city": "부천시",
       "businessNm": "중동동물병원",
       "licensedDt": 19971103,
@@ -1206,7 +1206,7 @@
       },
       {
       "id": 65,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824473",
       "city": "부천시",
       "businessNm": "연은동물병원",
       "licensedDt": 20031224,
@@ -1225,7 +1225,7 @@
       },
       {
       "id": 66,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824474",
       "city": "부천시",
       "businessNm": "아름다운동물병원",
       "licensedDt": 20030723,
@@ -1244,7 +1244,7 @@
       },
       {
       "id": 67,
-      "organizationId": "Organization/",
+      "organizationId": "Organization/824475",
       "city": "부천시",
       "businessNm": "쓰담동물병원",
       "licensedDt": 20170512,

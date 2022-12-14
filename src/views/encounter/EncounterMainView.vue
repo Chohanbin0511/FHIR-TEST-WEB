@@ -52,6 +52,7 @@
 							variant="outlined"
 							rounded="xl"
 							style="background-color: ghostwhite"
+							@click="clickHospitalDetail(item)"
 						>
 							<v-card-item>
 								<v-card-title>{{ item.businessNm }}</v-card-title>
@@ -86,6 +87,7 @@ const totalPage = ref(null);
 const fetchTotalAnimalHospitalCount = async () => {
 	try {
 		const { data } = await getPageAnimalHospitalList(totalSearchParams.value);
+		console.log('data', data);
 		totalCount.value = data.length;
 		totalPage.value = Math.ceil(data.length / searchParams.value._limit);
 	} catch (error) {
@@ -113,6 +115,13 @@ const fetchAnimalHospitalList = async () => {
 	} catch (error) {
 		console.error(error);
 	}
+};
+
+/**
+ * 병원 클릭
+ */
+const clickHospitalDetail = item => {
+	console.log('Clicked item!', item);
 };
 
 /**
