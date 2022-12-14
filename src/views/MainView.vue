@@ -1,7 +1,11 @@
 <template>
 	<TheViewLayout
 		@update:innerHeight="updateInnerHeight"
-		:style="!userInfo.isLogined ? 'height:' + innerHeight + 'px;' : ''"
+		:style="
+			!userInfo.isLogined || myPetList.length === 0
+				? 'height:' + innerHeight + 'px;'
+				: ''
+		"
 	>
 		<template #mainPanel>
 			<v-container class="pb-0">
@@ -58,17 +62,32 @@
 						show-arrows
 					>
 						<v-slide-group-item
-							v-for="item in myPetList"
+							v-for="(item, idx) in myPetList"
 							:key="item"
 							v-slot="{ toggle, selectedClass }"
 						>
-							<v-chip
+							<!-- <v-chip
 								class="ma-2"
 								:class="selectedClass"
 								color="indigo-lighten-2"
 								style="background-color: white"
 								variant="outlined"
 								@click="toggle"
+							> -->
+							<!-- :disabled="model === idx" -->
+							<!-- color="indigo-lighten-2" -->
+							<!-- :class="selectedClass" -->
+							<v-chip
+								class="ma-2"
+								:color="model === idx ? 'white' : 'indigo-lighten-2'"
+								:style="
+									model === idx
+										? 'background-color: black'
+										: 'background-color: white'
+								"
+								variant="outlined"
+								@click="toggle"
+								:disabled="model === idx"
 							>
 								<v-icon icon="mdi-dog-side"></v-icon>
 								<div class="d-flex fill-height align-center justify-center">
@@ -437,4 +456,4 @@ watch(
 );
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
