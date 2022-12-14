@@ -24,34 +24,37 @@
 				<v-card width="400" class="mt-4 mb-4">
 					<template v-slot:title> Profile </template>
 
-					<v-card-text class="pt-1 pb-1">
+					<v-card-text
+						class="pt-1 pb-1"
+						:class="!userInfo.isLogined ? 'mb-2' : ''"
+					>
 						<!-- <v-icon> mdi-account-outline </v-icon> -->
 						아이디 :
 						{{ userInfo.userId ? userInfo.userId : '비회원' }}
 					</v-card-text>
 
 					<!-- <v-card-text class="pt-0 pb-0"> -->
-					<v-card-text class="pt-1 pb-1">
+					<v-card-text v-show="userInfo.isLogined" class="pt-1 pb-1">
 						<!-- <v-icon> mdi-account-outline </v-icon> -->
 						성별 :
 						{{ userInfo.gender }}
 					</v-card-text>
-					<v-card-text class="pt-1 pb-1">
+					<v-card-text v-show="userInfo.isLogined" class="pt-1 pb-1">
 						<!-- <v-icon> mdi-account-outline </v-icon> -->
 						번호 :
 						{{ userInfo.mobilePhone }}
 					</v-card-text>
-					<v-card-text class="pt-1 pb-1">
+					<v-card-text v-show="userInfo.isLogined" class="pt-1 pb-1">
 						<!-- <v-icon> mdi-account-outline </v-icon> -->
 						이름 :
 						{{ userInfo.userName }}
 					</v-card-text>
-					<v-card-text class="pt-1 pb-1">
+					<v-card-text v-show="userInfo.isLogined" class="pt-1 pb-1">
 						<!-- <v-icon> mdi-account-outline </v-icon> -->
 						생년월일 :
 						{{ userInfo.birthday }}
 					</v-card-text>
-					<v-card-text class="pt-1 pb-1 mb-2">
+					<v-card-text v-show="userInfo.isLogined" class="pt-1 pb-1 mb-2">
 						<!-- <v-icon> mdi-account-outline </v-icon> -->
 						이메일 :
 						{{ userInfo.email }}
