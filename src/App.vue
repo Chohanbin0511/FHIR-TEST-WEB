@@ -1,5 +1,5 @@
 <template>
-	<v-app>
+	<v-app style="background-color: whitesmoke">
 		<v-main>
 			<TheView />
 		</v-main>
@@ -8,11 +8,6 @@
 
 <script setup>
 import TheView from '@/layouts/TheView.vue';
-
-// import * as msg from 'virtual:fhir-module';
-// const modules = import.meta.glob('./dir/*.js');
-// console.log('modules', modules);
-// console.log('msg', msg);
 </script>
 
 <style></style>

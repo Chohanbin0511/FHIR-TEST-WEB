@@ -1,5 +1,8 @@
 <template>
-	<TheViewLayout>
+	<TheViewLayout
+		@update:innerHeight="updateInnerHeight"
+		:style="'height:' + innerHeight + 'px;'"
+	>
 		<template #mainPanel>
 			<v-container>
 				<h1>FHIR Sample</h1>
@@ -83,6 +86,13 @@ const userInfo = useAuthStore().userInfo;
 // };
 
 // const myClient = fhir(fhirConfig.value);
+
+const innerHeight = ref(0);
+
+// onUpdated(() => {});
+const updateInnerHeight = () => {
+	innerHeight.value = window.innerHeight;
+};
 
 const apiName = ref(null);
 const apiResult = ref(null);

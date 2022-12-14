@@ -1,5 +1,8 @@
 <template>
-	<TheViewLayout :is-change-height="isChangeHeight">
+	<TheViewLayout
+		@update:innerHeight="updateInnerHeight"
+		:style="!userInfo.isLogined ? 'height:' + innerHeight + 'px;' : ''"
+	>
 		<template #mainPanel>
 			<v-container class="pb-0">
 				<v-card-title class="mt-2"> Main </v-card-title>
@@ -223,6 +226,12 @@ import TheViewLayout from '@/layouts/TheViewLayout.vue';
 
 const model = ref(null);
 
+const innerHeight = ref(0);
+
+// onUpdated(() => {});
+const updateInnerHeight = () => {
+	innerHeight.value = window.innerHeight;
+};
 const clickTest = () => {
 	console.log('click');
 };
@@ -406,15 +415,11 @@ const expectedMyGroupSelectedPet = async petInfo => {
 	}
 };
 
-const isChangeHeight = ref(false);
 const changePetActList = (btnDetail, selectedPet) => {
-	isChangeHeight.value = false;
 	nowBottomTab.value = btnDetail.id;
 	// fhir 조회예정
-	console.log('test', isChangeHeight.value);
 	console.log('btnDetail', btnDetail);
 	console.log('selectedPet', selectedPet);
-	isChangeHeight.value = true;
 };
 
 onMounted(() => {

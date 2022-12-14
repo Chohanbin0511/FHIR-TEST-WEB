@@ -1,5 +1,8 @@
 <template>
-	<TheViewLayout>
+	<TheViewLayout
+		@update:innerHeight="updateInnerHeight"
+		:style="'height:' + innerHeight + 'px;'"
+	>
 		<template #mainPanel>
 			<v-container>
 				<h1>SDK Sample</h1>
@@ -26,9 +29,19 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
+
+const innerHeight = ref(0);
+
+onMounted(() => {
+	innerHeight.value = window.innerHeight;
+});
+
+const updateInnerHeight = () => {
+	innerHeight.value = window.innerHeight;
+};
 
 const samplePageList = ref([
 	{ title: 'Fhir Sample', type: 'fhir' },

@@ -1,5 +1,5 @@
 <template>
-	<TheViewLayout :is-change-height="isChangeHeight">
+	<TheViewLayout>
 		<template #mainPanel>
 			<v-container>
 				<v-card-title class="mt-2">Encounter Main</v-card-title>
@@ -101,10 +101,8 @@ const searchParams = ref({
 const itemList = ref([]);
 const nowPage = ref(0);
 const nextPass = ref(false);
-const isChangeHeight = ref(false);
 const fetchAnimalHospitalList = async () => {
 	loading.value = true;
-	isChangeHeight.value = false;
 	try {
 		nowPage.value++;
 		searchParams.value._page = nowPage.value;
@@ -112,7 +110,6 @@ const fetchAnimalHospitalList = async () => {
 		nextPass.value = true;
 		itemList.value = [...itemList.value, ...data];
 		console.log('data', data);
-		isChangeHeight.value = true;
 		loading.value = false;
 	} catch (error) {
 		console.error(error);

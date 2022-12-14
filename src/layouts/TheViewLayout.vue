@@ -1,13 +1,5 @@
 <template>
-	<v-layout
-		id="main-layout"
-		v-resize="onResize"
-		:style="
-			layoutHeight < windowHeight
-				? 'height:' + innerHeight + 'px;'
-				: 'height: 100%;'
-		"
-	>
+	<v-layout id="main-layout" v-resize="onResize">
 		<v-app-bar
 			color="indigo-lighten-2"
 			density="compact"
@@ -24,7 +16,10 @@
 			</v-btn>
 		</v-app-bar>
 
-		<v-navigation-drawer v-model="drawer" style="position: fixed">
+		<v-navigation-drawer
+			v-model="drawer"
+			style="position: fixed; background-color: white"
+		>
 			<v-list density="compact">
 				<v-card width="400" class="mt-4 mb-4">
 					<template v-slot:title> Profile </template>
@@ -77,7 +72,7 @@
 			</v-list>
 		</v-navigation-drawer>
 
-		<v-main style="background-color: whitesmoke">
+		<v-main>
 			<slot name="mainPanel" />
 		</v-main>
 	</v-layout>
@@ -85,50 +80,23 @@
 </template>
 
 <script setup>
-import { ref, onMounted, toRefs, onUpdated, watch } from 'vue';
+import { ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
 
-const props = defineProps({
-	isChangeHeight: { type: Boolean, default: false },
-});
-
-const { isChangeHeight } = toRefs(props);
+const emit = defineEmits(['update:innerHeight']);
 
 const router = useRouter();
 /**
  * 유저 정보
  */
 const userInfo = useAuthStore().userInfo;
-const layoutHeight = ref(0);
-const innerHeight = ref(0);
-const windowHeight = ref(0);
-onMounted(() => {
-	console.log('onMounted');
-	layoutHeight.value = document.getElementById('main-layout').clientHeight;
-	windowHeight.value = window.innerHeight;
-	innerHeight.value = window.innerHeight;
-});
-onUpdated(() => {
-	console.log('onUpdated', document.getElementById('main-layout').scrollHeight);
-	// innerHeight.value = window.innerHeight;
-});
+// const layoutHeight = ref(0);
 // screen resize
 const onResize = () => {
 	console.log('onResize');
-	innerHeight.value = window.innerHeight;
+	emit('update:innerHeight');
 };
-
-watch(
-	() => isChangeHeight.value,
-	() => {
-		if (isChangeHeight.value) {
-			console.log('!!');
-			layoutHeight.value = document.getElementById('main-layout').clientHeight;
-		}
-	},
-	{ deep: true },
-);
 
 // 메뉴클릭시 이동
 const routeUrlChange = url => {
@@ -228,4 +196,8 @@ const items = ref([
 ]);
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.v-navigation-drawer__scrim {
+	height: 100%;
+}
+</style>
