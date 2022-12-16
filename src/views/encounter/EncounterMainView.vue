@@ -74,9 +74,11 @@
 <script setup>
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
 import { ref, onMounted } from 'vue';
-import { onBeforeRouteLeave } from 'vue-router';
+import { onBeforeRouteLeave, useRouter } from 'vue-router';
 import { getPageAnimalHospitalList } from '@/api/animalHospitalApi';
 import { handleScroll } from '@/composables/handleScroll';
+
+const router = useRouter();
 
 const loading = ref(true);
 const totalSearchParams = ref({
@@ -122,6 +124,12 @@ const fetchAnimalHospitalList = async () => {
  */
 const clickHospitalDetail = item => {
 	console.log('Clicked item!', item);
+	router.push({
+		name: 'AnimalHospitalDetail',
+		query: {
+			hospitalId: item.id,
+		},
+	});
 };
 
 /**
