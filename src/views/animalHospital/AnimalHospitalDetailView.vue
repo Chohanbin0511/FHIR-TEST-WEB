@@ -41,6 +41,8 @@
 					</template>
 					<v-banner-text class="d-flex fill-height align-center">
 						동물병원(부천시)의 상세정보를 조회할 수 있다.
+
+
 					</v-banner-text>
 				</v-banner> -->
 			</v-container>
@@ -72,14 +74,6 @@ const fetchAnimalHospitalDetail = async () => {
 		console.error(error);
 	}
 };
-
-// const FetchTokenImplicit = async () => {
-// 	try {
-// 		await getTokenImplicit();
-// 	} catch (error) {
-// 		console.error(error);
-// 	}
-// };
 
 let map;
 
