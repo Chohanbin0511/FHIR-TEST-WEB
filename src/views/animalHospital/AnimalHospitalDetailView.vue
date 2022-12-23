@@ -23,13 +23,52 @@
 				</v-banner>
 			</v-container>
 			<v-container>
-				<v-card-title class="mt-2" style="font-weight: bold">{{
+				<!-- <v-card-title class="mt-2" style="font-weight: bold">{{
 					hospitalDetailInfo?.businessNm
-				}}</v-card-title>
-				<div id="map" style="width: 100%; height: 300px"></div
+				}}</v-card-title> -->
+				<div id="map" style="width: 100%; height: 400px"></div
 			></v-container>
 			<v-container>
-				{{ hospitalDetailInfo }}
+				<v-card class="pa-5">
+					<v-card-title style="font-weight: bold">
+						{{ hospitalDetailInfo?.businessNm }}
+					</v-card-title>
+					<v-divider class="mx-4 mb-1"></v-divider>
+					<v-card-subtitle class="ml-2 pt-4 pb-0"> 주소 </v-card-subtitle>
+					<v-card-text class="pb-0">
+						<v-icon class="mr-2"> mdi-map-marker-outline</v-icon> 도로명 주소 :
+						{{ hospitalDetailInfo?.roadNameFullAddress }}
+						<!-- <v-divider class="mx-4 mb-1"></v-divider> -->
+					</v-card-text>
+					<v-card-text>
+						<v-icon class="mr-2"> mdi-map-marker-outline</v-icon> 지번 주소 :
+						{{ hospitalDetailInfo?.fullAddressOfLocation }}
+					</v-card-text>
+					<v-divider></v-divider>
+					<v-card-subtitle class="ml-2 pt-4 pb-0"> 전화번호 </v-card-subtitle>
+					<v-card-text>
+						<v-icon class="mr-2"> mdi-phone-outline</v-icon>
+						{{ hospitalDetailInfo?.tel }}
+					</v-card-text>
+					<v-divider></v-divider>
+					<v-card-subtitle class="ml-2 pt-4 pb-0"> 등록일 </v-card-subtitle>
+					<v-card-text>
+						<v-icon class="mr-2"> mdi-calendar-range</v-icon>
+						{{ hospitalDetailInfo?.licensedDt }}
+					</v-card-text>
+					<v-divider></v-divider>
+					<v-card-subtitle class="ml-2 pt-4 pb-0"> 영업 상태</v-card-subtitle>
+					<v-card-text>
+						<v-icon class="mr-2"> mdi-home-lock-open</v-icon>
+						{{ hospitalDetailInfo?.statusName }}
+					</v-card-text>
+					<v-divider></v-divider>
+					<v-card-subtitle class="ml-2 pt-4 pb-0"> 업종 명</v-card-subtitle>
+					<v-card-text>
+						<v-icon class="mr-2"> mdi-flag</v-icon>
+						{{ hospitalDetailInfo?.serviceNm }}
+					</v-card-text>
+				</v-card>
 				<!-- <v-banner
 					color="yellow"
 					icon="mdi-information-outline"

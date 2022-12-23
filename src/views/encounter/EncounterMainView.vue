@@ -62,7 +62,9 @@
 									<span class="mr-1">{{ item.fullAddressOfLocation }}</span>
 								</v-card-subtitle>
 							</v-card-item>
-							<v-card-text> 전화번호 : {{ item.tel }} </v-card-text>
+							<v-card-text>
+								전화번호 : {{ item.tel ? item.tel : '--' }}
+							</v-card-text>
 						</v-card>
 					</v-col>
 				</v-row>
