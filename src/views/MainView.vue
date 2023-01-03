@@ -422,7 +422,6 @@ const expectedMyGroupSelectedPet = async petInfo => {
 const changePetActList = (btnDetail, selectedPet) => {
 	nowBottomTab.value = btnDetail.id;
 	// fhir 조회예정
-	console.log('btnDetail', btnDetail);
 	console.log('selectedPet', selectedPet);
 };
 
