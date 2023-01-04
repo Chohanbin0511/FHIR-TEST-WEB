@@ -14,28 +14,31 @@
 					class="rounded-lg"
 					color="pink-darken-1"
 					icon="mdi-account-box"
-					lines="two"
+					lines="one"
 				>
 					<template v-slot:prepend>
 						<v-avatar></v-avatar>
 					</template>
-
-					<v-banner-text v-if="!userInfo.isLogined">
-						로그인 후 자신의 그룹을 생성해 Pet의 정보를 관리해보세요!
-					</v-banner-text>
-					<v-banner-text v-else class="d-flex fill-height align-center">
-						Pet 추가가 가능하고 상세정보를 확인할 수 있어요.
-					</v-banner-text>
-					<v-banner-actions v-if="!userInfo.isLogined" class="mt-1">
-						<v-btn @click="$router.push('/login')">로그인 하기</v-btn>
-					</v-banner-actions>
-					<v-banner-actions v-if="userInfo.isLogined" class="mt-1">
-						<groupInsert
-							v-if="userInfo.isLogined && groupList.total === 0"
-							@update:groupList="fetchGroupList"
-						>
-						</groupInsert>
-					</v-banner-actions>
+					<template v-slot:text>
+						<v-banner-text v-if="!userInfo.isLogined">
+							로그인 후 자신의 그룹을 생성해 Pet의 정보를 관리해보세요!
+						</v-banner-text>
+						<v-banner-text v-else class="d-flex fill-height align-center">
+							Pet 추가가 가능하고 상세정보를 확인할 수 있어요.
+						</v-banner-text>
+					</template>
+					<template v-slot:actions>
+						<v-banner-actions v-if="!userInfo.isLogined" class="mt-1">
+							<v-btn @click="$router.push('/login')">로그인 하기</v-btn>
+						</v-banner-actions>
+						<v-banner-actions v-if="userInfo.isLogined" class="mt-1">
+							<groupInsert
+								v-if="userInfo.isLogined && groupList.total === 0"
+								@update:groupList="fetchGroupList"
+							>
+							</groupInsert>
+						</v-banner-actions>
+					</template>
 				</v-banner>
 			</v-container>
 			<v-container class="pt-0 pb-0">
