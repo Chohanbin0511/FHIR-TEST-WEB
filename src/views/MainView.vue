@@ -14,7 +14,7 @@
 					class="rounded-lg"
 					color="pink-darken-1"
 					icon="mdi-account-box"
-					lines="one"
+					lines="two"
 				>
 					<template v-slot:prepend>
 						<v-avatar></v-avatar>

@@ -66,6 +66,10 @@ const { SET_GROUPLIST } = store;
 
 // 가족 Group 생성
 const fetchCreateGroup = async () => {
+	if (!inputData.value.name) {
+		return false;
+	}
+
 	const resource = {
 		resourceType: 'Group',
 		identifier: [

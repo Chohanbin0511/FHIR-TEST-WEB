@@ -30,9 +30,22 @@
 			></v-container>
 			<v-container>
 				<v-card class="pa-5">
-					<v-card-title style="font-weight: bold">
+					<v-sheet style="display: flex">
+						<v-card-title class="mr-auto" style="font-weight: bold">
+							{{ hospitalDetailInfo?.businessNm }}
+						</v-card-title>
+						<v-btn
+							class="mt-1"
+							@click="insertEncounter"
+							size="x-small"
+							icon="mdi-clipboard-text-outline"
+							color="teal-accent-4"
+						>
+						</v-btn>
+					</v-sheet>
+					<!-- <v-card-title style="font-weight: bold">
 						{{ hospitalDetailInfo?.businessNm }}
-					</v-card-title>
+					</v-card-title> -->
 					<v-divider class="mx-4 mb-1"></v-divider>
 					<v-card-subtitle class="ml-2 pt-4 pb-0"> 주소 </v-card-subtitle>
 					<v-card-text class="pb-0">
@@ -85,7 +98,13 @@
 					</v-banner-text>
 				</v-banner> -->
 			</v-container>
+			<DialogPetEncounter
+				:is-pop-show="isPopShow"
+				@update:closePopUp="closePopUp"
+			></DialogPetEncounter>
+			<!-- <DialogFullScreen v-if="insertBtnshow"></DialogFullScreen> -->
 		</template>
+		<!-- <DialogFullScreen></DialogFullScreen> -->
 	</TheViewLayout>
 </template>
 
@@ -94,6 +113,8 @@ import { useRoute } from 'vue-router';
 import { ref, onMounted } from 'vue';
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
 import { getAnimalHospitalDetail } from '@/api/animalHospitalApi';
+import DialogPetEncounter from '@/components/pet/DialogPetEncounter.vue';
+// import DialogFullScreen from '@/components/DialogFullScreen';
 
 const route = useRoute();
 const hospitalId = ref(route.query.hospitalId);
@@ -171,6 +192,16 @@ onMounted(() => {
 		console.log('navigator 불가능', navigator);
 	}
 });
+
+const isPopShow = ref(false);
+const insertEncounter = () => {
+	isPopShow.value = true;
+	console.log('진료기록 등록!', isPopShow.value);
+	// if()
+};
+const closePopUp = () => {
+	isPopShow.value = false;
+};
 </script>
 
 <style lang="scss" scoped></style>

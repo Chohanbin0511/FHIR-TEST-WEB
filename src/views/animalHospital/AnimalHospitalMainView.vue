@@ -2,7 +2,13 @@
 	<TheViewLayout>
 		<template #mainPanel>
 			<v-container class="pb-0">
-				<v-card-title class="mt-2">Hospital Map</v-card-title>
+				<v-sheet style="display: flex">
+					<v-icon class="mt-5 ml-5" @click="$router.go(-1)"
+						>mdi-arrow-left-thick</v-icon
+					>
+					<v-card-title class="mt-2 pl-2"> Hospital Map </v-card-title>
+				</v-sheet>
+				<!-- <v-card-title class="mt-2">Hospital Map</v-card-title> -->
 				<v-banner
 					color="pink-darken-1"
 					icon="mdi-account-box"
