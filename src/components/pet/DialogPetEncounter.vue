@@ -17,7 +17,7 @@
 					</v-toolbar-items>
 				</v-toolbar>
 				<v-list lines="one" subheader>
-					<v-list-subheader>그룹 선택</v-list-subheader>
+					<v-list-subheader>선택 그룹</v-list-subheader>
 					<v-list-item
 						title="Content filtering"
 						subtitle="Set the content filtering level to restrict apps that can be downloaded"
@@ -82,6 +82,8 @@ const closePopUp = () => {
 const notifications = ref(false);
 const sound = ref(true);
 const widgets = ref(false);
+
+// TODO: 진료날짜 (기간), pet patientId , 해당 서비스 제공 병원, OrganizationId
 </script>
 
 <style scoped>

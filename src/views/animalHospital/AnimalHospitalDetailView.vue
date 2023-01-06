@@ -23,9 +23,6 @@
 				</v-banner>
 			</v-container>
 			<v-container>
-				<!-- <v-card-title class="mt-2" style="font-weight: bold">{{
-					hospitalDetailInfo?.businessNm
-				}}</v-card-title> -->
 				<div id="map" style="width: 100%; height: 400px"></div
 			></v-container>
 			<v-container>
@@ -43,15 +40,11 @@
 						>
 						</v-btn>
 					</v-sheet>
-					<!-- <v-card-title style="font-weight: bold">
-						{{ hospitalDetailInfo?.businessNm }}
-					</v-card-title> -->
 					<v-divider class="mx-4 mb-1"></v-divider>
 					<v-card-subtitle class="ml-2 pt-4 pb-0"> 주소 </v-card-subtitle>
 					<v-card-text class="pb-0">
 						<v-icon class="mr-2"> mdi-map-marker-outline</v-icon> 도로명 주소 :
 						{{ hospitalDetailInfo?.roadNameFullAddress }}
-						<!-- <v-divider class="mx-4 mb-1"></v-divider> -->
 					</v-card-text>
 					<v-card-text>
 						<v-icon class="mr-2"> mdi-map-marker-outline</v-icon> 지번 주소 :
@@ -82,29 +75,12 @@
 						{{ hospitalDetailInfo?.serviceNm }}
 					</v-card-text>
 				</v-card>
-				<!-- <v-banner
-					color="yellow"
-					icon="mdi-information-outline"
-					lines="2"
-					class="rounded-lg"
-				>
-					<template v-slot:prepend>
-						<v-avatar></v-avatar>
-					</template>
-					<v-banner-text class="d-flex fill-height align-center">
-						동물병원(부천시)의 상세정보를 조회할 수 있다.
-
-
-					</v-banner-text>
-				</v-banner> -->
 			</v-container>
 			<DialogPetEncounter
 				:is-pop-show="isPopShow"
 				@update:closePopUp="closePopUp"
 			></DialogPetEncounter>
-			<!-- <DialogFullScreen v-if="insertBtnshow"></DialogFullScreen> -->
 		</template>
-		<!-- <DialogFullScreen></DialogFullScreen> -->
 	</TheViewLayout>
 </template>
 
@@ -114,7 +90,7 @@ import { ref, onMounted } from 'vue';
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
 import { getAnimalHospitalDetail } from '@/api/animalHospitalApi';
 import DialogPetEncounter from '@/components/pet/DialogPetEncounter.vue';
-// import DialogFullScreen from '@/components/DialogFullScreen';
+import { useAuthStore } from '@/stores/auth';
 
 const route = useRoute();
 const hospitalId = ref(route.query.hospitalId);
@@ -193,8 +169,19 @@ onMounted(() => {
 	}
 });
 
+const userInfo = useAuthStore().userInfo;
+const groupList = useAuthStore().groupList;
 const isPopShow = ref(false);
 const insertEncounter = () => {
+	if (!userInfo.isLogined) {
+		alert('로그인 후 사용 가능합니다');
+		return false;
+	}
+
+	if (groupList.total === 0 || groupList.memberTotal === 0) {
+		alert('팻 등록 후 사용 가능합니다');
+	}
+
 	isPopShow.value = true;
 	console.log('진료기록 등록!', isPopShow.value);
 	// if()
