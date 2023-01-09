@@ -158,15 +158,6 @@ const getClickHandler = (seq, item) => {
 		selectedSeq.value = seq;
 		selectedItem.value = item;
 		isSelectedItem.value = true;
-
-		// let marker = markers[seq],
-		// 	infoWindow = infoWindows[seq];
-		// console.log('item', item);
-		// if (infoWindow.getMap()) {
-		// 	infoWindow.close();
-		// } else {
-		// 	infoWindow.open(map, marker);
-		// }
 	};
 };
 const closeIsSelectedItem = () => {

@@ -13,14 +13,12 @@
 					</v-btn>
 					<v-toolbar-title>진료기록 등록</v-toolbar-title>
 					<v-toolbar-items>
-						<v-btn variant="text" @click="createEncounter"> 저장 </v-btn>
+						<v-btn variant="text" @click="fetchCreateEncounter"> 저장 </v-btn>
 					</v-toolbar-items>
 				</v-toolbar>
 				<!-- 기간 선택-->
 				<v-container class="pb-0">
 					<v-card-title> Select Date </v-card-title>
-					<!-- <input type="date" /> -->
-
 					<div class="ma-3">
 						<Datepicker v-model="date" range></Datepicker>
 					</div>
@@ -87,9 +85,9 @@
 </template>
 
 <script setup>
-import { ref, toRefs, computed, watch, onMounted } from 'vue';
+import { ref, toRefs, computed, watch, onMounted, inject } from 'vue';
 import { useAuthStore } from '@/stores/auth';
-import { getGroupList, getBundle } from '@/api/fhirApi';
+import { getGroupList, getBundle, createEncounter } from '@/api/fhirApi';
 import GroupList from '@/components/group/GroupList.vue';
 import Datepicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css';
@@ -97,10 +95,11 @@ import '@vuepic/vue-datepicker/dist/main.css';
 const props = defineProps({
 	isPopShow: { type: Boolean, default: false },
 	hospitalName: { type: String },
+	organizationId: { type: String },
 });
 
 const emit = defineEmits(['update:closePopUp']);
-const { isPopShow, hospitalName } = toRefs(props);
+const { isPopShow, hospitalName, organizationId } = toRefs(props);
 const isShow = computed(() => {
 	return isPopShow.value;
 });
@@ -204,20 +203,91 @@ const fetchBundlePetList = async member => {
 		};
 	});
 };
-
+const dayjs = inject('dayjs');
 const date = ref(null);
 onMounted(() => {
-	const startDate = new Date();
 	// const endDate = new Date(new Date().setDate(startDate.getDate() + 7));
-	const endDate = new Date();
+	// const startDate = new Date();
+	// const endDate = new Date();
+	const startDate = dayjs().format();
+	const endDate = dayjs().format();
 	date.value = [startDate, endDate];
 });
 
 const rules = ref([v => v.length <= 50 || '최대 50자까지 입력 가능합니다']);
 const encounterContent = ref(null);
-const createEncounter = () => {
+const fetchCreateEncounter = async () => {
+	if (
+		!hospitalName.value ||
+		!myPetList.value[model.value].id ||
+		!organizationId.value
+	) {
+		alert('등록실패!');
+		return;
+	}
+
+	if (!date.value || !date.value[0] || !date.value[1]) {
+		alert('날짜를 선택하세요!');
+		return;
+	}
+
+	if (!encounterContent.value) {
+		alert('내용을 입력하세요');
+		return;
+	}
+	console.log('hospitalName', hospitalName.value);
 	console.log('myPetList', myPetList.value[model.value]);
 	console.log('content', encounterContent.value);
+	console.log('organizationId', organizationId.value);
+	console.log('startDate', dayjs(date.value[0]).format());
+	console.log('endDate', dayjs(date.value[1]).format());
+
+	const resource = {
+		resourceType: 'Encounter',
+		identifier: [
+			{
+				system: 'https://redwoodplatformtest-chohbin.netlify.app',
+				value: userInfo.patientId,
+			},
+		],
+		status: 'finished',
+		type: [
+			{
+				coding: [
+					{
+						system: 'https://www.hins.or.kr',
+						code: 'H33',
+						display: '동물병원',
+					},
+				],
+				text: '동물병원',
+			},
+		],
+		subject: {
+			reference: 'Patient/' + myPetList.value[model.value].id,
+		},
+		period: {
+			start: dayjs(date.value[0]).format(),
+			end: dayjs(date.value[1]).format(),
+		},
+		reasonCode: [
+			{
+				text: encounterContent.value,
+			},
+		],
+		serviceProvider: {
+			reference: organizationId.value,
+			display: hospitalName.value,
+		},
+	};
+	console.log('resource', resource);
+	try {
+		const response = await createEncounter(resource);
+		console.log('response', response);
+		alert('진료기록 등록 성공!');
+	} catch (error) {
+		console.error(error);
+	}
 };
 
 watch(

@@ -60,6 +60,13 @@ export function updateGroup(patientId, resource) {
 }
 
 /**
+ * 진료기록 등록
+ */
+export function createEncounter(resource) {
+	return fhirCredentialsAuth.post(`/Encounter`, resource);
+}
+
+/**
  * Bundle 조회
  */
 export function getBundle(resource) {

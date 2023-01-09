@@ -79,6 +79,7 @@
 			<DialogPetEncounter
 				:is-pop-show="isPopShow"
 				:hospital-name="hospitalDetailInfo?.businessNm"
+				:organization-id="hospitalDetailInfo?.organizationId"
 				@update:closePopUp="closePopUp"
 			></DialogPetEncounter>
 		</template>

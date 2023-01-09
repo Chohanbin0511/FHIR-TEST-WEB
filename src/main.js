@@ -5,6 +5,7 @@ import { createPinia } from 'pinia';
 import piniaPersist from 'pinia-plugin-persist';
 import vuetify from './plugins/vuetify';
 import { loadFonts } from './plugins/webfontloader';
+import dayjs from './plugins/dayjs';
 
 loadFonts();
 
@@ -15,6 +16,7 @@ pinia.use(piniaPersist);
 app.use(pinia);
 app.use(router);
 app.use(vuetify);
+app.use(dayjs);
 app.mount('#app');
 
 console.log('MODE: ', import.meta.env.MODE);
