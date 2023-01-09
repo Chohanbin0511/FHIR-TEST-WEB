@@ -105,6 +105,9 @@ const isShow = computed(() => {
 });
 
 const closePopUp = () => {
+	model.value = null;
+	date.value = [dayjs().format(), dayjs().format()];
+	encounterContent.value = null;
 	emit('update:closePopUp');
 };
 // const notifications = ref(false);
@@ -206,9 +209,6 @@ const fetchBundlePetList = async member => {
 const dayjs = inject('dayjs');
 const date = ref(null);
 onMounted(() => {
-	// const endDate = new Date(new Date().setDate(startDate.getDate() + 7));
-	// const startDate = new Date();
-	// const endDate = new Date();
 	const startDate = dayjs().format();
 	const endDate = dayjs().format();
 	date.value = [startDate, endDate];
@@ -235,12 +235,6 @@ const fetchCreateEncounter = async () => {
 		alert('내용을 입력하세요');
 		return;
 	}
-	console.log('hospitalName', hospitalName.value);
-	console.log('myPetList', myPetList.value[model.value]);
-	console.log('content', encounterContent.value);
-	console.log('organizationId', organizationId.value);
-	console.log('startDate', dayjs(date.value[0]).format());
-	console.log('endDate', dayjs(date.value[1]).format());
 
 	const resource = {
 		resourceType: 'Encounter',
@@ -285,6 +279,7 @@ const fetchCreateEncounter = async () => {
 		const response = await createEncounter(resource);
 		console.log('response', response);
 		alert('진료기록 등록 성공!');
+		closePopUp();
 	} catch (error) {
 		console.error(error);
 	}
