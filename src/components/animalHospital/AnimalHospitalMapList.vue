@@ -139,7 +139,7 @@ const path1 = () => {
 		naver.maps.Event.addListener(
 			markers[i],
 			'click',
-			getClickHandler(i, itemList.value[i]),
+			getClickHandler(i + 1, itemList.value[i]),
 		);
 	}
 	// naver.maps.Event.addListener(map, 'idle', function () {
