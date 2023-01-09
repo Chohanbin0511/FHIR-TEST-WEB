@@ -78,6 +78,7 @@
 			</v-container>
 			<DialogPetEncounter
 				:is-pop-show="isPopShow"
+				:hospital-name="hospitalDetailInfo?.businessNm"
 				@update:closePopUp="closePopUp"
 			></DialogPetEncounter>
 		</template>
