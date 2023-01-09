@@ -13,7 +13,7 @@
 					</v-btn>
 					<v-toolbar-title>진료기록 등록</v-toolbar-title>
 					<v-toolbar-items>
-						<v-btn variant="text" @click="closePopUp"> 저장 </v-btn>
+						<v-btn variant="text" @click="createEncounter"> 저장 </v-btn>
 					</v-toolbar-items>
 				</v-toolbar>
 
@@ -37,7 +37,7 @@
 					<!-- <input type="date" /> -->
 
 					<div class="ma-3">
-						<label for="start">Start date : </label>
+						<!-- <label for="start">Start date : </label>
 						<input
 							class="mr-3"
 							type="date"
@@ -55,9 +55,8 @@
 							type="date"
 							value="2018-07-22"
 						/>
-						<!-- min="2018-01-01"
-							max="2018-12-31" -->
-						<input type="time" />
+						<input type="time" /> -->
+						<Datepicker v-model="date" range></Datepicker>
 					</div>
 					<v-divider></v-divider>
 				</v-container>
@@ -69,6 +68,7 @@
 						clearable
 						clear-icon="mdi-close-circle"
 						label="진료 내용"
+						v-model="encounterContent"
 						:rules="rules"
 					></v-textarea>
 				</v-container>
@@ -105,10 +105,13 @@
 </template>
 
 <script setup>
-import { ref, toRefs, computed, watch } from 'vue';
+import { ref, toRefs, computed, watch, onMounted } from 'vue';
 import { useAuthStore } from '@/stores/auth';
 import { getGroupList, getBundle } from '@/api/fhirApi';
 import GroupList from '@/components/group/GroupList.vue';
+import Datepicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css';
+
 const props = defineProps({
 	isPopShow: { type: Boolean, default: false },
 	hospitalName: { type: String },
@@ -220,7 +223,20 @@ const fetchBundlePetList = async member => {
 	});
 };
 
-const rules = ref([v => v.length <= 25 || 'Max 25 characters']);
+const date = ref(null);
+onMounted(() => {
+	const startDate = new Date();
+	// const endDate = new Date(new Date().setDate(startDate.getDate() + 7));
+	const endDate = new Date();
+	date.value = [startDate, endDate];
+});
+
+const rules = ref([v => v.length <= 50 || '최대 50자까지 입력 가능합니다']);
+const encounterContent = ref(null);
+const createEncounter = () => {
+	console.log('myPetList', myPetList.value[model.value]);
+	console.log('content', encounterContent.value);
+};
 
 watch(
 	() => isShow.value,
