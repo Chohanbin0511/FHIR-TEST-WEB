@@ -16,7 +16,16 @@
 						<v-btn variant="text" @click="createEncounter"> 저장 </v-btn>
 					</v-toolbar-items>
 				</v-toolbar>
+				<!-- 기간 선택-->
+				<v-container class="pb-0">
+					<v-card-title> Select Date </v-card-title>
+					<!-- <input type="date" /> -->
 
+					<div class="ma-3">
+						<Datepicker v-model="date" range></Datepicker>
+					</div>
+					<v-divider></v-divider>
+				</v-container>
 				<GroupList
 					class="mt-2"
 					:my-pet-list="myPetList"
@@ -25,41 +34,14 @@
 					@update:groupModel="updateGroupModel"
 				>
 				</GroupList>
+
 				<!-- 선택한 병원-->
 				<v-container class="pb-0">
 					<v-card-title> Selected Hospital </v-card-title>
 					<v-card-text> 병원명 : {{ hospitalName }} </v-card-text>
 					<v-divider></v-divider>
 				</v-container>
-				<!-- 기간 선택-->
-				<v-container class="pb-0">
-					<v-card-title> Select Date </v-card-title>
-					<!-- <input type="date" /> -->
 
-					<div class="ma-3">
-						<!-- <label for="start">Start date : </label>
-						<input
-							class="mr-3"
-							type="date"
-							id="start"
-							name="start"
-							value="2018-07-22"
-						/>
-						<input type="time" />
-						<br />
-						<label for="End">End date : </label>
-						<input
-							class="mr-3"
-							id="End"
-							name="End"
-							type="date"
-							value="2018-07-22"
-						/>
-						<input type="time" /> -->
-						<Datepicker v-model="date" range></Datepicker>
-					</div>
-					<v-divider></v-divider>
-				</v-container>
 				<!-- 진료 내용 입력-->
 				<v-container class="pb-0">
 					<v-card-title> Input Encounter Content </v-card-title>
