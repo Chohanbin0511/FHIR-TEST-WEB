@@ -20,7 +20,7 @@
 				<v-container class="pb-0">
 					<v-card-title> Select Date </v-card-title>
 					<div class="ma-3">
-						<Datepicker v-model="date" range></Datepicker>
+						<Datepicker v-model="date" range alt-position></Datepicker>
 					</div>
 					<v-divider></v-divider>
 				</v-container>
