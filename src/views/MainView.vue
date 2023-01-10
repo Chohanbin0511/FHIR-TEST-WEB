@@ -114,28 +114,64 @@
 					>
 				</div>
 			</v-container>
-			<v-container
-				class="pt-2"
-				id="pet_actlist"
-				v-if="userInfo.isLogined && model != null"
-			>
+			<v-container class="pt-2" v-if="userInfo.isLogined && model != null">
 				<v-card class="pa-2 rounded-xl">
 					<v-card-title>
 						{{ detailPetInfoList[nowBottomTab].text }} 리스트</v-card-title
 					>
-					<v-list-item
-						v-for="i in detailPetInfoList[nowBottomTab].length"
-						:key="i"
-						active-color="primary"
-					>
-						<template v-slot:prepend>
-							<v-icon :icon="detailPetInfoList[nowBottomTab].icon"></v-icon>
-						</template>
-						<v-list-item-title @click="clickTest" style="cursor: pointer">
-							{{ i }}. {{ detailPetInfoList[nowBottomTab].text }} 기록 리스트
-							샘플</v-list-item-title
+					<template v-if="detailPetInfoList[nowBottomTab].dataList">
+						<v-list-item
+							v-for="item in detailPetInfoList[nowBottomTab].dataList"
+							:key="item"
+							active-color="primary"
 						>
-					</v-list-item>
+							<template v-slot:prepend>
+								<!-- <v-icon :icon="detailPetInfoList[nowBottomTab].icon"></v-icon> -->
+								{{
+									dayjs(`${item.resource?.period.start}`).format('YYYY/MM/DD')
+								}}
+							</template>
+							<v-expansion-panels>
+								<v-expansion-panel>
+									<v-expansion-panel-title style="font-weight: bold">
+										{{
+											item.resource?.serviceProvider.display
+										}}</v-expansion-panel-title
+									>
+									<v-expansion-panel-text>
+										<!-- style="padding-bottom: 0px" -->
+										<v-card-text class="pt-0 pb-0">
+											{{
+												dayjs(`${item.resource?.period.start}`).format(
+													'YYYY/MM/DD hh:mm:ss',
+												)
+											}}</v-card-text
+										>
+										<v-card-text class="pt-0 pb-0">
+											{{
+												dayjs(`${item.resource?.period.end}`).format(
+													'YYYY/MM/DD hh:mm:ss',
+												)
+											}}</v-card-text
+										>
+										<v-card-text class="pt-0 pb-0">
+											{{ item.resource?.reasonCode[0].text }}</v-card-text
+										>
+									</v-expansion-panel-text>
+								</v-expansion-panel>
+							</v-expansion-panels>
+						</v-list-item>
+					</template>
+					<template
+						v-if="detailPetInfoList[nowBottomTab].dataList.length === 0"
+					>
+						<v-list-item active-color="primary">
+							<template v-slot:prepend>
+								<v-icon :icon="detailPetInfoList[nowBottomTab].icon"></v-icon>
+							</template>
+							<div>데이터가 없습니다.</div>
+						</v-list-item>
+					</template>
 				</v-card>
 			</v-container>
 			<!-- <v-container>
@@ -170,13 +206,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { ref, onMounted, watch, inject } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { getTokenAuthCodeResult } from '@/api/oauthApi';
 import {
 	getGroupList,
 	getBundle,
 	updateGroup,
+	getEncounterList,
 	// deletePatient,
 } from '@/api/fhirApi';
 import { useAuthStore } from '@/stores/auth';
@@ -186,6 +223,8 @@ import * as OpenAPI from '@/assets/js/sdk/openApi';
 import groupInsert from '@/components/group/GroupInsert.vue';
 import GroupList from '@/components/group/GroupList.vue';
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
+
+const dayjs = inject('dayjs');
 
 const model = ref(null);
 
@@ -199,9 +238,30 @@ const clickTest = () => {
 };
 const nowBottomTab = ref(0);
 const detailPetInfoList = ref([
-	{ id: 0, text: '진료기록', icon: 'mdi-clipboard-text-outline', length: 4 },
-	{ id: 1, text: '알레르기', icon: 'mdi-block-helper', length: 10 },
-	{ id: 2, text: '예방접종', icon: 'mdi-pill', length: 20 },
+	{
+		id: 0,
+		text: '진료기록',
+		type: 'encounter',
+		icon: 'mdi-clipboard-text-outline',
+		length: null,
+		dataList: [],
+	},
+	{
+		id: 1,
+		text: '알레르기',
+		type: 'ImmunizationRecommendation',
+		icon: 'mdi-block-helper',
+		length: 10,
+		dataList: [],
+	},
+	{
+		id: 2,
+		text: '예방접종',
+		type: 'AllergyIntolerance',
+		icon: 'mdi-pill',
+		length: 20,
+		dataList: [],
+	},
 ]);
 
 /**
@@ -375,10 +435,37 @@ const expectedMyGroupSelectedPet = async petInfo => {
 };
 
 const changePetActList = (btnDetail, selectedPet) => {
+	console.log('selectedPet', selectedPet);
+	console.log('btnDetail', btnDetail);
+	console.log('nowBottomTab', nowBottomTab.value);
 	nowBottomTab.value = btnDetail.id;
 	// fhir 조회예정
-	console.log('selectedPet', selectedPet);
+	switch (btnDetail.type) {
+		case 'encounter':
+			console.log('encounter');
+			fetchGetEncounterList(selectedPet.id);
+			break;
+		case 'ImmunizationRecommendation':
+			console.log('ImmunizationRecommendation');
+			break;
+		case 'AllergyIntolerance':
+			console.log('AllergyIntolerance');
+			break;
+		default:
+			break;
+	}
 };
+const fetchGetEncounterList = async patientId => {
+	const {
+		data: { total },
+		data: { entry },
+	} = await getEncounterList(patientId);
+	console.log('total', total);
+	console.log('entry', entry);
+	detailPetInfoList.value[0].length = total;
+	detailPetInfoList.value[0].dataList = entry;
+};
+
 const updateGroupModel = idx => {
 	model.value = idx;
 };
@@ -391,10 +478,19 @@ onMounted(() => {
 watch(
 	() => model.value,
 	() => {
-		changePetActList(detailPetInfoList.value[0], myPetList.value[model.value]);
+		if (model.value) {
+			changePetActList(
+				detailPetInfoList.value[0],
+				myPetList.value[model.value],
+			);
+		}
 	},
 	{ deep: true },
 );
 </script>
 
-<style scoped></style>
+<style scoped>
+.v-expansion-panel-text__wrapper {
+	padding-bottom: 0px;
+}
+</style>

@@ -67,6 +67,13 @@ export function createEncounter(resource) {
 }
 
 /**
+ * 진료기록 조회
+ */
+export function getEncounterList(patientId) {
+	return fhirCredentialsAuth.get(`/Encounter?patient=Patient/${patientId}`);
+}
+
+/**
  * Bundle 조회
  */
 export function getBundle(resource) {
