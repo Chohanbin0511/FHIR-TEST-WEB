@@ -186,7 +186,6 @@ const insertEncounter = () => {
 
 	isPopShow.value = true;
 	console.log('진료기록 등록!', isPopShow.value);
-	// if()
 };
 const closePopUp = () => {
 	isPopShow.value = false;
