@@ -162,9 +162,7 @@
 							</v-expansion-panels>
 						</v-list-item>
 					</template>
-					<template
-						v-if="detailPetInfoList[nowBottomTab].dataList.length === 0"
-					>
+					<template v-if="!detailPetInfoList[nowBottomTab].dataList">
 						<v-list-item active-color="primary">
 							<template v-slot:prepend>
 								<v-icon :icon="detailPetInfoList[nowBottomTab].icon"></v-icon>
@@ -435,9 +433,6 @@ const expectedMyGroupSelectedPet = async petInfo => {
 };
 
 const changePetActList = (btnDetail, selectedPet) => {
-	console.log('selectedPet', selectedPet);
-	console.log('btnDetail', btnDetail);
-	console.log('nowBottomTab', nowBottomTab.value);
 	nowBottomTab.value = btnDetail.id;
 	// fhir 조회예정
 	switch (btnDetail.type) {
@@ -478,12 +473,7 @@ onMounted(() => {
 watch(
 	() => model.value,
 	() => {
-		if (model.value) {
-			changePetActList(
-				detailPetInfoList.value[0],
-				myPetList.value[model.value],
-			);
-		}
+		changePetActList(detailPetInfoList.value[0], myPetList.value[model.value]);
 	},
 	{ deep: true },
 );
