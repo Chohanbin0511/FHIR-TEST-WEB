@@ -294,6 +294,8 @@ const fetchGroupList = async () => {
 		data: { total },
 		data: { entry },
 	} = await getGroupList(userInfo.patientId);
+	console.log('total', total);
+	console.log('entry', entry);
 	if (total > 0) {
 		groupInfo.value = entry[0];
 		const {
@@ -302,7 +304,7 @@ const fetchGroupList = async () => {
 			resource: { member },
 		} = entry[0];
 		SET_GROUPLIST(total, name, quantity, member);
-		if (quantity > 0) {
+		if (member.length > 0) {
 			fetchBundlePetList(member);
 		} else {
 			myPetList.value = [];
