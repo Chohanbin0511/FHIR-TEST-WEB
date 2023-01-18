@@ -72,6 +72,15 @@ export function createEncounter(resource) {
 export function getEncounterList(patientId) {
 	return fhirCredentialsAuth.get(`/Encounter?patient=Patient/${patientId}`);
 }
+/**
+ * 병원 진료기록 리스트조회
+ */
+export function getHospitalEncounterList(organizationId) {
+	return fhirCredentialsAuth.get(
+		`/Encounter?service-provider=${organizationId}`,
+	);
+	// service-provider=Organization/824377
+}
 
 /**
  * Bundle 조회
