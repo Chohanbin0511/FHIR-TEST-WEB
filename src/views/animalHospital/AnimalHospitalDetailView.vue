@@ -95,13 +95,32 @@
 					</template>
 					<template v-if="nowTab === 'review'">
 						<v-card-subtitle class="ml-2 pt-4 pb-0">
-							총 진료 건수
+							총 진료 건수 : {{ hospitalEncounterList?.length }} 건
 						</v-card-subtitle>
-						<v-card-text>
-							<!-- <v-icon class="mr-2"> mdi-calendar-range</v-icon> -->
-							<!-- {{ hospitalDetailInfo?.licensedDt }} -->
-							2 건
-						</v-card-text>
+						<v-row class="mt-2">
+							<v-col
+								v-for="item in hospitalEncounterList"
+								cols="12"
+								sm="12"
+								md="12"
+								lg="12"
+								:key="item"
+								class="pt-1 pb-1"
+							>
+								<v-card variant="outlined" rounded="xl">
+									<v-card-text class="pb-0" style="font-weight: bold"
+										>유저 : {{ item.subject }}
+									</v-card-text>
+									<v-divider></v-divider>
+									<v-card-text class="pb-0 pt-1">
+										방문일 : {{ item.period }}
+									</v-card-text>
+									<v-card-text class="pb-1 pt-1">
+										진료 내용 : {{ item.reasonCode }}
+									</v-card-text>
+								</v-card>
+							</v-col>
+						</v-row>
 					</template>
 				</v-card>
 			</v-container>
@@ -118,7 +137,7 @@
 
 <script setup>
 import { useRoute } from 'vue-router';
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, inject } from 'vue';
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
 import { getAnimalHospitalDetail } from '@/api/animalHospitalApi';
 import { getHospitalEncounterList } from '@/api/fhirApi';
@@ -155,6 +174,8 @@ const fetchAnimalHospitalDetail = async () => {
 	}
 };
 
+const dayjs = inject('dayjs');
+const hospitalEncounterList = ref([]);
 const fetchHospitalEncounterList = async organizationId => {
 	try {
 		const {
@@ -163,6 +184,16 @@ const fetchHospitalEncounterList = async organizationId => {
 		} = await getHospitalEncounterList(organizationId);
 		console.log('entry', entry);
 		console.log('total', total);
+		entry.forEach((el, idx) => {
+			console.log('idx', idx);
+			console.log('el', el);
+			hospitalEncounterList.value[idx] = {
+				period: dayjs(`${el.resource.period.start}`).format('YYYY/MM/DD'),
+				reasonCode: el.resource.reasonCode[0].text,
+				subject: el.resource.subject.reference,
+			};
+		});
+		console.log('hospitalEncounterList', hospitalEncounterList.value);
 	} catch (error) {
 		console.error(error);
 	}
