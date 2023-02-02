@@ -18,12 +18,12 @@
 ## Screen Shot
 
 <p align="center">
- <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="33%">
- <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="33%">
- <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="33%">
+ <img src="src/assets/images/screenshots/screenshot_login.jpg" width="33%">
+ <img src="src/assets/images/screenshots/screenshot_oauth_sdk.jpg" width="33%">
+ <img src="src/assets/images/screenshots/screenshot_hospital_map_pick.jpg" width="33%">
  <br/>
  <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="33%">
- <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="33%">
+ <img src="src/assets/images/screenshots/screenshot_pet_encounter_insert.jpg" width="33%">
 </p>
 
 
