@@ -17,6 +17,7 @@
 
 ## Screen Shot
 
+<!--
 <p align="center">
  <img src="src/assets/images/screenshots/screenshot_login.jpg" width="33%" height="400px">
  <img src="src/assets/images/screenshots/screenshot_oauth_sdk.jpg" width="33%"  height="400px">
@@ -25,7 +26,7 @@
  <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="33%" height="400px">
  <img src="src/assets/images/screenshots/screenshot_pet_encounter_insert.jpg" width="33%" height="400px">
 </p>
-
+-->
 
 ### Built With
 
