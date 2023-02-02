@@ -39,7 +39,7 @@
 | **UI Framework**             | Vuetify3.0  |
 | **Deployment**               | Netlify, Heroku  |
 | **Open Data**             | 전국 동물 병원 요약 정보[공공 데이터] |
-| **Open API**             | Redwood Platform |
+| **Open API**             | Redwood Platform , Naver Map |
 
 ## 🚩 Update
 
