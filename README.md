@@ -18,11 +18,12 @@
 ## Screen Shot
 
 <p align="center">
- <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="33" >
- <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="33%" >
- <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="33%" >
- <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="33%" >
- <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="33%" >
+ <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="33&">
+ <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="33%">
+ <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="33%">
+ <br/>
+ <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="33%">
+ <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="33%">
 </p>
 
 
