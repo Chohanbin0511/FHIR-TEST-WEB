@@ -43,24 +43,17 @@
 플랫폼(Redwood Platform)을 테스트 하기 위한 웹 서비스로 플랫폼의 SDK ['Fhir sdk', 'Oauth sdk', openApi sdk']를 활용하여, 로그인, 회원가입, Oauth, 건강정보 CRUD 및 통계를 구현했습니다. 이를 통해, 반려동물 건강 정보 기록 및 공유 할수 있고 공공데이터[부천시의 동물병원]를 통해 병원 위치정보와  해당 병원의 진료기록을 저장, 조회 할 수 있습니다.
 
 
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+해당 프로젝트를 구성한 Tech Skill List입니다.
 
+<!--
 * [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
+-->
+front
 * [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
