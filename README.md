@@ -13,13 +13,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<figure class="half">
- <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="100px">
- <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="100px">
- <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="100px">
- <
- <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="100px">
- <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="100px">
+<figure  class="third">
+ <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="300px">
+ <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="300px">
+ <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="300px">
+ <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="300px">
+ <img src="src/assets/images/screenshots/screenshot_pet_list.jpg" width="300px">
 </figure>
 
 플랫폼(Redwood Platform)을 테스트 하기 위한 웹 서비스로 플랫폼의 SDK ['Fhir sdk', 'Oauth sdk', openApi sdk']를 활용하여, 로그인, 회원가입, Oauth, 건강정보 CRUD 및 통계를 구현했습니다. 이를 통해, 반려동물 건강 정보 기록 및 공유 할수 있고 공공데이터[부천시의 동물병원]를 통해 병원 위치정보와  해당 병원의 진료기록을 저장, 조회 할 수 있습니다.
