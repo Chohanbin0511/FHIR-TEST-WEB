@@ -20,16 +20,6 @@
 
 
 <p align="center">
- <div style="border: 1px solid gold; float: left; width: 33%;">
-   <h3>test </h3>
-   <img src="src/assets/images/screenshots/screenshot_main.png" width="250px">
- </div>
- <div style="border: 1px solid gold; float: left; width: 33%;">
-   <h3>test22 </h3>
-   <img src="src/assets/images/screenshots/screenshot_main.png" width="250px">
- </div>
- <br/>
-
  <img src="src/assets/images/screenshots/screenshot_main.png" width="250px">
  <img src="src/assets/images/screenshots/screenshot_encounter_main.png" width="250px" >
  <img src="src/assets/images/screenshots/screenshot_hospital_detail.png" width="250px" >
