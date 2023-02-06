@@ -23,6 +23,8 @@
  <div>
    <h3>test </h3>
    <img src="src/assets/images/screenshots/screenshot_main.png" width="250px">
+   <h3>test </h3>
+   <img src="src/assets/images/screenshots/screenshot_main.png" width="250px">
  </div>
  <br/>
 
