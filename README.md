@@ -24,8 +24,8 @@
  <img src="src/assets/images/screenshots/screenshot_encounter_main.png" width="250px" >
  <img src="src/assets/images/screenshots/screenshot_hospital_detail.png" width="250px" >
  <br/>
- <img src="src/assets/images/screenshots/screenshot_encounter_insert.png" width="33%" >
- <img src="src/assets/images/screenshots/screenshot_sdk_oauth.png" width="33%" >
+ <img src="src/assets/images/screenshots/screenshot_encounter_insert.png" width="250px" >
+ <img src="src/assets/images/screenshots/screenshot_sdk_oauth.png" width="250px" >
 </p>
 
 
