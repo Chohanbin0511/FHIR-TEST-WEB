@@ -20,10 +20,12 @@
 
 
 <p align="center">
- <div>
+ <div style="border: 1px solid gold; float: left; width: 33%;">
    <h3>test </h3>
    <img src="src/assets/images/screenshots/screenshot_main.png" width="250px">
-   <h3>test </h3>
+ </div>
+ <div style="border: 1px solid gold; float: left; width: 33%;">
+   <h3>test22 </h3>
    <img src="src/assets/images/screenshots/screenshot_main.png" width="250px">
  </div>
  <br/>
