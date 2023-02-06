@@ -20,12 +20,12 @@
 
 
 <p align="center">
- <img src="src/assets/images/screenshots/screenshot_main.png" width="33%" height="400px">
- <img src="src/assets/images/screenshots/screenshot_encounter_main.png" width="33%"  height="400px">
- <img src="src/assets/images/screenshots/screenshot_hospital_detail.png" width="33%" height="400px">
+ <img src="src/assets/images/screenshots/screenshot_main.png" width="33%">
+ <img src="src/assets/images/screenshots/screenshot_encounter_main.png" width="33%" >
+ <img src="src/assets/images/screenshots/screenshot_hospital_detail.png" width="33%" >
  <br/>
- <img src="src/assets/images/screenshots/screenshot_encounter_insert.png" width="33%" height="400px">
- <img src="src/assets/images/screenshots/screenshot_sdk_oauth.png" width="33%" height="400px">
+ <img src="src/assets/images/screenshots/screenshot_encounter_insert.png" width="33%" >
+ <img src="src/assets/images/screenshots/screenshot_sdk_oauth.png" width="33%" >
 </p>
 
 
