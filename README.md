@@ -17,7 +17,6 @@
 
 
 ## 📸 Screen Shot
-![](src/assets/images/screenshots/screenshot_main.png)
 
 <p align="center">
 
