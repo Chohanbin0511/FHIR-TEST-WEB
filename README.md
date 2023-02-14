@@ -17,10 +17,10 @@
 
 
 ## 📸 Screen Shot
-
+![](src/assets/images/screenshots/screenshot_main.png)
 
 <p align="center">
-![](src/assets/images/screenshots/screenshot_main.png)
+
  <img src="src/assets/images/screenshots/screenshot_main.png" width="250px">
  <img src="src/assets/images/screenshots/screenshot_encounter_main.png" width="250px" >
  <img src="src/assets/images/screenshots/screenshot_hospital_detail.png" width="250px" >
