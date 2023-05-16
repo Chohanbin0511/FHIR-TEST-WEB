@@ -18,8 +18,8 @@
 
 ## 📸 Screen Shot
 
-
 <p align="center">
+
  <img src="src/assets/images/screenshots/screenshot_main.png" width="250px">
  <img src="src/assets/images/screenshots/screenshot_encounter_main.png" width="250px" >
  <img src="src/assets/images/screenshots/screenshot_hospital_detail.png" width="250px" >
