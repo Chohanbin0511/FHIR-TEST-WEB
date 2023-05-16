@@ -13,7 +13,6 @@ import TheView from '@/layouts/TheView.vue';
 import { useNetwork } from '@vueuse/core';
 
 const { isOnline } = useNetwork();
-
 const router = useRouter();
 const route = useRoute();
 
