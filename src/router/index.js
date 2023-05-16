@@ -36,6 +36,11 @@ const otherRoutes = [
 		// meta: { anonymous: true },
 		component: () => import('@/views/user/LoginView.vue'),
 	},
+	{
+		path: '/network-error-page',
+		name: 'network-error-page',
+		component: () => import('@/components/common/NetworkErrorPage.vue'),
+	},
 ];
 
 let allRoutes = [];

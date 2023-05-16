@@ -83,11 +83,17 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
 
 const emit = defineEmits(['update:innerHeight']);
+
+const windowSize = ref(window.innerWidth);
+
+onMounted(() => {
+	console.log('windowSize', windowSize.value);
+});
 
 const router = useRouter();
 /**

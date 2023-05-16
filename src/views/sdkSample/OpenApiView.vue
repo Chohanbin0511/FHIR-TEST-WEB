@@ -215,7 +215,8 @@ const btnCheckExistUserId = title => {
 	resetDialogContent();
 	apiName.value = title;
 	const data = {
-		userId: userInfo.userId,
+		// userId: userInfo.userId,
+		userId: 'chbtest24232324',
 	};
 
 	OpenAPI.checkExistUserId(config, data)
@@ -234,7 +235,9 @@ const btnIdentifyMobilePhone = title => {
 	resetDialogContent();
 	apiName.value = title;
 	const data = {
-		mobilePhone: userInfo.mobilePhone,
+		// mobilePhone: userInfo.mobilePhone,
+		// mobilePhone: '01027424694',
+		mobilePhone: '01000019161',
 	};
 
 	OpenAPI.identifyMobilePhone(config, data)
