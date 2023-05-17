@@ -43,13 +43,18 @@
 			</v-container>
 			<!-- group component-->
 			<GroupList
+				v-motion-popXDelay1000
 				:my-pet-list="myPetList"
 				:is-pet-insert-act="true"
 				:group-model="model"
 				@update:groupList="fetchGroupList"
 				@update:groupModel="updateGroupModel"
 			></GroupList>
-			<v-container v-if="model != null" class="pt-0 pb-0">
+			<v-container
+				v-if="model != null"
+				class="pt-0 pb-0"
+				v-motion-popXDelay1500
+			>
 				<v-card
 					class="pa-2 mb-2 rounded-xl"
 					min-width="330"
@@ -114,7 +119,11 @@
 					>
 				</div>
 			</v-container>
-			<v-container class="pt-2" v-if="userInfo.isLogined && model != null">
+			<v-container
+				class="pt-2"
+				v-if="userInfo.isLogined && model != null"
+				v-motion-popXDelay2000
+			>
 				<v-card class="pa-2 rounded-xl">
 					<v-card-title>
 						{{ detailPetInfoList[nowBottomTab].text }} 리스트</v-card-title
