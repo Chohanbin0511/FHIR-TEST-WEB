@@ -1,7 +1,7 @@
 <template>
 	<TheViewLayout>
 		<template #mainPanel>
-			<v-container class="pb-0">
+			<v-container class="pb-0" v-motion-popXDelay500>
 				<v-sheet style="display: flex">
 					<v-icon class="mt-5 ml-5" @click="$router.go(-1)"
 						>mdi-arrow-left-thick</v-icon
@@ -22,12 +22,12 @@
 					</v-banner-text>
 				</v-banner>
 			</v-container>
-			<v-container>
+			<v-container v-motion-popXDelay1000>
 				<div id="map" style="width: 100%; height: 400px"></div
 			></v-container>
 			<!-- S: 장소 Tab 영역 -->
 			<v-container class="pt-0 pl-0 pr-0"> </v-container>
-			<v-container>
+			<v-container v-motion-popXDelay1500>
 				<v-card class="pa-5">
 					<v-sheet style="display: flex">
 						<v-card-title class="mr-auto" style="font-weight: bold">

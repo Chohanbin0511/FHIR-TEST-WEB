@@ -8,7 +8,7 @@
 		"
 	>
 		<template #mainPanel>
-			<v-container class="pb-0">
+			<v-container class="pb-0" v-motion-popXDelay500>
 				<v-card-title class="mt-2"> Main </v-card-title>
 				<v-banner
 					class="rounded-lg"

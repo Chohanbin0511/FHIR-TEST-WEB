@@ -1,7 +1,7 @@
 <template>
 	<TheViewLayout>
 		<template #mainPanel>
-			<v-container>
+			<v-container v-motion-popXDelay500>
 				<v-card-title class="mt-2">Encounter Main</v-card-title>
 				<v-banner
 					color="blue-lighten-1"
@@ -17,7 +17,7 @@
 					</v-banner-text>
 				</v-banner>
 			</v-container>
-			<v-container>
+			<v-container v-motion-popXDelay1000>
 				<v-btn
 					prepend-icon="mdi-map-outline"
 					variant="outlined"
@@ -35,7 +35,7 @@
 					지도로 병원 찾기</v-btn
 				>
 			</v-container>
-			<v-container v-if="itemList.length > 0">
+			<v-container v-if="itemList.length > 0" v-motion-popXDelay1500>
 				<v-row>
 					<v-col
 						class="pb-0"

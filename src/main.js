@@ -3,8 +3,12 @@ import App from './App.vue';
 import router from './router';
 import { createPinia } from 'pinia';
 import piniaPersist from 'pinia-plugin-persist';
+
+import { MotionPlugin } from '@vueuse/motion';
+
 import vuetify from './plugins/vuetify';
 import { loadFonts } from './plugins/webfontloader';
+import globalMotionDirectives from './plugins/global-motion-directives';
 import dayjs from './plugins/dayjs';
 
 loadFonts();
@@ -13,6 +17,7 @@ const app = createApp(App);
 
 const pinia = createPinia();
 pinia.use(piniaPersist);
+app.use(MotionPlugin, globalMotionDirectives);
 app.use(pinia);
 app.use(router);
 app.use(vuetify);

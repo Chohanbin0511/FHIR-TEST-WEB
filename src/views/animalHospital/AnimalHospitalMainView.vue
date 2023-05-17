@@ -1,7 +1,7 @@
 <template>
 	<TheViewLayout>
 		<template #mainPanel>
-			<v-container class="pb-0">
+			<v-container class="pb-0" v-motion-popXDelay500>
 				<v-sheet style="display: flex">
 					<v-icon class="mt-5 ml-5" @click="$router.go(-1)"
 						>mdi-arrow-left-thick</v-icon
@@ -23,7 +23,7 @@
 					</v-banner-text>
 				</v-banner>
 			</v-container>
-			<v-container>
+			<v-container v-motion-popXDelay1000>
 				<AnimalHospitalMapList> </AnimalHospitalMapList>
 			</v-container>
 		</template>
