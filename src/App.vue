@@ -35,4 +35,6 @@ watch(
 );
 </script>
 
-<style></style>
+<style>
+@import url('../src/assets/css/progress.css');
+</style>
