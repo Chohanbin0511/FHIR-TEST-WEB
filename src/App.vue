@@ -7,14 +7,18 @@
 </template>
 
 <script setup>
-import { watch } from 'vue';
+import { watch, provide } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import TheView from '@/layouts/TheView.vue';
 import { useNetwork } from '@vueuse/core';
+import { useNProgress } from '@vueuse/integrations/useNProgress';
 
 const { isOnline } = useNetwork();
 const router = useRouter();
 const route = useRoute();
+
+const { progress } = useNProgress();
+provide('nprogress', progress);
 
 watch(
 	() => isOnline.value,

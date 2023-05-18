@@ -75,10 +75,12 @@
 
 <script setup>
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, inject } from 'vue';
 import { onBeforeRouteLeave, useRouter } from 'vue-router';
 import { getPageAnimalHospitalList } from '@/api/animalHospitalApi';
 import { handleScroll } from '@/composables/handleScroll';
+
+const progress = inject('nprogress');
 
 const router = useRouter();
 
@@ -88,14 +90,18 @@ const totalSearchParams = ref({
 });
 const totalCount = ref(null);
 const totalPage = ref(null);
+
 const fetchTotalAnimalHospitalCount = async () => {
 	try {
+		progress.value = 0.1;
 		const { data } = await getPageAnimalHospitalList(totalSearchParams.value);
 		console.log('data', data);
 		totalCount.value = data.length;
 		totalPage.value = Math.ceil(data.length / searchParams.value._limit);
 	} catch (error) {
 		console.error(error);
+	} finally {
+		progress.value = 1;
 	}
 };
 
@@ -108,16 +114,19 @@ const itemList = ref([]);
 const nowPage = ref(0);
 const nextPass = ref(false);
 const fetchAnimalHospitalList = async () => {
-	loading.value = true;
 	try {
+		progress.value = 0.1;
+		loading.value = true;
 		nowPage.value++;
 		searchParams.value._page = nowPage.value;
 		const { data } = await getPageAnimalHospitalList(searchParams.value);
 		nextPass.value = true;
 		itemList.value = [...itemList.value, ...data];
-		loading.value = false;
 	} catch (error) {
 		console.error(error);
+	} finally {
+		progress.value = 1;
+		loading.value = false;
 	}
 };
 

@@ -41,20 +41,24 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, inject } from 'vue';
 import { useRouter } from 'vue-router';
 import { getAnimalHospitalList } from '@/api/animalHospitalApi';
 
+const progress = inject('nprogress');
 const router = useRouter();
 
 const itemList = ref([]);
 const fetchAnimalHospitalList = async () => {
 	try {
+		progress.value = 0.1;
 		const { data } = await getAnimalHospitalList();
 		itemList.value = data;
 		initMap();
 	} catch (error) {
 		console.error(error);
+	} finally {
+		progress.value = 1;
 	}
 };
 

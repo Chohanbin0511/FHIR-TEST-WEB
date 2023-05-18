@@ -48,9 +48,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, inject } from 'vue';
 import { useAuthStore } from '@/stores/auth';
 import { createGroup, getGroupList } from '@/api/fhirApi';
+
+const progress = inject('nprogress');
 
 const dialog = ref(false);
 
@@ -87,6 +89,7 @@ const fetchCreateGroup = async () => {
 	};
 
 	try {
+		progress.value = 0.1;
 		const response = await createGroup(resource);
 		console.log('response', response);
 		alert('그룹 생성 성공');
@@ -95,6 +98,8 @@ const fetchCreateGroup = async () => {
 		dialog.value = false;
 	} catch (error) {
 		console.error(error);
+	} finally {
+		progress.value = 1;
 	}
 };
 
