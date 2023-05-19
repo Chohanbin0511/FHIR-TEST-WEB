@@ -44,17 +44,13 @@
 					</v-sheet>
 					<v-tabs fixed-tabs bg-color="white">
 						<v-tab
+							v-for="tab in detailTabList"
+							:key="tab"
 							style="font-size: 16px; font-weight: bold"
-							@click="changeDetailTab('home')"
+							@click="changeDetailTab(tab.type)"
 						>
-							홈
+							{{ tab.title }}
 						</v-tab>
-						<v-tab
-							style="font-size: 16px; font-weight: bold"
-							@click="changeDetailTab('review')"
-						>
-							진료 기록</v-tab
-						>
 					</v-tabs>
 					<v-divider class="mx-4 mb-1"></v-divider>
 					<template v-if="nowTab === 'home'">
@@ -148,6 +144,11 @@ const route = useRoute();
 const hospitalId = ref(route.query.hospitalId);
 
 const nowTab = ref('home');
+
+const detailTabList = ref([
+	{ title: '홈', type: 'home' },
+	{ title: '진료 기록', type: 'review' },
+]);
 
 const changeDetailTab = tab => {
 	if (tab === 'review' && !userInfo.isLogined) {
