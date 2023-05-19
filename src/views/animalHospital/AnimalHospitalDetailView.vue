@@ -275,6 +275,7 @@ const insertEncounter = () => {
 };
 const closePopUp = () => {
 	isPopShow.value = false;
+	fetchAnimalHospitalDetail();
 };
 </script>
 
