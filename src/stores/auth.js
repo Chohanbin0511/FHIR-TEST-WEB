@@ -1,8 +1,9 @@
 import { defineStore } from 'pinia';
-
-export const useAuthStore = defineStore('auth', {
-	state: () => ({
-		userInfo: {
+import { ref } from 'vue';
+export const useAuthStore = defineStore(
+	'auth',
+	() => {
+		const userInfo = ref({
 			isLogined: false,
 			userId: null,
 			userName: null,
@@ -12,69 +13,82 @@ export const useAuthStore = defineStore('auth', {
 			mobilePhone: null,
 			fhirResource: null,
 			patientId: null,
-		},
-		oauth: {
+		});
+		const oauth = ref({
 			accessToken: null,
 			refreshToken: null,
 			tokenType: null,
 			expiresIn: null,
-		},
-		groupList: {
+		});
+		const groupList = ref({
 			total: 0,
 			name: null,
 			memberTotal: 0,
 			memberList: [],
-		},
-	}),
-	actions: {
-		SET_LOGIN(loginData) {
-			this.userInfo.isLogined = true;
-			this.userInfo.userId = loginData.userId;
-			this.userInfo.userName = loginData.userName;
-			this.userInfo.birthday = loginData.birthday;
-			this.userInfo.gender = loginData.gender;
-			this.userInfo.email = loginData.email;
-			this.userInfo.mobilePhone = loginData.mobilePhone;
-			this.userInfo.fhirResource = loginData.fhirResource;
-			this.userInfo.patientId = loginData.fhirResource.split('/')[1];
-		},
-		SET_OAUTH(oauthData) {
-			this.oauth.accessToken = oauthData.access_token;
-			this.oauth.refreshToken = oauthData.refresh_token;
-			this.oauth.tokenType = oauthData.token_type;
-			this.oauth.expiresIn = oauthData.expires_in;
-		},
-		SET_GROUPLIST(total, name, quantity, list) {
-			this.groupList.total = total;
-			this.groupList.name = name;
-			this.groupList.memberTotal = quantity;
-			this.groupList.memberList = list;
-		},
-		CLEAR_SESSION() {
-			this.userInfo.isLogined = false;
-			this.userInfo.userId = null;
-			this.userInfo.userName = null;
-			this.userInfo.birthday = null;
-			this.userInfo.gender = null;
-			this.userInfo.email = null;
-			this.userInfo.mobilePhone = null;
-			this.userInfo.fhirResource = null;
-			this.userInfo.patientId = null;
-		},
-		CLEAR_OAUTH() {
-			this.oauth.accessToken = null;
-			this.oauth.refreshToken = null;
-			this.oauth.tokenType = null;
-			this.oauth.expiresIn = null;
-		},
-		CLEAR_GROUPLIST() {
-			this.groupList.total = 0;
-			this.groupList.name = null;
-			this.groupList.memberTotal = 0;
-			this.groupList.memberList = [];
+		});
+		const SET_LOGIN = loginData => {
+			userInfo.value.isLogined = true;
+			userInfo.value.userId = loginData.userId;
+			userInfo.value.userName = loginData.userName;
+			userInfo.value.birthday = loginData.birthday;
+			userInfo.value.gender = loginData.gender;
+			userInfo.value.email = loginData.email;
+			userInfo.value.mobilePhone = loginData.mobilePhone;
+			userInfo.value.fhirResource = loginData.fhirResource;
+			userInfo.value.patientId = loginData.fhirResource.split('/')[1];
+		};
+
+		const SET_OAUTH = oauthData => {
+			oauth.value.accessToken = oauthData.access_token;
+			oauth.value.refreshToken = oauthData.refresh_token;
+			oauth.value.tokenType = oauthData.token_type;
+			oauth.value.expiresIn = oauthData.expires_in;
+		};
+		const SET_GROUPLIST = (total, name, quantity, list) => {
+			groupList.value.total = total;
+			groupList.value.name = name;
+			groupList.value.memberTotal = quantity;
+			groupList.value.memberList = list;
+		};
+		const CLEAR_SESSION = () => {
+			userInfo.value.isLogined = false;
+			userInfo.value.userId = null;
+			userInfo.value.userName = null;
+			userInfo.value.birthday = null;
+			userInfo.value.gender = null;
+			userInfo.value.email = null;
+			userInfo.value.mobilePhone = null;
+			userInfo.value.fhirResource = null;
+			userInfo.value.patientId = null;
+		};
+		const CLEAR_OAUTH = () => {
+			oauth.value.accessToken = null;
+			oauth.value.refreshToken = null;
+			oauth.value.tokenType = null;
+			oauth.value.expiresIn = null;
+		};
+		const CLEAR_GROUPLIST = () => {
+			groupList.value.total = 0;
+			groupList.value.name = null;
+			groupList.value.memberTotal = 0;
+			groupList.value.memberList = [];
+		};
+
+		return {
+			userInfo,
+			oauth,
+			groupList,
+			SET_LOGIN,
+			SET_OAUTH,
+			SET_GROUPLIST,
+			CLEAR_SESSION,
+			CLEAR_OAUTH,
+			CLEAR_GROUPLIST,
+		};
+	},
+	{
+		persist: {
+			enabled: true,
 		},
 	},
-	persist: {
-		enabled: true,
-	},
-});
+);
