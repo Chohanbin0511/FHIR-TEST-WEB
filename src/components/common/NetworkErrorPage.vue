@@ -9,7 +9,8 @@
 </template>
 
 <script setup>
-import { useRouter, useRoute, inject } from 'vue-router';
+import { inject } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 import { useNetwork } from '@vueuse/core';
 
 const { isOnline } = useNetwork();
