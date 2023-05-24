@@ -53,6 +53,7 @@ import { useAuthStore } from '@/stores/auth';
 import { createGroup, getGroupList } from '@/api/fhirApi';
 
 const progress = inject('nprogress');
+const rootMethods = inject('rootMethods');
 
 const dialog = ref(false);
 
@@ -92,7 +93,7 @@ const fetchCreateGroup = async () => {
 		progress.value = 0.1;
 		const response = await createGroup(resource);
 		console.log('response', response);
-		alert('그룹 생성 성공');
+		rootMethods.openToast('그룹 생성이 완료되었습니다.');
 		fetchGroupList();
 		emit('update:groupList');
 		dialog.value = false;

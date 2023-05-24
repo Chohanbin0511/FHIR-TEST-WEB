@@ -9,17 +9,19 @@
 </template>
 
 <script setup>
-import { useRouter, useRoute } from 'vue-router';
+import { useRouter, useRoute, inject } from 'vue-router';
 import { useNetwork } from '@vueuse/core';
 
 const { isOnline } = useNetwork();
+
+const rootMethods = inject('rootMethods');
 
 const router = useRouter();
 const route = useRoute();
 const goPrev = () => {
 	console.log(!route.query);
 	if (!isOnline.value) {
-		alert('네트워크 오류');
+		rootMethods.isSimpleConfirm(true, '안내', '네트워크 오류', '확인');
 	} else {
 		if (Object.keys(route.query).length === 0) {
 			router.go(-1);

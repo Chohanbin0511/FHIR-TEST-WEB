@@ -84,10 +84,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, inject } from 'vue';
 import { useAuthStore } from '@/stores/auth';
 import { createPatient, updateGroup } from '@/api/fhirApi';
 
+const rootMethods = inject('rootMethods');
 const dialog = ref(false);
 
 const emit = defineEmits(['update:groupList']);
@@ -121,7 +122,7 @@ const createFhirPatientValidCheck = () => {
 const createFhirPatient = async () => {
 	const result = createFhirPatientValidCheck();
 	if (!result) {
-		alert('빈칸체크!');
+		rootMethods.isSimpleConfirm(true, '안내', '빈칸을 체크해주세요', '확인');
 		return false;
 	}
 	const resource = {
@@ -296,12 +297,12 @@ const addGroupPet = async (active, id, birthDate) => {
 	try {
 		const { status } = await updateGroup(userInfo.patientId, resource);
 		if (status >= 200) {
-			alert('펫 추가 성공');
+			rootMethods.openToast('펫 등록에 성공하였습니다');
 			emit('update:groupList');
 			dialog.value = false;
 			clearInputText();
 		} else {
-			alert(status);
+			rootMethods.openToast(status);
 		}
 	} catch (error) {
 		console.error(error);

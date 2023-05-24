@@ -92,6 +92,8 @@ import GroupList from '@/components/group/GroupList.vue';
 import Datepicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css';
 
+const rootMethods = inject('rootMethods');
+
 const props = defineProps({
 	isPopShow: { type: Boolean, default: false },
 	hospitalName: { type: String },
@@ -222,17 +224,17 @@ const fetchCreateEncounter = async () => {
 		!myPetList.value[model.value].id ||
 		!organizationId.value
 	) {
-		alert('등록실패!');
+		rootMethods.isSimpleConfirm(true, '안내', '등록에 실패하였습니다', '확인');
 		return;
 	}
 
 	if (!date.value || !date.value[0] || !date.value[1]) {
-		alert('날짜를 선택하세요!');
+		rootMethods.isSimpleConfirm(true, '안내', '날짜를 선택하세요', '확인');
 		return;
 	}
 
 	if (!encounterContent.value) {
-		alert('내용을 입력하세요');
+		rootMethods.isSimpleConfirm(true, '안내', '내용을 입력하세요', '확인');
 		return;
 	}
 
@@ -274,11 +276,10 @@ const fetchCreateEncounter = async () => {
 			display: hospitalName.value,
 		},
 	};
-	console.log('resource', resource);
 	try {
 		const response = await createEncounter(resource);
 		console.log('response', response);
-		alert('진료기록 등록 성공!');
+		rootMethods.openToast('진료 기록이 등록되었습니다.');
 		closePopUp();
 	} catch (error) {
 		console.error(error);

@@ -140,6 +140,8 @@ import { getHospitalEncounterList } from '@/api/fhirApi';
 import DialogPetEncounter from '@/components/pet/DialogPetEncounter.vue';
 import { useAuthStore } from '@/stores/auth';
 
+const rootMethods = inject('rootMethods');
+
 const route = useRoute();
 const hospitalId = ref(route.query.hospitalId);
 
@@ -152,7 +154,12 @@ const detailTabList = ref([
 
 const changeDetailTab = tab => {
 	if (tab === 'review' && !userInfo.isLogined) {
-		alert('로그인 후 사용 가능합니다');
+		rootMethods.isSimpleConfirm(
+			true,
+			'안내',
+			'로그인 후 사용 가능합니다.',
+			'확인',
+		);
 		nowTab.value = 'home';
 		return false;
 	}
@@ -263,16 +270,25 @@ const groupList = useAuthStore().groupList;
 const isPopShow = ref(false);
 const insertEncounter = () => {
 	if (!userInfo.isLogined) {
-		alert('로그인 후 사용 가능합니다');
+		rootMethods.isSimpleConfirm(
+			true,
+			'안내',
+			'로그인 후 사용 가능합니다.',
+			'확인',
+		);
 		return false;
 	}
 
 	if (groupList.total === 0 || groupList.memberTotal === 0) {
-		alert('팻 등록 후 사용 가능합니다');
+		rootMethods.isSimpleConfirm(
+			true,
+			'안내',
+			'팻 등록 후 사용 가능합니다.',
+			'확인',
+		);
 	}
 
 	isPopShow.value = true;
-	console.log('진료기록 등록!', isPopShow.value);
 };
 const closePopUp = () => {
 	isPopShow.value = false;

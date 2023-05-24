@@ -96,7 +96,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref, watch } from 'vue';
+import { onMounted, ref, watch, inject } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
 import {
@@ -111,6 +111,8 @@ import { useAuthStore } from '@/stores/auth';
 import * as OpenAPI from '@/assets/js/sdk/openApi';
 
 import sha256 from 'sha256';
+
+const rootMethods = inject('rootMethods');
 
 const store = useAuthStore();
 const { SET_LOGIN, SET_OAUTH } = store;
@@ -225,7 +227,7 @@ const FetchTokenPassword = async () => {
 	oauthResult.value = null;
 	isOauthResult.value = true;
 	if (!userId.value || !userPw.value) {
-		alert('정보를 입력하세요');
+		rootMethods.isSimpleConfirm(true, '안내', '정보를 입력하세요', '확인');
 		return false;
 	}
 	let userInfo = {
