@@ -192,15 +192,17 @@ const fetchHospitalEncounterList = async organizationId => {
 		} = await getHospitalEncounterList(organizationId);
 		console.log('entry', entry);
 		console.log('total', total);
-		entry.forEach((el, idx) => {
-			console.log('idx', idx);
-			console.log('el', el);
-			hospitalEncounterList.value[idx] = {
-				period: dayjs(`${el.resource.period.start}`).format('YYYY/MM/DD'),
-				reasonCode: el.resource.reasonCode[0].text,
-				subject: el.resource.subject.reference,
-			};
-		});
+		if (entry.length > 0) {
+			entry.forEach((el, idx) => {
+				console.log('idx', idx);
+				console.log('el', el);
+				hospitalEncounterList.value[idx] = {
+					period: dayjs(`${el.resource.period.start}`).format('YYYY/MM/DD'),
+					reasonCode: el.resource.reasonCode[0].text,
+					subject: el.resource.subject.reference,
+				};
+			});
+		}
 		console.log('hospitalEncounterList', hospitalEncounterList.value);
 	} catch (error) {
 		console.error(error);
