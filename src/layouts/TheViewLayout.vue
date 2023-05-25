@@ -1,10 +1,9 @@
 <template>
-	<v-layout id="main-layout">
+	<v-layout id="main-layout" :style="'height:' + height + 'px;'">
 		<v-app-bar
 			color="indigo-lighten-2"
 			density="compact"
 			style="position: fixed; top: 0; width: 100%"
-			:style="'height:' + height + 'px;'"
 			class="bg-indigo-lighten-1"
 		>
 			<template v-slot:prepend>
@@ -96,12 +95,6 @@ const router = useRouter();
  * 유저 정보
  */
 const userInfo = useAuthStore().userInfo;
-// const layoutHeight = ref(0);
-// screen resize
-// const onResize = () => {
-// 	console.log('onResize');
-// 	emit('update:innerHeight');
-// };
 
 // 메뉴클릭시 이동
 const routeUrlChange = url => {
@@ -201,8 +194,4 @@ const items = ref([
 ]);
 </script>
 
-<style scoped>
-/* .v-navigation-drawer__scrim {
-	height: 100%;
-} */
-</style>
+<style scoped></style>

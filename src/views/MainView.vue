@@ -238,11 +238,6 @@ const model = ref(null);
 
 const { height } = useWindowSize();
 
-// const innerHeight = ref(height.value);
-
-// const updateInnerHeight = () => {
-// 	innerHeight.value = window.innerHeight;
-// };
 const clickTest = () => {
 	console.log('click');
 };

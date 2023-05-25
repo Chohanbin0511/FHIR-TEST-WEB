@@ -34,16 +34,6 @@ import TheViewLayout from '@/layouts/TheViewLayout.vue';
 
 const { height } = useWindowSize();
 
-// const innerHeight = ref(0);
-
-// onMounted(() => {
-// 	innerHeight.value = window.innerHeight;
-// });
-
-// const updateInnerHeight = () => {
-// 	innerHeight.value = window.innerHeight;
-// };
-
 const samplePageList = ref([
 	{ title: 'Fhir Sample', type: 'fhir' },
 	{ title: 'OAuth Sample', type: 'oauth' },

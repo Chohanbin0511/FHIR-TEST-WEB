@@ -88,13 +88,6 @@ const userInfo = useAuthStore().userInfo;
 
 const { height } = useWindowSize();
 
-// const innerHeight = ref(0);
-
-// onUpdated(() => {});
-// const updateInnerHeight = () => {
-// 	innerHeight.value = window.innerHeight;
-// };
-
 const apiName = ref(null);
 const apiResult = ref(null);
 
