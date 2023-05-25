@@ -1,9 +1,8 @@
 <template>
 	<TheViewLayout
-		@update:innerHeight="updateInnerHeight"
 		:style="
 			!userInfo.isLogined || myPetList.length === 0
-				? 'height:' + innerHeight + 'px;'
+				? 'height:' + height + 'px;'
 				: ''
 		"
 	>
@@ -215,6 +214,8 @@
 <script setup>
 import { ref, onMounted, watch, inject } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
+import { useWindowSize } from '@vueuse/core';
+
 import { getTokenAuthCodeResult } from '@/api/oauthApi';
 import {
 	getGroupList,
@@ -235,11 +236,13 @@ const dayjs = inject('dayjs');
 
 const model = ref(null);
 
-const innerHeight = ref(0);
+const { height } = useWindowSize();
 
-const updateInnerHeight = () => {
-	innerHeight.value = window.innerHeight;
-};
+// const innerHeight = ref(height.value);
+
+// const updateInnerHeight = () => {
+// 	innerHeight.value = window.innerHeight;
+// };
 const clickTest = () => {
 	console.log('click');
 };

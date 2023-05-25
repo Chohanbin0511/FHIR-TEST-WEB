@@ -1,5 +1,5 @@
 <template>
-	<v-layout id="main-layout" v-resize="onResize">
+	<v-layout id="main-layout">
 		<v-app-bar
 			color="indigo-lighten-2"
 			density="compact"
@@ -83,17 +83,28 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted } from 'vue';
+import { ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
 
-const emit = defineEmits(['update:innerHeight']);
+// const emit = defineEmits(['update:innerHeight']);
 
-const windowSize = ref(window.innerWidth);
+// const windowSize = ref(window.innerWidth);
 
-onMounted(() => {
-	console.log('windowSize', windowSize.value);
-});
+// onMounted(() => {
+// 	console.log('windowSize', windowSize.value);
+// });
+
+// const { width, height } = useWindowSize();
+
+// watch(
+// 	() => [width, height],
+// 	() => {
+// 		console.log('caca');
+// 		emit('update:innerHeight');
+// 	},
+// 	{ deep: true },
+// );
 
 const router = useRouter();
 /**
@@ -102,10 +113,10 @@ const router = useRouter();
 const userInfo = useAuthStore().userInfo;
 // const layoutHeight = ref(0);
 // screen resize
-const onResize = () => {
-	console.log('onResize');
-	emit('update:innerHeight');
-};
+// const onResize = () => {
+// 	console.log('onResize');
+// 	emit('update:innerHeight');
+// };
 
 // 메뉴클릭시 이동
 const routeUrlChange = url => {

@@ -154,13 +154,13 @@ const detailTabList = ref([
 
 const changeDetailTab = tab => {
 	if (tab === 'review' && !userInfo.isLogined) {
+		nowTab.value = 'home';
 		rootMethods.isSimpleConfirm(
 			true,
 			'안내',
 			'로그인 후 사용 가능합니다.',
 			'확인',
 		);
-		nowTab.value = 'home';
 		return false;
 	}
 	nowTab.value = tab;

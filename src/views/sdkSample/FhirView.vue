@@ -1,8 +1,5 @@
 <template>
-	<TheViewLayout
-		@update:innerHeight="updateInnerHeight"
-		:style="'height:' + innerHeight + 'px;'"
-	>
+	<TheViewLayout :style="'height:' + height + 'px;'">
 		<template #mainPanel>
 			<v-container>
 				<h1>FHIR Sample</h1>
@@ -61,6 +58,8 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useWindowSize } from '@vueuse/core';
+
 import TheViewLayout from '@/layouts/TheViewLayout.vue';
 import {
 	getPatient,
@@ -87,12 +86,14 @@ const userInfo = useAuthStore().userInfo;
 
 // const myClient = fhir(fhirConfig.value);
 
-const innerHeight = ref(0);
+const { height } = useWindowSize();
+
+// const innerHeight = ref(0);
 
 // onUpdated(() => {});
-const updateInnerHeight = () => {
-	innerHeight.value = window.innerHeight;
-};
+// const updateInnerHeight = () => {
+// 	innerHeight.value = window.innerHeight;
+// };
 
 const apiName = ref(null);
 const apiResult = ref(null);
