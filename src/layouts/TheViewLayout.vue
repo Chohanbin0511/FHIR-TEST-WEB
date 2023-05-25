@@ -19,6 +19,7 @@
 		<v-navigation-drawer
 			v-model="drawer"
 			style="position: fixed; background-color: white"
+			:style="'height:' + height + 'px;'"
 		>
 			<v-list density="compact">
 				<v-card width="400" class="mt-4 mb-4">
@@ -86,25 +87,9 @@
 import { ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
+import { useWindowSize } from '@vueuse/core';
 
-// const emit = defineEmits(['update:innerHeight']);
-
-// const windowSize = ref(window.innerWidth);
-
-// onMounted(() => {
-// 	console.log('windowSize', windowSize.value);
-// });
-
-// const { width, height } = useWindowSize();
-
-// watch(
-// 	() => [width, height],
-// 	() => {
-// 		console.log('caca');
-// 		emit('update:innerHeight');
-// 	},
-// 	{ deep: true },
-// );
+const { height } = useWindowSize();
 
 const router = useRouter();
 /**
