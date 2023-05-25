@@ -4,6 +4,7 @@
 			color="indigo-lighten-2"
 			density="compact"
 			style="position: fixed; top: 0; width: 100%"
+			:style="'height:' + height + 'px;'"
 			class="bg-indigo-lighten-1"
 		>
 			<template v-slot:prepend>
@@ -19,7 +20,6 @@
 		<v-navigation-drawer
 			v-model="drawer"
 			style="position: fixed; background-color: white"
-			:style="'height:' + height + 'px;'"
 		>
 			<v-list density="compact">
 				<v-card width="400" class="mt-4 mb-4">
