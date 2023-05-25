@@ -202,7 +202,7 @@ const items = ref([
 </script>
 
 <style scoped>
-.v-navigation-drawer__scrim {
+/* .v-navigation-drawer__scrim {
 	height: 100%;
-}
+} */
 </style>
